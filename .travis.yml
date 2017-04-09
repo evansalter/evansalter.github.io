@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "node"
+script:
+  - yarn run lint
+  - yarn run build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  target_branch: master
+  on:
+    branch: sources
