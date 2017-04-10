@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 a {
   color: black;
 }

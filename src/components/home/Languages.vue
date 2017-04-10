@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .language-container {
   display: flex;
   flex-flow: row wrap;

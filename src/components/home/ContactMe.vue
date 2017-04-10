@@ -33,25 +33,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 h1 {
   padding-bottom: 15px;
-}
-
-.contact-image {
-  width: 215px;
-  border-radius: 50%;
-}
-
-a {
-  font-size: 21px;
-  padding-left: 15px;
-  color: white;
-  text-decoration: underline;
-}
-
-svg {
-  vertical-align: bottom;
 }
 
 .col {
@@ -60,6 +44,11 @@ svg {
 
 .image-container {
   text-align: right;
+
+  .contact-image {
+    width: 215px;
+    border-radius: 50%;
+  }
 }
 
 .contact-info {
@@ -67,6 +56,17 @@ svg {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  a {
+    font-size: 21px;
+    padding-left: 15px;
+    color: white;
+    text-decoration: underline;
+  }
+
+  svg {
+    vertical-align: bottom;
+  }
 }
 
 @media(max-width: 600px) {
