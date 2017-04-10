@@ -35,6 +35,14 @@ export default {
 .panel {
   margin: 0;
   color: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      z-index: 500 - $i
+    }
+  }
 }
 
 #welcome-panel {
