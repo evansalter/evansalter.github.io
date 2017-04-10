@@ -27,18 +27,50 @@
     </v-row>
     <v-row id="languages-and-frameworks" class="panel panel-full blue-grey">
       <h1>Languages and Frameworks</h1>
-      <v-grid s4>
-        <ul>
-          <li></li>
+      <div class="language-container">
+        <ul v-for="language in languages">
+          <h3>{{ language.category }}</h3>
+          <li v-for="value in language.values">
+            {{ value }}
+          </li>
         </ul>
-      </v-grid>
+      </div>
+    </v-row>
+    <v-row id="contact-me" class="panel panel-full green">
+      <contact-me></contact-me>
     </v-row>
   </div>
 </template>
 
 <script>
+import ContactMe from './ContactMe'
+
 export default {
-  name: 'home'
+  name: 'home',
+  components: {ContactMe},
+  data: () => {
+    return {
+      languages: [
+        {
+          category: 'Web Frontend',
+          values: ['Javascript', 'Typescript', 'HTML', 'CSS', 'Angular2', 'Vue.js', 'KnockoutJS']
+        },
+        {
+          category: 'Backend',
+          values: ['Python', 'Go']
+        },
+        {
+          category: 'Data',
+          values: ['Cloud Datastore', 'SQL', 'BiqQuery', 'Elasticsearch']
+        },
+        {
+          category: 'Google Cloud Platform',
+          values: ['AppEngine', 'Compute Engine']
+        }
+
+      ]
+    }
+  }
 }
 </script>
 
@@ -54,7 +86,7 @@ export default {
 
 #welcome-panel {
   height: 90%;
-  background-image: url("../assets/headshot.jpg");
+  background-image: url("../../assets/headshot/full.jpg");
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
@@ -87,11 +119,20 @@ h1 {
   padding: 25px;
 }
 
-p {
+p, li {
   font-size: 25px;
 }
 
 .light-green {
   color: black;
+}
+
+.language-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.language-container ul {
+  padding: 15px;
 }
 </style>
