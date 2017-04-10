@@ -16,9 +16,9 @@ export default {
   data: () => {
     return {
       pages: [
-        { path: 'about', name: 'About' },
-        { path: 'projects', name: 'Projects' },
-        { path: 'blog', name: 'Blog' }
+        { path: '/', name: 'Home' },
+        { path: '/projects', name: 'Projects' },
+        { path: '/blog', name: 'Blog' }
       ]
     }
   }
