@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #about-container {
   height: calc(100% - 64px);
 }
@@ -49,19 +49,15 @@ h1 {
   margin: 0;
 }
 
-.panel-full {
-  padding: 25px;
-}
-
 p, li {
   font-size: 25px;
 }
 
-.light-green {
-  color: black;
+.panel-full {
+  padding: 25px;
 }
 
-.language-container ul {
-  padding: 15px;
+.light-green {
+  color: black;
 }
 </style>

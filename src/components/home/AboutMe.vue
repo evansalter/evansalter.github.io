@@ -25,4 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+p {
+  font-size: 25px;
+}
 </style>

@@ -45,5 +45,13 @@ export default {
 .language-container {
   display: flex;
   flex-flow: row wrap;
+
+  ul {
+    padding: 15px;
+
+    li {
+      font-size: 25px;
+    }
+  }
 }
 </style>
