@@ -12,6 +12,8 @@
     "test": "echo \"No tests specified; skipping.\""
   },
   "dependencies": {
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
     "vue": "^2.2.2",
     "vue-awesome": "^2.2.3",
     "vue-materials": "^1.0.7-rc.7",

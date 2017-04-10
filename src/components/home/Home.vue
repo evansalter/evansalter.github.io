@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #about-container {
   height: calc(100% - 64px);
 }
