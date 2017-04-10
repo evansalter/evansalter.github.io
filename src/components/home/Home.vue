@@ -12,15 +12,7 @@
       <about-me></about-me>
     </v-row>
     <v-row id="languages-and-frameworks" class="panel panel-full blue-grey">
-      <h1>Languages and Frameworks</h1>
-      <div class="language-container">
-        <ul v-for="language in languages">
-          <h3>{{ language.category }}</h3>
-          <li v-for="value in language.values">
-            {{ value }}
-          </li>
-        </ul>
-      </div>
+      <languages></languages>
     </v-row>
     <v-row id="contact-me" class="panel panel-full green">
       <contact-me></contact-me>
@@ -31,33 +23,11 @@
 <script>
 import AboutMe from './AboutMe'
 import ContactMe from './ContactMe'
+import Languages from './Languages'
 
 export default {
   name: 'home',
-  components: { ContactMe, AboutMe },
-  data: () => {
-    return {
-      languages: [
-        {
-          category: 'Web Frontend',
-          values: ['Javascript', 'Typescript', 'HTML', 'CSS', 'Angular2', 'Vue.js', 'KnockoutJS']
-        },
-        {
-          category: 'Backend',
-          values: ['Python', 'Go']
-        },
-        {
-          category: 'Data',
-          values: ['Cloud Datastore', 'SQL', 'BiqQuery', 'Elasticsearch']
-        },
-        {
-          category: 'Google Cloud Platform',
-          values: ['AppEngine', 'Compute Engine']
-        }
-
-      ]
-    }
-  }
+  components: { ContactMe, AboutMe, Languages }
 }
 </script>
 
@@ -112,11 +82,6 @@ p, li {
 
 .light-green {
   color: black;
-}
-
-.language-container {
-  display: flex;
-  flex-flow: row wrap;
 }
 
 .language-container ul {

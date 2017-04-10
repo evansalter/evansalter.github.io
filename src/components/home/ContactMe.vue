@@ -34,6 +34,10 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  padding-bottom: 15px;
+}
+
 .contact-image {
   width: 215px;
   border-radius: 50%;
