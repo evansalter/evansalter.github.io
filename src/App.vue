@@ -26,6 +26,7 @@ html, body, #app{
   height: 100%;
 }
 .main-container {
+  margin-top: 64px;
   min-height: calc(100vh - 134px);
 }
 </style>
