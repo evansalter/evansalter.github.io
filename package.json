@@ -17,8 +17,8 @@
     "sass-loader": "^6.0.3",
     "vue": "^2.2.2",
     "vue-awesome": "^2.2.3",
-    "vue-materials": "^1.0.7-rc.7",
-    "vue-router": "^2.3.0"
+    "vue-router": "^2.3.0",
+    "vuetify": "^0.10.4"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
