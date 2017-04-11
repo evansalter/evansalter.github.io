@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <navigation></navigation>
     <div class="main-container">
       <router-view></router-view>
     </div>
     <page-footer></page-footer>
-  </div>
+  </v-app>
 </template>
 
 <script>
