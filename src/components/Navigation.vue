@@ -1,24 +1,27 @@
 <template>
-  <v-nav nav-class="white" fixed>
-    <router-link to="/" class="brand-logo" slot="logo" active-class="">Evan Salter</router-link>
-    <ul class="right hide-on-small-and-down">
-      <li v-for="page in pages">
-        <router-link :to="page.path" :exact="page.exact">{{ page.name }}</router-link>
-      </li>
-    </ul>
-    <ul class="right hide-on-med-and-up">
-      <li>
-        <a href="#" v-side-nav:side="nav" class="button-collapse"><v-icon>menu</v-icon></a>
-      </li>
-    </ul>
-    <v-side-nav id="side" slot="side-nav">
-      <ul>
-        <li v-for="page in pages">
-          <router-link :to="page.path" :exact="page.exact" v-on:click.native="closeSidenav">{{ page.name }}</router-link>
-        </li>
-      </ul>
-    </v-side-nav>
-  </v-nav>
+  <div>
+    <v-toolbar fixed transparent>
+      <v-toolbar-side-icon class="hidden-md-and-up" @click.native.stop="sidebarVisible = !sidebarVisible"></v-toolbar-side-icon>
+      <v-toolbar-title>Evan Salter</v-toolbar-title>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-toolbar-item v-for="page in pages"
+                        :key="page.name"
+                        :to="page.path"
+                        ripple>
+          {{ page.name }}
+        </v-toolbar-item>
+      </v-toolbar-items>
+    </v-toolbar>
+    <v-sidebar drawer v-model="sidebarVisible">
+      <v-list dense>
+        <v-list-item v-for="page in pages" :key="page.name">
+          <v-list-tile :to="page.path" ripple>
+            <v-list-tile-title v-text="page.name"/>
+          </v-list-tile>
+        </v-list-item>
+      </v-list>
+    </v-sidebar>
+  </div>
 </template>
 
 <script>
@@ -26,6 +29,7 @@ export default {
   name: 'navigation',
   data: () => {
     return {
+      sidebarVisible: false,
       pages: [
         { path: '/', name: 'Home', exact: true },
         { path: '/projects', name: 'Projects', exact: false },
@@ -45,17 +49,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-a {
-  color: black;
+.toolbar {
+  z-index: 100;
 }
 
-.router-link-active {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-@media(min-width: 993px) {
-  .brand-logo {
-    margin-left: 10px;
-  }
+.sidebar {
+  z-index: 99;
+  padding-top: 70px;
 }
 </style>
