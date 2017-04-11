@@ -45,6 +45,7 @@ export default {
 .language-container {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
 
   ul {
     padding: 15px;
