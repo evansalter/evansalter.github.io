@@ -17,7 +17,7 @@ export default {
 .text-container {
   padding-bottom: 0;
   padding-left: 25px;
-  height: 100%;
+  height: calc(100vh - 128px);
   background: linear-gradient(to right, rgba(33,150,243,1) 0%,rgba(33,150,243,1) 50%,rgba(33,150,243,0) 100%);
   display: flex;
   flex-direction: column;

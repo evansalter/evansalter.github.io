@@ -1,5 +1,5 @@
 <template>
-  <div id="about-container">
+  <div>
     <v-row class="panel" id="welcome-panel">
       <welcome></welcome>
     </v-row>
@@ -28,10 +28,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#about-container {
-  height: calc(100% - 64px);
-}
-
 .panel {
   margin: 0;
   color: white;

@@ -52,4 +52,10 @@ a {
 .router-link-active {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+@media(min-width: 993px) {
+  .brand-logo {
+    margin-left: 10px;
+  }
+}
 </style>
