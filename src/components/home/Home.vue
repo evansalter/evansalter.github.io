@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container fluid="fluid">
     <v-row class="panel" id="welcome-panel">
       <welcome></welcome>
     </v-row>
@@ -12,7 +12,7 @@
     <v-row id="contact-me" class="panel panel-full green">
       <contact-me></contact-me>
     </v-row>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -36,7 +36,7 @@ export default {
 
   @for $i from 1 through 4 {
     &:nth-child(#{$i}) {
-      z-index: 500 - $i
+      z-index: 98 - $i
     }
   }
 }

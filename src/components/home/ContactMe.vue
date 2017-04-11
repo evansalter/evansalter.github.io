@@ -1,20 +1,20 @@
 <template>
-  <div>
+  <v-row>
     <h1>Contact Me</h1>
-    <v-grid s12 m6>
+    <v-col xs12 sm6>
       <div class="image-container">
         <img class="contact-image" :src="contactImage"></img>
       </div>
-    </v-grid>
-    <v-grid s12 m6>
+    </v-col>
+    <v-col xs12 sm6>
       <div class="contact-info">
         <p v-for="item in contactInfo">
           <icon :name="item.icon" :scale="item.scale"></icon>
           <a :href="item.url" target="_blank">{{ item.display }}</a>
         </p>
       </div>
-    </v-grid>
-  </div>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -36,6 +36,7 @@ export default {
 <style lang="scss" scoped>
 h1 {
   padding-bottom: 15px;
+  color: white;
 }
 
 .col {
@@ -69,7 +70,7 @@ h1 {
   }
 }
 
-@media(max-width: 600px) {
+@media(max-width: 575px) {
   .image-container, .contact-info {
     text-align: center;
   }

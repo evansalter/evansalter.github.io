@@ -1,10 +1,10 @@
 <template>
-  <div class="text-container col s12 m7">
+  <v-col xs12 sm7 class="text-container">
     <div class="text">
       <h1>Hi.</h1>
       <h3>I'm Evan Salter.</h3>
     </div>
-  </div>
+  </v-col>
 </template>
 
 <script>
@@ -22,9 +22,12 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  * {
+    color: white;
+  }
 }
 
-@media(max-width: 600px) {
+@media(max-width: 575px) {
   .text-container {
     background: #2196F3;
   }
