@@ -25,6 +25,9 @@ export default {
 </script>
 
 <style>
+body {
+  height: 100vh;
+}
 .spacer {
   height: 64px;
 }
