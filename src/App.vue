@@ -28,6 +28,9 @@ export default {
 body {
   height: 100vh;
 }
+#app {
+  overflow: hidden;
+}
 .spacer {
   height: 64px;
 }
