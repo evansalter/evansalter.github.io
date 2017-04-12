@@ -25,9 +25,6 @@ export default {
 </script>
 
 <style>
-html, body, #app{
-  height: 100%;
-}
 .spacer {
   height: 64px;
 }
