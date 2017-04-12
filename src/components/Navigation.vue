@@ -6,7 +6,8 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <v-toolbar-item v-for="page in pages"
                         :key="page.name"
-                        @click.native="navigate(page.path)"
+                        :to="page.path"
+                        :router="true"
                         ripple>
           {{ page.name }}
         </v-toolbar-item>
@@ -15,7 +16,7 @@
     <v-sidebar drawer v-model="sidebarVisible">
       <v-list dense>
         <v-list-item v-for="page in pages" :key="page.name">
-          <v-list-tile @click.native="navigate(page.path)" ripple>
+          <v-list-tile :to="page.path" :router="true" active-class="sidebar-active" ripple>
             <v-list-tile-title v-text="page.name"/>
           </v-list-tile>
         </v-list-item>
@@ -39,11 +40,6 @@ export default {
         edge: 'right'
       }
     }
-  },
-  methods: {
-    navigate: function (path) {
-      this.$router.push(path)
-    }
   }
 }
 </script>
@@ -56,5 +52,9 @@ export default {
 .sidebar {
   z-index: 99;
   padding-top: 70px;
+}
+
+.sidebar-active {
+  background: rgba(0,0,0,.12);
 }
 </style>
