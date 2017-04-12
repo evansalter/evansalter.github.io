@@ -23,12 +23,9 @@
 </template>
 
 <script>
-import ProjectImage from './ProjectImage'
-
 export default {
   name: 'project-card',
   props: ['project', 'index'],
-  components: { ProjectImage },
   computed: {
     imageStyle: function () {
       return 'background-image: url("' + this.project.image + '")'
