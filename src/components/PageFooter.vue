@@ -42,7 +42,6 @@ export default {
 
 <style lang="scss">
 #page-footer {
-  z-index: 105;
   margin: 0;
   div {
     color: #2B3940;

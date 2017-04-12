@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid="fluid">
+  <v-container fluid>
     <v-row class="panel" id="welcome-panel">
       <welcome></welcome>
     </v-row>

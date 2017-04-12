@@ -6,7 +6,7 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <v-toolbar-item v-for="page in pages"
                         :key="page.name"
-                        :to="page.path"
+                        @click.native="navigate(page.path)"
                         ripple>
           {{ page.name }}
         </v-toolbar-item>
@@ -15,7 +15,7 @@
     <v-sidebar drawer v-model="sidebarVisible">
       <v-list dense>
         <v-list-item v-for="page in pages" :key="page.name">
-          <v-list-tile :to="page.path" ripple>
+          <v-list-tile @click.native="navigate(page.path)" ripple>
             <v-list-tile-title v-text="page.name"/>
           </v-list-tile>
         </v-list-item>
@@ -41,8 +41,8 @@ export default {
     }
   },
   methods: {
-    closeSidenav: () => {
-      $('.button-collapse').sideNav('hide')
+    navigate: function (path) {
+      this.$router.push(path)
     }
   }
 }

@@ -27,6 +27,6 @@ html, body, #app{
 }
 .main-container {
   margin-top: 64px;
-  min-height: calc(100vh - 134px);
+  min-height: calc(100vh - 109px);
 }
 </style>
