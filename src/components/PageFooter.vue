@@ -20,6 +20,9 @@
         <a v-tooltip:top="{ html: 'Vuetify.js' }" href="https://vuetifyjs.com/" target="_blank">
           <img :src="icons.vuetify" height="15"/>
         </a>
+        <a v-tooltip:top="{ html: 'NPM' }" href="https://www.npmjs.com/" target="_blank">
+          <img :src="icons.npm" height="17"/>
+        </a>
          / <span class="hidden-sm-and-down">Hosted on </span><a href="https://github.io" target="_blank">github.io</a>
     </div>
   </v-footer>
@@ -31,6 +34,7 @@ export default {
   data: () => {
     return {
       icons: {
+        npm: require('../assets/icons/npm.svg'),
         vuejs: require('../assets/icons/vuejs.svg'),
         vuetify: require('../assets/icons/vuetify.png'),
         webpack: require('../assets/icons/webpack.svg')
