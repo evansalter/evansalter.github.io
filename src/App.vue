@@ -1,9 +1,12 @@
 <template>
   <v-app id="app">
+    <div class="spacer"></div>
     <navigation></navigation>
-    <div class="main-container">
-      <router-view></router-view>
-    </div>
+    <main class="main-container">
+      <v-content>
+        <router-view></router-view>
+      </v-content>
+    </main>
     <page-footer></page-footer>
   </v-app>
 </template>
@@ -25,8 +28,11 @@ export default {
 html, body, #app{
   height: 100%;
 }
+.spacer {
+  height: 64px;
+}
 .main-container {
-  margin-top: 64px;
   min-height: calc(100vh - 109px);
+  transform: translateZ(0);
 }
 </style>
