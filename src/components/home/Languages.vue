@@ -42,6 +42,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1, h3 {
+  color: white;
+}
+
 .language-container {
   display: flex;
   flex-flow: row wrap;
@@ -49,6 +53,7 @@ export default {
 
   ul {
     padding: 15px;
+    list-style: none;
 
     li {
       font-size: 25px;

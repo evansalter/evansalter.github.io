@@ -6,11 +6,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import Materials from 'vue-materials'
+import Vuetify from 'vuetify'
 import Icon from 'vue-awesome/components/Icon.vue'
 
 Vue.config.productionTip = false
-Vue.use(Materials)
+Vue.use(Vuetify)
 Vue.component('icon', Icon)
 
 /* eslint-disable no-new */
