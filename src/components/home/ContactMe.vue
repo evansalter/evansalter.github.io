@@ -1,20 +1,22 @@
 <template>
-  <v-row>
+  <div class="contact-container">
     <h1>Contact Me</h1>
-    <v-col xs12 sm6>
-      <div class="image-container">
-        <img class="contact-image" :src="contactImage"></img>
-      </div>
-    </v-col>
-    <v-col xs12 sm6>
-      <div class="contact-info">
-        <p v-for="item in contactInfo">
-          <icon :name="item.icon" :scale="item.scale"></icon>
-          <a :href="item.url" target="_blank">{{ item.display }}</a>
-        </p>
-      </div>
-    </v-col>
-  </v-row>
+    <v-row>
+      <v-col xs12 sm6>
+        <div class="image-container">
+          <img class="contact-image" :src="contactImage"></img>
+        </div>
+      </v-col>
+      <v-col xs12 sm6>
+        <div class="contact-info">
+          <p v-for="item in contactInfo">
+            <icon :name="item.icon" :scale="item.scale"></icon>
+            <a :href="item.url" target="_blank">{{ item.display }}</a>
+          </p>
+        </div>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
@@ -50,6 +52,10 @@ h1 {
     width: 215px;
     border-radius: 50%;
   }
+}
+
+.contact-container {
+  width: 100%;
 }
 
 .contact-info {
