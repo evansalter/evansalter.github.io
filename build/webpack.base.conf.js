@@ -78,6 +78,17 @@ module.exports = {
         ]
       },
       {
+        test: /\.md$/,
+        loaders: [
+          {
+            loader: 'html-loader'
+          },
+          {
+            loader: 'markdown-loader'
+          }
+        ]
+      },
+      {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
