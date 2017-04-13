@@ -1,5 +1,10 @@
 <template>
-  <v-container v-html="post"></v-container>
+  <v-container class="post-container">
+    <h3>{{ post.title }}</h3>
+    <h6>{{ post.date }}</h6>
+    <v-divider/>
+    <div v-html="postContent"></div>
+  </v-container>
 </template>
 
 <script>
@@ -14,12 +19,21 @@ export default {
   },
   computed: {
     post: function () {
-      return require('./posts/' + this.posts[this.slug].filename)
+      var post = this.posts[this.slug]
+      if (post === undefined) {
+        this.$router.replace('/blog')
+      }
+      return post
+    },
+    postContent: function () {
+      return require('./posts/' + this.post.filename)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
+.post-container {
+  padding-top: 15px;
+}
 </style>
