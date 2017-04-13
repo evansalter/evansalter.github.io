@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <div class="header">
+    <div>
       <h3>Thoughts</h3>
     </div>
     <v-list two-line subheader>
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header {
-  margin-top: 25px;
+h3 {
+  margin-top: 15px;
 }
 </style>
