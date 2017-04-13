@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import PageFooter from '@/components/PageFooter'
 import Navigation from '@/components/Navigation'
+import PageFooter from '@/components/PageFooter'
 
 export default {
   name: 'app',
   components: {
-    PageFooter,
-    Navigation
+    Navigation,
+    PageFooter
   }
 }
 </script>

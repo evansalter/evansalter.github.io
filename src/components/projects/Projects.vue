@@ -2,19 +2,30 @@
   <v-container>
     <div>
       <h3>Projects</h3>
-      <h5>Please take a second to explore some of the projects I have worked on.</h5>
+      <h5>Here's what I've been keeping myself busy with</h5>
     </div>
-    <project-card v-for="(project, index) in projects" :key="project.name" :index="index" :project="project"></project-card>
+    <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
+    <project-card v-for="(project, index) in projects"
+                  :key="project.name"
+                  :index="index"
+                  :project="project"
+                  v-if="shouldShowProject(project.technologies)">
+    </project-card>
   </v-container>
 </template>
 
 <script>
 import ProjectCard from './ProjectCard'
+import TagSelector from '@/components/common/TagSelector'
 
 export default {
-  components: { ProjectCard },
+  components: {
+    ProjectCard,
+    TagSelector
+  },
   data: () => {
     return {
+      selectedTags: [],
       projects: [
         {
           name: 'Roll Up Tracker',
@@ -28,7 +39,6 @@ export default {
         },
         {
           name: 'Another project',
-          // image: require('../../assets/projects/roll-up-tracker.png'),
           description: '',
           technologies: ['Angular2', 'Python', 'iOS', 'Swift'],
           links: [
@@ -37,6 +47,24 @@ export default {
           ]
         }
       ]
+    }
+  },
+  computed: {
+    allTags: function () {
+      var tags = {}
+      for (var project of this.projects) {
+        for (var technology of project.technologies) {
+          tags[technology] = tags[technology] + 1 || 1
+        }
+      }
+      return tags
+    }
+  },
+  methods: {
+    shouldShowProject: function (tags) {
+      return this.selectedTags.filter(function (tag) {
+        return tags.indexOf(tag) > -1
+      }).length > 0 || this.selectedTags.length === 0
     }
   }
 }
