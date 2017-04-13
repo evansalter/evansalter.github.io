@@ -27,6 +27,10 @@ export default {
           values: ['Python', 'Go']
         },
         {
+          category: 'Systems',
+          values: ['C/C++', 'Java']
+        },
+        {
           category: 'Data',
           values: ['Cloud Datastore', 'SQL', 'BiqQuery', 'Elasticsearch']
         },
