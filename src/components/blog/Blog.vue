@@ -6,12 +6,15 @@
     <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
     <v-list three-line subheader>
       <v-list-item v-for="post in posts" :key="post.filename" v-if="shouldShowPost(post.tags)">
-        <v-list-tile :to="'/blog/' + slugify(post.title)" :router="true">
+        <v-list-tile :to="getPath(post.title)" :router="true">
           <v-list-tile-content>
             <v-list-tile-title>{{ post.title }}</v-list-tile-title>
             <v-list-tile-sub-title>{{ post.date }}</v-list-tile-sub-title>
             <tag-list :tags="post.tags"></tag-list>
           </v-list-tile-content>
+          <v-list-tile-action>
+            <span class="disqus-comment-count" :data-disqus-url="hostname + getPath(post.title)"></span>
+          </v-list-tile-action>
         </v-list-tile>
         <v-divider/>
       </v-list-item>
@@ -32,15 +35,26 @@ export default {
       selectedTags: []
     }
   },
+  mounted: function () {
+    if (window.DISQUSWIDGETS) {
+      window.DISQUSWIDGETS.getCount({reset: true})
+    }
+  },
   methods: {
     slugify: Slugify,
     shouldShowPost: function (tags) {
       return this.selectedTags.filter(function (tag) {
         return tags.indexOf(tag) > -1
       }).length > 0 || this.selectedTags.length === 0
+    },
+    getPath: function (title) {
+      return '/blog/' + this.slugify(title)
     }
   },
   computed: {
+    hostname: function () {
+      return window.location.href.split(window.location.pathname)[0]
+    },
     allTags: function () {
       var tags = {}
       for (var post of this.posts) {

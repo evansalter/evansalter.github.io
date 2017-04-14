@@ -2,6 +2,7 @@
   <div class="post-container">
     <h3>{{ post.title }}</h3>
     <h6>{{ post.date }}</h6>
+    <a href="#disqus_thread"><a href="#disqus_thread"> Comment</a></a>
     <tag-list :tags="post.tags"></tag-list>
     <v-divider/>
     <div class="post-content" v-html="postContent"></div>
@@ -21,6 +22,11 @@ export default {
   data: function () {
     return {
       posts: PostObject
+    }
+  },
+  mounted: function () {
+    if (window.DISQUSWIDGETS) {
+      window.DISQUSWIDGETS.getCount({reset: true})
     }
   },
   computed: {
