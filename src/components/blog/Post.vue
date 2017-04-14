@@ -53,7 +53,7 @@ export default {
       }
     }
 
-    ol {
+    ol, ul {
       margin-left: 20px;
     }
 
