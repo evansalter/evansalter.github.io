@@ -4,14 +4,18 @@
     <h6>{{ post.date }}</h6>
     <v-divider/>
     <div class="post-content" v-html="postContent"></div>
+    <v-divider/>
+    <disqus></disqus>
   </div>
 </template>
 
 <script>
 import { PostObject } from './posts/index.js'
+import Disqus from './Disqus'
 
 export default {
   props: ['slug'],
+  components: { Disqus },
   data: function () {
     return {
       posts: PostObject
