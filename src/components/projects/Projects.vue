@@ -31,19 +31,39 @@ export default {
           name: 'Roll Up Tracker',
           image: require('../../assets/projects/roll-up-tracker.jpg'),
           description: 'A web and iOS app to track your Roll Up The Rim To Win progress.',
-          technologies: ['Angular2', 'Typescript', 'Python', 'iOS', 'Swift'],
+          technologies: ['Angular2', 'Typescript', 'Python', 'iOS', 'Swift', 'Web'],
           links: [
-            { name: 'Website', url: 'https://www.rolluptracker.com' },
-            { name: 'App Store', url: 'http://appstore.com/rolluptracker' }
+            { name: 'Website', url: 'https://www.rolluptracker.com', icon: 'globe' },
+            { name: 'App Store', url: 'http://appstore.com/rolluptracker', icon: 'mobile' }
           ]
         },
         {
-          name: 'Another project',
-          description: '',
-          technologies: ['Angular2', 'Python', 'iOS', 'Swift'],
+          name: 'Scrobblin\' With Friends',
+          image: require('../../assets/projects/scrobblin-with-friends.png'),
+          description: 'A simple Vue.js web app to see what your friends are listening to.',
+          technologies: ['Vue.js', 'Web'],
           links: [
-            { name: 'Website', url: 'https://www.rolluptracker.com' },
-            { name: 'App Store', url: 'http://appstore.com/rolluptracker' }
+            { name: 'GitHub', url: 'https://github.com/esalter-va/scrobblin-friends', icon: 'github' },
+            { name: 'Website', url: 'https://www.scrobblin-friends.appspot.com', icon: 'globe' }
+          ]
+        },
+        {
+          name: 'vim-checklist',
+          image: require('../../assets/projects/vim-checklist.gif'),
+          description: 'A Vim plugin to simplify creating and using Markdown checklists.',
+          technologies: ['Vim'],
+          links: [
+            { name: 'GitHub', url: 'https://github.com/esalter-va/vim-checklist', icon: 'github' },
+            { name: 'Vim Awesome', url: 'http://vimawesome.com/plugin/vim-checklist' }
+          ]
+        },
+        {
+          name: 'Chromescape Navigator',
+          description: 'A silly Chrome Extension that displays the Netscape Navigator or IE throbber when loading pages, for nostalgia purposes',
+          technologies: ['Javascript', 'Chrome Extension', 'Web'],
+          links: [
+            { name: 'GitHub', url: 'https://github.com/esalter-va/chromescape-navigator', icon: 'github' },
+            { name: 'Chrome Web Store', url: 'https://chrome.google.com/webstore/detail/chromescape-navigator/ocjjknbofcggmblgmlpfpmhccojaecnp', icon: 'chrome' }
           ]
         }
       ]
