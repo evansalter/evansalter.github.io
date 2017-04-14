@@ -7,11 +7,7 @@
           <v-card-title>{{ project.name }}</v-card-title>
           <v-card-text v-if="project.description">{{ project.description }}</v-card-text>
         </v-row>
-        <v-card-row v-if="project.technologies && project.technologies.length > 0" class="technologies">
-          <v-chip label v-for="technology in project.technologies" :key="technology">
-            {{ technology }}
-          </v-chip>
-        </v-card-row>
+        <tag-list :tags="project.technologies"></tag-list>
         <v-card-row actions>
           <v-btn flat v-for="link in project.links" :key="link.name" @click.native="open(link.url, '_blank')">
             <template v-if="link.icon">
@@ -27,9 +23,12 @@
 </template>
 
 <script>
+import TagList from '@/components/common/TagList'
+
 export default {
   name: 'project-card',
   props: ['project', 'index'],
+  components: { TagList },
   computed: {
     imageStyle: function () {
       return 'background-image: url("' + this.project.image + '")'
@@ -61,8 +60,5 @@ export default {
       height: 300px;
     }
   }
-}
-.technologies {
-  display: inline-block;
 }
 </style>

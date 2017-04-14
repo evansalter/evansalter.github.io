@@ -2,6 +2,7 @@
   <div class="post-container">
     <h3>{{ post.title }}</h3>
     <h6>{{ post.date }}</h6>
+    <tag-list :tags="post.tags"></tag-list>
     <v-divider/>
     <div class="post-content" v-html="postContent"></div>
     <v-divider/>
@@ -12,10 +13,11 @@
 <script>
 import { PostObject } from './posts/index.js'
 import Disqus from './Disqus'
+import TagList from '@/components/common/TagList'
 
 export default {
   props: ['slug'],
-  components: { Disqus },
+  components: { Disqus, TagList },
   data: function () {
     return {
       posts: PostObject
