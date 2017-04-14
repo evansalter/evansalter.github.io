@@ -84,7 +84,11 @@ module.exports = {
             loader: 'html-loader'
           },
           {
-            loader: 'markdown-loader'
+            loader: 'markdown-it-loader',
+            options: {
+              preset: 'default',
+              typographer: true
+            }
           }
         ]
       },

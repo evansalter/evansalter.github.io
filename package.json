@@ -12,9 +12,11 @@
     "test": "echo \"No tests specified; skipping.\""
   },
   "dependencies": {
+    "highlight.js": "^9.10.0",
     "html-loader": "^0.4.5",
     "image-webpack-loader": "^3.3.0",
-    "markdown-loader": "^2.0.0",
+    "markdown-it": "^8.3.1",
+    "markdown-it-loader": "^0.5.0",
     "node-sass": "^4.5.2",
     "sass-loader": "^6.0.3",
     "vue": "^2.2.2",
