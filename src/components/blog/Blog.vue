@@ -58,8 +58,10 @@ export default {
     allTags: function () {
       var tags = {}
       for (var post of this.posts) {
-        for (var tag of post.tags) {
-          tags[tag] = tags[tags] + 1 || 1
+        if (post.tags) {
+          for (var tag of post.tags) {
+            tags[tag] = tags[tags] + 1 || 1
+          }
         }
       }
       return tags
