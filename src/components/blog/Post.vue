@@ -1,10 +1,10 @@
 <template>
-  <v-container class="post-container">
+  <div class="post-container">
     <h3>{{ post.title }}</h3>
     <h6>{{ post.date }}</h6>
     <v-divider/>
-    <div v-html="postContent"></div>
-  </v-container>
+    <div class="post-content" v-html="postContent"></div>
+  </div>
 </template>
 
 <script>
@@ -32,8 +32,36 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .post-container {
-  padding-top: 15px;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 25px;
+
+  .post-content {
+    margin-top: 15px;
+    font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+    font-size: 21px;
+
+    @for $i from 1 through 6 {
+      h#{$i} {
+        margin: 30px 0 15px 0;
+      }
+    }
+
+    ol {
+      margin-left: 20px;
+    }
+
+    pre > code {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+
+      &:before, &:after {
+        content: '';
+      }
+    }
+  }
 }
 </style>

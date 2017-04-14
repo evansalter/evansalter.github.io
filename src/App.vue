@@ -15,6 +15,8 @@
 import Navigation from '@/components/Navigation'
 import PageFooter from '@/components/PageFooter'
 
+require('highlight.js/styles/default.css')
+
 export default {
   name: 'app',
   components: {
