@@ -2,7 +2,7 @@
   <div class="post-container">
     <h3>{{ post.title }}</h3>
     <h6>{{ post.date }}</h6>
-    <a href="#disqus_thread"><a href="#disqus_thread"> Comment</a></a>
+    <icon name="comments-o"></icon> <a class="comment-link" href="#disqus_thread"></a>
     <tag-list :tags="post.tags"></tag-list>
     <v-divider/>
     <div class="post-content" v-html="postContent"></div>
@@ -49,6 +49,11 @@ export default {
   max-width: 740px;
   margin: 0 auto;
   padding: 25px;
+
+  .comment-link {
+    text-decoration: none;
+    font-size: 15px;
+  }
 
   .post-content {
     margin-top: 15px;

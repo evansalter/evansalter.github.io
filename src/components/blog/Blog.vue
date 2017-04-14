@@ -13,7 +13,10 @@
             <tag-list :tags="post.tags"></tag-list>
           </v-list-tile-content>
           <v-list-tile-action>
-            <span class="disqus-comment-count" :data-disqus-url="hostname + getPath(post.title)"></span>
+            <div>
+              <icon name="comments-o"></icon>
+              <span class="disqus-comment-count" :data-disqus-url="hostname + getPath(post.title)"></span>
+            </div>
           </v-list-tile-action>
         </v-list-tile>
         <v-divider/>
