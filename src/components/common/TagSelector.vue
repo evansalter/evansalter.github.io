@@ -1,5 +1,5 @@
 <template>
-  <v-container class="tag-container">
+  <v-container v-if="tags && tags.length > 0" class="tag-container">
       <v-chip label
               v-for="(count, tag) in tags"
               :key="tag"
