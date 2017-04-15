@@ -5,6 +5,7 @@ import 'vue-awesome/icons'
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import { PostObject } from './components/blog/posts/index.js'
 
 import Vuetify from 'vuetify'
 import Icon from 'vue-awesome/components/Icon.vue'
@@ -12,6 +13,18 @@ import Icon from 'vue-awesome/components/Icon.vue'
 Vue.config.productionTip = false
 Vue.use(Vuetify)
 Vue.component('icon', Icon)
+
+router.beforeEach((to, from, next) => {
+  var pageName
+  if (to.meta.name !== undefined) {
+    pageName = to.meta.name
+  } else if (to.name === 'BlogPost') {
+    var slug = to.params.slug
+    pageName = PostObject[slug].title
+  }
+  document.title = `${pageName}${pageName !== undefined ? ' | ' : ''}Evan Salter`
+  next()
+})
 
 /* eslint-disable no-new */
 new Vue({

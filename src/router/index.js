@@ -15,17 +15,20 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      meta: { name: 'Home' }
     },
     {
       path: '/projects',
       name: 'Projects',
-      component: Projects
+      component: Projects,
+      meta: { name: 'Projects' }
     },
     {
       path: '/blog',
       name: 'Blog',
-      component: Blog
+      component: Blog,
+      meta: { name: 'Blog' }
     },
     {
       path: '/blog/:slug',
@@ -36,7 +39,8 @@ export default new Router({
     {
       path: '*',
       name: '404',
-      component: FourOhFour
+      component: FourOhFour,
+      meta: { name: '404' }
     }
   ]
 })
