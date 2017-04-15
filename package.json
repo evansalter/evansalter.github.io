@@ -19,6 +19,7 @@
     "markdown-it-loader": "^0.5.0",
     "node-sass": "^4.5.2",
     "sass-loader": "^6.0.3",
+    "sitemap-webpack-plugin": "^0.3.0",
     "vue": "^2.2.2",
     "vue-awesome": "^2.2.3",
     "vue-router": "^2.3.0",
