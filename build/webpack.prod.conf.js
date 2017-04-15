@@ -8,6 +8,8 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+var SitemapPlugin = require('sitemap-webpack-plugin')
+var generatePaths = require('./sitemap.js')
 
 var env = config.build.env
 
@@ -94,7 +96,9 @@ var webpackConfig = merge(baseWebpackConfig, {
         from: path.resolve(__dirname, '../404.html'),
         to: config.build.fourohfour
       }
-    ])
+    ]),
+    // generate sitemap
+    new SitemapPlugin('https://evansalter.com', generatePaths())
   ]
 })
 
