@@ -9,6 +9,7 @@
                   :key="project.name"
                   :index="index"
                   :project="project"
+                  class="slide-and-fade-in"
                   v-if="shouldShowProject(project.technologies)">
     </project-card>
   </v-container>
@@ -91,6 +92,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../styles/animation.scss";
+
 .card {
   margin-bottom: 25px;
   &:nth-child(2) {

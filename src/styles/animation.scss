@@ -1,0 +1,33 @@
+
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slide-and-fade-in {
+  0% {
+    left: -100px;
+    opacity: 0;
+  }
+  100% {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+@mixin animation-settings($animation-name, $i) {
+    opacity: 0;
+    animation: $animation-name 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: ($i * 0.1) * 1s;
+}
+
+@for $i from 0 to 15 {
+  .slide-and-fade-in:nth-child(#{$i}) {
+    @include animation-settings(slide-and-fade-in, $i);
+  }
+
+  .fade-in:nth-child(#{$i}) {
+    @include animation-settings(fade-in, $i);
+  }
+}

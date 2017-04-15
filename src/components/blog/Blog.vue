@@ -5,7 +5,7 @@
     </div>
     <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
     <v-list three-line subheader>
-      <v-list-item v-for="post in posts" :key="post.filename" v-if="shouldShowPost(post.tags)">
+      <v-list-item v-for="post in posts" :key="post.filename" v-if="shouldShowPost(post.tags)" class="slide-and-fade-in">
         <v-list-tile :to="getPath(post.title)" :router="true">
           <v-list-tile-content>
             <v-list-tile-title>{{ post.title }}</v-list-tile-title>
@@ -74,8 +74,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../styles/animation.scss";
+
 h3 {
   margin-top: 15px;
+}
+.list {
+  overflow: initial;
 }
 .list > li.list__item {
   margin-top: 16px;
