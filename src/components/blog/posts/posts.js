@@ -1,7 +1,8 @@
 var postList = [
   {
-    title: 'My First Blog Post',
-    filename: 'post1.md',
+    title: 'GitHub Pages and Single-Page Apps',
+    filename: 'ghpages-spa.md',
+    tags: ['Hosting', 'Web'],
     date: '2017-04-12'
   }
 ]
