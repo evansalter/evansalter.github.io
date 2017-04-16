@@ -31,4 +31,7 @@ h1 {
 p {
   font-size: 25px;
 }
+a {
+  color: white;
+}
 </style>

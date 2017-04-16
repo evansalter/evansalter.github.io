@@ -28,6 +28,8 @@ export default {
       contactInfo: [
         { icon: 'github', scale: '2', display: 'esalter-va', url: 'https://github.com/esalter-va/' },
         { icon: 'linkedin', scale: '2', display: 'evansalter', url: 'https://www.linkedin.com/in/evansalter/' },
+        { icon: 'twitter', scale: '2', display: '_evansalter', url: 'https://twitter.com/_evansalter' },
+        { icon: 'codepen', scale: '2', display: 'esalter-va', url: 'https://codepen.io/esalter-va/' },
         { icon: 'envelope', scale: '1.7', display: 'evan@evansalter.com', url: 'evan@evansalter.com' }
       ]
     }

@@ -37,8 +37,11 @@ export default {
         {
           category: 'Google Cloud Platform',
           values: ['AppEngine', 'Compute Engine']
+        },
+        {
+          category: 'Mobile',
+          values: ['iOS', 'Swift', 'Objective-C']
         }
-
       ]
     }
   }
