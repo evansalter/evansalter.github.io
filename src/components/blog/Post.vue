@@ -3,6 +3,7 @@
     <h3>{{ post.title }}</h3>
     <h6>{{ post.date }}</h6>
     <icon name="comments-o"></icon> <a class="comment-link" href="#disqus_thread"></a>
+    <span class="sharing">Share: <sharing :url="postUrl" :title="post.title"></sharing></span>
     <tag-list :tags="post.tags"></tag-list>
     <v-divider/>
     <div class="post-content" v-html="postContent"></div>
@@ -14,11 +15,12 @@
 <script>
 import { PostObject } from './posts/index.js'
 import Disqus from './Disqus'
+import Sharing from '@/components/common/Sharing'
 import TagList from '@/components/common/TagList'
 
 export default {
   props: ['slug'],
-  components: { Disqus, TagList },
+  components: { Disqus, Sharing, TagList },
   data: function () {
     return {
       posts: PostObject
@@ -39,6 +41,9 @@ export default {
     },
     postContent: function () {
       return require('./posts/' + this.post.filename)
+    },
+    postUrl: function () {
+      return window.location.origin + window.location.pathname
     }
   }
 }
@@ -79,6 +84,14 @@ export default {
         content: '';
       }
     }
+  }
+}
+.sharing {
+  display: inline-block;
+  float: right;
+  div {
+    vertical-align: text-top;
+    display: inline-block;
   }
 }
 </style>

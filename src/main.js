@@ -10,7 +10,10 @@ import { PostObject } from './components/blog/posts/index.js'
 import Vuetify from 'vuetify'
 import Icon from 'vue-awesome/components/Icon.vue'
 
+import SocialSharing from 'vue-social-sharing'
+
 Vue.config.productionTip = false
+Vue.use(SocialSharing)
 Vue.use(Vuetify)
 Vue.component('icon', Icon)
 
