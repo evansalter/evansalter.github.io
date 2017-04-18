@@ -6,7 +6,7 @@
     <span class="sharing">Share: <sharing :url="postUrl" :title="post.title"></sharing></span>
     <tag-list :tags="post.tags"></tag-list>
     <v-divider/>
-    <div class="post-content" v-html="postContent"></div>
+    <article class="post-content" v-html="postContent"></article>
     <post-footer :url="postUrl" :title="post.title"></post-footer>
     <v-divider/>
     <disqus></disqus>
