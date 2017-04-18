@@ -17,7 +17,10 @@
           </v-toolbar-item>
           <v-list>
             <v-list-item v-for="link in contactInfo" :key="link.url">
-              <v-list-tile :href="link.url" :target="getTarget(link)">
+              <v-list-tile :href="link.url" :target="getTarget(link)" avatar>
+                <v-list-tile-avatar>
+                  <icon :name="link.icon"></icon>
+                </v-list-tile-avatar>
                 <v-list-tile-title v-text="link.name"></v-list-tile-title>
               </v-list-tile>
             </v-list-item>
