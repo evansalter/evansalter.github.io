@@ -11,7 +11,7 @@
                         ripple>
           {{ page.name }}
         </v-toolbar-item>
-        <v-menu bottom offset-y="64" transition="v-slide-y-transition">
+        <v-menu bottom :offset-y="true" transition="v-slide-y-transition">
           <v-toolbar-item slot="activator">
             Contact &nbsp; <icon name="angle-down"></icon>
           </v-toolbar-item>

@@ -96,7 +96,8 @@ h3 {
   overflow: initial;
 }
 .list > li.list__item > a{
-  height: 110px;
+  height: auto;
+  padding-top: 10px;
 }
 .no-posts {
   text-align: center;
