@@ -2,7 +2,14 @@ var postList = [
   {
     title: 'My First Blog Post',
     filename: 'post1.md',
-    date: '2017-04-12'
+    date: '2017-04-12',
+    tags: ['These', 'Are', 'Some', 'Tags']
+  },
+  {
+    title: 'Blog post 2',
+    filename: 'post1.md',
+    date: '2017-04-24',
+    tags: ['Tag2']
   }
 ]
 

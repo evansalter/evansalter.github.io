@@ -1,5 +1,3 @@
-# My First Blog Post
-
 This is a paragraph
 
 1. Numbered List

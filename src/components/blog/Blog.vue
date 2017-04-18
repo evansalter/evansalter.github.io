@@ -48,8 +48,12 @@ export default {
     if (window.DISQUSWIDGETS) {
       window.DISQUSWIDGETS.getCount({reset: true})
     }
-    if (window.twttr) {
-      window.twttr.widgets.load()
+  },
+  watch: {
+    selectedTags: function () {
+      setTimeout(function () {
+        window.DISQUSWIDGETS.getCount({reset: true})
+      }, 1)
     }
   },
   methods: {
@@ -91,8 +95,8 @@ h3 {
 .list {
   overflow: initial;
 }
-.list > li.list__item {
-  margin-top: 16px;
+.list > li.list__item > a{
+  height: 110px;
 }
 .no-posts {
   text-align: center;
