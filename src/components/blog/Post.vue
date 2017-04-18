@@ -7,6 +7,7 @@
     <tag-list :tags="post.tags"></tag-list>
     <v-divider/>
     <div class="post-content" v-html="postContent"></div>
+    <post-footer :url="postUrl" :title="post.title"></post-footer>
     <v-divider/>
     <disqus></disqus>
   </div>
@@ -15,12 +16,13 @@
 <script>
 import { PostObject } from './posts/index.js'
 import Disqus from './Disqus'
+import PostFooter from './PostFooter'
 import Sharing from '@/components/common/Sharing'
 import TagList from '@/components/common/TagList'
 
 export default {
   props: ['slug'],
-  components: { Disqus, Sharing, TagList },
+  components: { Disqus, PostFooter, Sharing, TagList },
   data: function () {
     return {
       posts: PostObject
