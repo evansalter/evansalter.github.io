@@ -2,8 +2,10 @@
   <div class="post-container">
     <h3>{{ post.title }}</h3>
     <h6>{{ post.date }}</h6>
-    <icon name="comments-o"></icon> <a class="comment-link" href="#disqus_thread"></a>
-    <span class="sharing">Share: <sharing :url="postUrl" :title="post.title"></sharing></span>
+    <div>
+      <icon name="comments-o"></icon> <a class="comment-link" href="#disqus_thread"></a>
+      <span class="sharing">Share: <sharing :url="postUrl" :title="post.title"></sharing></span>
+    </div>
     <tag-list :tags="post.tags"></tag-list>
     <v-divider/>
     <article class="post-content" v-html="postContent"></article>
@@ -95,5 +97,8 @@ export default {
     vertical-align: text-top;
     display: inline-block;
   }
+}
+.tags {
+  display: inline-block;
 }
 </style>
