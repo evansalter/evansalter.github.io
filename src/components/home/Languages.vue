@@ -58,6 +58,12 @@ h1, h3 {
   flex-flow: row wrap;
   justify-content: space-around;
 
+  @media(max-width: 575px) {
+    & {
+      flex-direction: column;
+    }
+  }
+
   ul {
     padding: 15px;
     list-style: none;
