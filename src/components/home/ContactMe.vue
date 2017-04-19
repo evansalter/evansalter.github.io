@@ -78,5 +78,8 @@ h1 {
   .image-container, .contact-info {
     text-align: center;
   }
+  .contact-info {
+    padding-top: 45px;
+  }
 }
 </style>
