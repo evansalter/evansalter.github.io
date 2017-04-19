@@ -1,6 +1,6 @@
 <template>
   <div v-if="tags && tags.length > 0" class="tags">
-    <v-chip label v-for="tag in tags" :key="tag">
+    <v-chip label class="blue-grey lighten-4" v-for="tag in tags" :key="tag">
       {{ tag }}
     </v-chip>
   </div>
