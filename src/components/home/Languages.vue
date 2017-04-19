@@ -23,6 +23,10 @@ export default {
           values: ['Javascript', 'Typescript', 'HTML', 'CSS', 'Angular2', 'Vue.js', 'KnockoutJS']
         },
         {
+          category: 'Google Cloud Platform',
+          values: ['AppEngine', 'Compute Engine']
+        },
+        {
           category: 'Backend',
           values: ['Python', 'Go']
         },
@@ -33,10 +37,6 @@ export default {
         {
           category: 'Data',
           values: ['Cloud Datastore', 'SQL', 'BiqQuery', 'Elasticsearch']
-        },
-        {
-          category: 'Google Cloud Platform',
-          values: ['AppEngine', 'Compute Engine']
         },
         {
           category: 'Mobile',
@@ -56,7 +56,7 @@ h1, h3 {
 .language-container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 
   ul {
     padding: 15px;
