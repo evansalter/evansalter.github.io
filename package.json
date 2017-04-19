@@ -22,6 +22,7 @@
     "sitemap-webpack-plugin": "^0.3.0",
     "vue": "^2.2.2",
     "vue-awesome": "^2.2.3",
+    "vue-head": "^2.0.10",
     "vue-router": "^2.3.0",
     "vue-social-sharing": "^2.2.0",
     "vuetify": "^0.10.4"

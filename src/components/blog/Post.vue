@@ -49,6 +49,25 @@ export default {
     postUrl: function () {
       return window.location.origin + window.location.pathname
     }
+  },
+  head: {
+    meta: function () {
+      var metaTags = [
+        { p: 'og:title', c: this.post.title },
+        { p: 'og:url', c: this.postUrl },
+        { p: 'og:type', c: 'article' },
+        { p: 'article:published_time', c: this.post.date },
+        { p: 'article:author:first_name', c: 'Evan' },
+        { p: 'article:author:last_name', c: 'Salter' },
+        { p: 'article:author', c: 'https://twitter.com/_evansalter' }
+      ]
+      for (let tag of this.post.tags) {
+        metaTags.push(
+          { p: 'article:tag', c: tag }
+        )
+      }
+      return metaTags
+    }
   }
 }
 </script>

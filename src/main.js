@@ -9,11 +9,13 @@ import { PostObject } from './components/blog/posts/index.js'
 
 import Vuetify from 'vuetify'
 import Icon from 'vue-awesome/components/Icon.vue'
+import VueHead from 'vue-head'
 
 import SocialSharing from 'vue-social-sharing'
 
 Vue.config.productionTip = false
 Vue.use(SocialSharing)
+Vue.use(VueHead)
 Vue.use(Vuetify)
 Vue.component('icon', Icon)
 
