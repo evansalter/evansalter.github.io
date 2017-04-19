@@ -48,12 +48,16 @@ export default {
     },
     postUrl: function () {
       return window.location.origin + window.location.pathname
+    },
+    postContentSnippet: function () {
+      return document.getElementsByClassName('post-content')[0].innerText.slice(0, 50) + '...'
     }
   },
   head: {
     meta: function () {
       var metaTags = [
         { p: 'og:title', c: this.post.title },
+        { p: 'og:description', c: this.postContentSnippet },
         { p: 'og:url', c: this.postUrl },
         { p: 'og:type', c: 'article' },
         { p: 'article:published_time', c: this.post.date },
