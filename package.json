@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
-    "build": "DEBUG=nightmare:*,electron:* node build/build.js",
+    "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No tests specified; skipping.\""
   },
