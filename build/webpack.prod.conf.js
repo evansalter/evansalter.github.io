@@ -11,6 +11,8 @@ var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var SitemapPlugin = require('sitemap-webpack-plugin')
 var generatePaths = require('./sitemap.js')
 
+var StaticSiteGenerator = require('webpack-static-site-generator')
+
 var env = config.build.env
 
 var webpackConfig = merge(baseWebpackConfig, {
@@ -97,6 +99,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         to: config.build.fourohfour
       }
     ]),
+    new StaticSiteGenerator(config.build.assetsRoot, generatePaths()),
     // generate sitemap
     new SitemapPlugin('https://evansalter.com', generatePaths())
   ]

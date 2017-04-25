@@ -42,7 +42,6 @@ export default {
 }
 
 #welcome-panel {
-  height: 90%;
   background-image: url("../../assets/headshot/full.jpg");
   background-position: right;
   background-repeat: no-repeat;

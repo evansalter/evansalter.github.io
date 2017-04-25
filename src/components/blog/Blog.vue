@@ -98,6 +98,10 @@ h3 {
 .list > li.list__item > a{
   height: auto;
   padding-top: 10px;
+
+  div {
+    height: auto;
+  }
 }
 .no-posts {
   text-align: center;
