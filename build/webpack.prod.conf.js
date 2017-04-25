@@ -99,7 +99,11 @@ var webpackConfig = merge(baseWebpackConfig, {
         to: config.build.fourohfour
       }
     ]),
-    new StaticSiteGenerator(config.build.assetsRoot, generatePaths()),
+    new StaticSiteGenerator(
+      config.build.assetsRoot,
+      generatePaths(),
+      '.main-container'
+    ),
     // generate sitemap
     new SitemapPlugin('https://evansalter.com', generatePaths())
   ]
