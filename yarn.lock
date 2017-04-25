@@ -3937,6 +3937,10 @@ nan@^2.3.0, nan@^2.3.2:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.1.tgz#8c84f7b14c96b89f57fbc838012180ec8ca39a01"
 
+nan@>=2.0.0:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -5273,6 +5277,12 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
 
+sleep@3.0.x:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/sleep/-/sleep-3.0.1.tgz#be4d17c579360e07e04ed8172ba2b10a69054df3"
+  dependencies:
+    nan ">=2.0.0"
+
 slice-ansi@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
@@ -6064,14 +6074,15 @@ webpack-sources@^0.2.3:
     source-list-map "^1.1.1"
     source-map "~0.5.3"
 
-webpack-static-site-generator@1.1.1-0:
-  version "1.1.1-0"
-  resolved "https://registry.yarnpkg.com/webpack-static-site-generator/-/webpack-static-site-generator-1.1.1-0.tgz#c3794a60377dea52740bb4b159d16a20784bd822"
+webpack-static-site-generator@1.1.2-0:
+  version "1.1.2-0"
+  resolved "https://registry.yarnpkg.com/webpack-static-site-generator/-/webpack-static-site-generator-1.1.2-0.tgz#59faa00afae4debd7e9e9266c0d29d1025d25a1d"
   dependencies:
     eslint "^3.19.0"
     express "^4.15.2"
     fs-path "^0.0.23"
     nightmare "^2.10.0"
+    xvfb "^0.2.3"
 
 webpack@^2.2.1:
   version "2.3.3"
@@ -6170,6 +6181,12 @@ xtend@~2.1.1:
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-2.1.2.tgz#6efecc2a4dad8e6962c4901b337ce7ba87b5d28b"
   dependencies:
     object-keys "~0.4.0"
+
+xvfb@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/xvfb/-/xvfb-0.2.3.tgz#5588a968754593913f33c0c0e2cbb73741235832"
+  optionalDependencies:
+    sleep "3.0.x"
 
 y18n@^3.2.1:
   version "3.2.1"
