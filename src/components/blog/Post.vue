@@ -63,7 +63,8 @@ export default {
         { p: 'article:published_time', c: this.post.date },
         { p: 'article:author:first_name', c: 'Evan' },
         { p: 'article:author:last_name', c: 'Salter' },
-        { p: 'article:author', c: 'https://twitter.com/_evansalter' }
+        { p: 'article:author', c: 'https://twitter.com/_evansalter' },
+        { p: 'twitter:site', c: '@_evansalter' }
       ]
       for (let tag of this.post.tags) {
         metaTags.push(
