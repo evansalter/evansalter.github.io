@@ -29,6 +29,15 @@ export default {
       selectedTags: [],
       projects: [
         {
+          name: 'webpack-static-site-generator ',
+          description: 'A Webpack plugin to generate a static site from your single-page app',
+          technologies: ['Javascript', 'Webpack', 'Web'],
+          links: [
+            { name: 'Github', url: 'https://github.com/esalter-va/webpack-static-site-generator', icon: 'github' },
+            { name: 'npm', url: 'https://www.npmjs.com/package/webpack-static-site-generator' }
+          ]
+        },
+        {
           name: 'Roll Up Tracker',
           image: require('../../assets/projects/roll-up-tracker.jpg'),
           description: 'A web and iOS app to track your Roll Up The Rim To Win progress.',
