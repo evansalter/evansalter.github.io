@@ -3,7 +3,7 @@ var postList = [
     title: 'GitHub Pages and Single-Page Apps',
     filename: 'ghpages-spa.md',
     tags: ['Hosting', 'Web'],
-    date: '2017-04-12'
+    date: '2017-04-30'
   }
 ]
 

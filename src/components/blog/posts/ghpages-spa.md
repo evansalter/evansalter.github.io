@@ -6,9 +6,9 @@ In the past, I have tackled this in a number of ways.
 
 I didn't really get into web development until I started my current job.  Yes, I knew some HTML and CSS, and I had taken a university web dev class.  However, I wasn't all that interested until I started using those skills in the workforce.
 
-At this job, all of our core applications are built using App Engine.  We use the Python version, with Jinja2 as our templating language, and plain ol' Javascript for frontend code.  After a while I began to feel very comfortable developing in AppEngine.  It was familiar, and I had gotten to the point where I could throw together a new application relatively quickly and easily.
+At my job, all of our core applications are built using App Engine.  We use the Python version, with Jinja2 as our templating language, and plain ol' Javascript for frontend code.  After a while I began to feel very comfortable developing in App Engine.  It was familiar, and I had gotten to the point where I could throw together a new application relatively quickly and easily.
 
-Now, back to SPAs.  In the summer of 2016, I started working on [Roll Up Tracker](https://www.rolluptracker.com/).  Roll Up Tracker is an Angular2 web-app that allows you to track your wins and losses during the Roll Up The Rim To Win season at Tim Hortons.  Naturally, when I started the project I decided to host it on AppEngine.  It might seem a bit odd to have to bootstrap an entire AppEngine project just to serve some HTML and Javascript.  However, I justify it by the fact that the backend was written in Python, using Google Cloud Datastore as the database.  It made sense to keep the frontend hosted alongside that.
+Now, back to SPAs.  In the summer of 2016, I started working on [Roll Up Tracker](https://www.rolluptracker.com/).  Roll Up Tracker is an Angular2 web-app that allows you to track your wins and losses during the Roll Up The Rim To Win season at Tim Hortons.  Naturally, when I started the project I decided to host it on App Engine.  It might seem a bit odd to have to bootstrap an entire App Engine project just to serve some HTML and Javascript.  However, I justify it by the fact that the backend was written in Python, using Google Cloud Datastore as the database.  It made sense to keep the frontend hosted alongside that.
 
 The implementation was pretty straightforward.
 
@@ -86,8 +86,8 @@ The only requirement is that you have a `package.json` with a `start` script.  `
 
 As cool as the deployment process is, there were some things I didn't like about it.
 
-1. The free tier gives you these janky URLs for your project, for example: coolproject-glkqdjsslm.now.sh.  I'm okay with it for a free project, but the is that every time you deploy, you get a new URL.  You basically can't host anything that other people are going to use for free
-1. Their cheapest paid tier, which gets you 1000 deploys/month (instead of 20), and private codebases, and more, is $14.99/mo.  Much more than I was willing to pay for silly side projects.
+1. The free tier gives you these janky URLs for your project, for example: coolproject-glkqdjsslm.now.sh.  This is okay since you're not paying for hosting, but the is that every time you deploy, you get a new URL.  You basically can't host anything that other people are going to use for free
+1. Their cheapest paid tier, which gets you 1000 deploys/month (instead of 20), private codebases, and more is $14.99/mo.  Much more than I was willing to pay for silly side projects.
 
 #### 4. GitHub Pages
 
@@ -95,7 +95,7 @@ Finally.  You sat through the excrutiating minutia of my SPA hosting experiences
 
 It seems like the logical place to serve a SPA from, right?  You've got free hosting.  Deploys are a breeze.  Free SSL.  Plus your code is probably going to be kept on GitHub anyway!
 
-I had recently decided that it was time to replace my personal website, which was previously a free Wordpress site that I put zero effort into (and I eventually password protected it because I was embarrassed by it).  My new site, which you are currently looking at, is written in Vue.js with no backend, so could really choose any provider I wanted.  App Engine (both Standard and Flex) were overkill and/or too expensive, `now` was also unfeasable because of the reasons I stated above.  So here we are.  GitHub Pages is the chosen one.
+I had recently decided that it was time to replace my personal website, which was previously a free Wordpress site that I put zero effort into (and I eventually password protected it because I was embarrassed by it).  My new site, which you are currently looking at, is written in Vue.js with no backend, so I could really choose any provider I wanted.  App Engine (both Standard and Flex) were overkill and/or too expensive, `now` was also unfeasable because of the reasons I stated above.  So here we are.  GitHub Pages is the chosen one.
 
 It is not without it's faults.  Of course, there are a few quirks here and there that you might need to work around, but I haven't come across any blockers, and I'm sure you wouldn't either.
 
@@ -107,7 +107,7 @@ First of, [go here](https://pages.github.com/).  It has all the basics of Pages,
 
 There are two types of Pages.  The first is an Organization/Personal page.  This lives in a repo called `<YOUR_USERNAME>.github.io`, has a URL that matches the repo name, and is meant as a general landing page for a person or organization (duh).  The code for the site lives in this project.
 
-The other kind, a Project page, most commonly lives in the `gh-pages` branch, or in a `/docs` folder on `master`.  Then, you access the page from `<YOUR_USERNAME>.github.io/<PROJECT_NAME>`  It allows you to keep all the code in one place.  Pretty handy, I think.
+The other kind, a Project page, most commonly lives in the `gh-pages` branch, or in a `/docs` folder on `master`.  Then, you access the page from `<YOUR_USERNAME>.github.io/<PROJECT_NAME>`.  It allows you to keep all the code in one place.  Pretty handy, I think.
 
 For the purposes of this post, I will be talking about Personal pages.
 
@@ -146,9 +146,13 @@ It was very smooth sailing for a while.  I was devloping locally very quickly us
 
 As it turns out, when I was using the live site I was always starting from the root of the site.  I never tried to go directly to `/projects` or any other page.  That's when I hit a snag.
 
-I definitely wasn't shocked when I discovered this.  It makes sense.  GitHub doesn't know about the Vue app's routes.  All it know is there is an `index.html` file in the repo that it can route to.
+I definitely wasn't shocked when I discovered this.  It makes total sense, since GitHub doesn't know about the Vue app's routes.  All it knows is there is an `index.html` file in the repo that it can route to.
 
-Once again, I set of into the depths of the internet in search of a solution.  The one I settled on was from [this](http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/) page.  I'll admit it's quite a janky solution to the problem, but it was also simple to implement, and until GitHub comes up with a better solution, this is it.
+I attempted two different solutions to this problem.  Depending on your requirements, one may be more appropriate than the other.
+
+#### Attempt 1: Hacking the 404 page.
+
+I found another person online that was trying to solve the same problem as me.  You can see his blog post [here](http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/).  I'll admit it's quite a janky solution to the problem but it was also simple to implement.  Until GitHub comes up with a better solution, this is a pretty decent workaround.
 
 This solution is based on the fact that you can use a custom 404 page on GH Pages.  All you have to do is add a `404.html` page to your repo.  Following the link above, I created `404.html` with the following lines in `<head>`:
 
@@ -173,6 +177,34 @@ Basically all this does is save the requested URL in your browser's storage, and
 </script>
 ```
 
-And that's it!  I have yet to discover if this is going to cause a problem in any browsers, but I'm not too worried about it for now.  Hopefully some day GH Pages will have an easier way to use a SPA router.
+This worked surprisingly well.  However, once I decided to implement Open Graph and Twitter meta tags in my blog posts, it fell apart.  However, if you have a simple site that doesn't require meta tags, then this just might work for you.
 
-### TODO: Custom domain
+#### Attempt 2: Prerendering a Static Site
+
+There were two issues with the above router hack in terms of serving meta tags:
+
+1. When Facebook, Slack, Twitter, or any other site with rich media cards would scan my links, they would land on the 404 page as expected.  However, they would not get redirected to the proper page by the method I shared above.  This is because GitHub Pages returned a 404 status code for the 404 page, which told the scrapers to give up.
+1. Even if I didn't use the 404 page hack, my meta tags were generated on the fly in my Vue app.  Since the scraper downloads the page without executing any javascript, it would not find the meta tags.
+
+So, the obvious solutions are server-side rendering or prerending.  I didn't want to go down the path of server-side rendering, since I don't want to host a server for this website.  So, prerendering it is!
+
+Since I'm using Webpack, I thought it made sense to add a webpack plugin to generate static HTML from my site.  I found a couple prebuilt plugins to do this, which both leveraged PhantomJS to render the site.  For some reason, I could not get it to render any actual content in my site.  I wasted a ton of time trying to get it working, with no success.
+
+Frustrated with that, I decided to write my own plugin.  Thus, [webpack-static-site-generator](https://github.com/esalter-va/webpack-static-site-generator) was born (great name, I know).  With that plugin in place, every time I built my site for production I would get static HTML files for all of my pages.  I could still use the Webpack dev server when developing locally without building, which was a huge plus.
+
+So, if you have any trouble hosting your SPA on any hosting provider, you might want to check out prerendering.
+
+### Part 5: Custom Domain
+
+If you've made it this far, you should be done with the "gotchas" of hosting a single-page app on GH Pages.  Setting up a custom domain was very easy.  There were just a couple steps:
+
+1. In your site's repo, go to Settings, then fill in your domain under "Custom domain" (i.e. `www.evansalter.com`)
+1. Set up a `CNAME` record with your domain registrar that points to your `github.io` address (i.e. `esalter-va.github.io`)
+
+There are some slightly different instructions on GitHub's support pages if you want to use an apex domain (no www), but it shouldn't be too much work.
+
+There was one slight problem I discovered.  There is NO SSL support when you're using a custom domain with GH Pages.  I was a tad annoyed at this, but seeing as my site has not real reason to be on HTTPS, I got over it.
+
+### Conclusion
+
+I very excited about using GitHub Pages to host a single-page app when I first started this site.  However, it wasn't quite as magical as it seemed.  I faced many problems along the way.  Some of them had simple solutions, while others were a little more complicated.  However, I'm still happy with how it worked out in the end.  The simplicity of Pages is what makes it great, and I would recommend that everybody at least considers it for their next project.
