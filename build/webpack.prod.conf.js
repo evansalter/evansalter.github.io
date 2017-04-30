@@ -100,7 +100,8 @@ var webpackConfig = merge(baseWebpackConfig, {
       },
       {
         from: path.resolve(__dirname, '../CNAME'),
-        to: config.build.cname
+        to: config.build.cname,
+        toType: 'file'
       }
 
     ]),
