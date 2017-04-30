@@ -4,13 +4,8 @@ node_js:
 addons:
   apt:
     packages:
-      - libgtk2.0-0
-      - libgconf-2-4
-      - libasound2
-      - libxtst6
-      - libxss1
-      - libnss3
       - xvfb
+      - libxss1
 script:
   - yarn run lint
   - yarn run build
