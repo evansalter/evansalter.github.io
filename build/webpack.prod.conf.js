@@ -105,7 +105,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       '.main-container'
     ),
     // generate sitemap
-    new SitemapPlugin('https://evansalter.com', generatePaths())
+    new SitemapPlugin('http://www.evansalter.com', generatePaths())
   ]
 })
 

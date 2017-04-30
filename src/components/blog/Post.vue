@@ -47,7 +47,7 @@ export default {
       return require('./posts/' + this.post.filename)
     },
     postUrl: function () {
-      return window.location.protocol + '//evansalter.com' + window.location.pathname
+      return 'http://www.evansalter.com' + window.location.pathname
     },
     postContentSnippet: function () {
       return document.getElementsByClassName('post-content')[0].innerText.slice(0, 50) + '...'
