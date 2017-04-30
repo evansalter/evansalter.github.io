@@ -48,6 +48,9 @@ export default {
     if (window.DISQUSWIDGETS) {
       window.DISQUSWIDGETS.getCount({reset: true})
     }
+    if (window.twttr && window.twttr.widgets) {
+      window.twttr.widgets.load()
+    }
   },
   watch: {
     selectedTags: function () {
