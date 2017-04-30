@@ -6075,8 +6075,8 @@ webpack-sources@^0.2.3:
     source-map "~0.5.3"
 
 webpack-static-site-generator:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/webpack-static-site-generator/-/webpack-static-site-generator-1.2.0.tgz#8e46ea6e7fd4900c901a95c55a3823d82a8547a1"
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/webpack-static-site-generator/-/webpack-static-site-generator-1.2.2.tgz#0ca42096873c7010af5ddd584fc34be880b69f4f"
   dependencies:
     eslint "^3.19.0"
     express "^4.15.2"
