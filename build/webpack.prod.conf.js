@@ -97,7 +97,12 @@ var webpackConfig = merge(baseWebpackConfig, {
       {
         from: path.resolve(__dirname, '../404.html'),
         to: config.build.fourohfour
+      },
+      {
+        from: path.resolve(__dirname, '../CNAME'),
+        to: config.build.cname
       }
+
     ]),
     new StaticSiteGenerator(
       config.build.assetsRoot,

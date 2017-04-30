@@ -6,6 +6,7 @@ module.exports = {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
     fourohfour: path.resolve(__dirname, '../dist/404.html'),
+    cname: path.resolve(__dirname, '../dist/CNAME'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
