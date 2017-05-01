@@ -29,7 +29,7 @@ export default {
 <style>
 #app {
   overflow: hidden;
-  font-family: futura;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 .spacer {
   height: 64px;
