@@ -27,10 +27,12 @@ export default {
   head: {
     meta: function () {
       return [
-        { p: 'og:title', c: 'Evan Salter' },
-        { p: 'og:description', c: 'Evan Salter\'s bio, projects, and blog.' },
+        { p: 'og:site_name', c: 'Evan Salter' },
+        { p: 'og:title', c: 'About Evan Salter' },
+        { p: 'og:description', c: 'My bio, projects, and blog.' },
         { p: 'og:url', c: 'http://www.evansalter.com' },
         { p: 'og:type', c: 'website' },
+        { p: 'og:image', c: require('../../assets/headshot/full.jpg') },
         { p: 'twitter:site', c: '@_evansalter' }
       ]
     }
