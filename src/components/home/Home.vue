@@ -23,7 +23,18 @@ import Welcome from './Welcome'
 
 export default {
   name: 'home',
-  components: { ContactMe, AboutMe, Languages, Welcome }
+  components: { ContactMe, AboutMe, Languages, Welcome },
+  head: {
+    meta: function () {
+      return [
+        { p: 'og:title', c: 'Evan Salter' },
+        { p: 'og:description', c: 'Evan Salter\'s bio, projects, and blog.' },
+        { p: 'og:url', c: 'https://www.evansalter.com' },
+        { p: 'og:type', c: 'website' },
+        { p: 'twitter:site', c: '@_evansalter' }
+      ]
+    }
+  }
 }
 </script>
 
