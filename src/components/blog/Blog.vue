@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <div>
-      <h3>Thoughts</h3>
+      <h3>Thoughts.</h3>
     </div>
     <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
     <div v-if="posts.length === 0" class="no-posts">

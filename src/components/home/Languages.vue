@@ -2,12 +2,12 @@
   <div>
     <h2>Languages and Frameworks</h2>
     <div class="language-container">
-      <ul v-for="language in languages">
-        <h4>{{ language.category }}</h4>
-        <li v-for="value in language.values">
+      <div v-for="language in languages">
+        <div><h4>{{ language.category }}</h4></div>
+        <span v-for="value in language.values">
           {{ value }}
-        </li>
-      </ul>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
         },
         {
           category: 'Google Cloud Platform',
-          values: ['AppEngine', 'Compute Engine']
+          values: ['App Engine', 'Compute Engine']
         },
         {
           category: 'Backend',
@@ -62,19 +62,23 @@ h4 {
   flex-flow: row wrap;
   justify-content: space-around;
 
-  @media(max-width: 575px) {
-    & {
-      flex-direction: column;
-    }
-  }
+  flex-direction: column;
 
-  ul {
-    padding: 15px;
-    list-style: none;
-
-    li {
+  div {
+    padding-top: 10px;
+    span {
       font-size: 25px;
+      padding-right: 25px;
     }
   }
+
+  // ul {
+  //   padding: 15px;
+  //   list-style: none;
+
+  //   li {
+  //     font-size: 25px;
+  //   }
+  // }
 }
 </style>

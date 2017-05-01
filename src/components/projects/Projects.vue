@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <div>
-      <h3>Projects</h3>
-      <h5>What I've been keeping myself busy with</h5>
+      <h3>Projects.</h3>
+      <h5>What I've been keeping myself busy with.</h5>
     </div>
     <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
     <project-card v-for="(project, index) in projects"
