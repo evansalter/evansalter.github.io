@@ -205,6 +205,6 @@ There are some slightly different instructions on GitHub's support pages if you 
 
 There was one slight problem I discovered.  There is NO SSL support when you're using a custom domain with GH Pages.  I was a tad annoyed at this, but seeing as my site has not real reason to be on HTTPS, I got over it.
 
-### Conclusion
+### Final Thoughts
 
 I very excited about using GitHub Pages to host a single-page app when I first started this site.  However, it wasn't quite as magical as it seemed.  I faced many problems along the way.  Some of them had simple solutions, while others were a little more complicated.  However, I'm still happy with how it worked out in the end.  The simplicity of Pages is what makes it great, and I would recommend that everybody at least considers it for their next project.
