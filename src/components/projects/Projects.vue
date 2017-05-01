@@ -30,7 +30,7 @@ export default {
       projects: [
         {
           name: 'webpack-static-site-generator ',
-          description: 'A Webpack plugin to generate a static site from your single-page app',
+          description: 'A Webpack plugin to generate a static site from your single-page app.',
           technologies: ['Javascript', 'Webpack', 'Web'],
           links: [
             { name: 'Github', url: 'https://github.com/esalter-va/webpack-static-site-generator', icon: 'github' },
@@ -69,7 +69,7 @@ export default {
         },
         {
           name: 'Chromescape Navigator',
-          description: 'A silly Chrome Extension that displays the Netscape Navigator or IE throbber when loading pages, for nostalgia purposes',
+          description: 'A silly Chrome Extension that displays the Netscape Navigator or IE throbber when loading pages, for nostalgia purposes.',
           technologies: ['Javascript', 'Chrome Extension', 'Web'],
           links: [
             { name: 'GitHub', url: 'https://github.com/esalter-va/chromescape-navigator', icon: 'github' },

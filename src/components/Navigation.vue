@@ -2,7 +2,7 @@
   <div>
     <v-toolbar fixed transparent class="blue-grey darken-2">
       <v-toolbar-side-icon class="hidden-md-and-up" @click.native.stop="sidebarVisible = !sidebarVisible"></v-toolbar-side-icon>
-      <v-toolbar-title>Evan Salter</v-toolbar-title>
+      <v-toolbar-title><router-link class="title" to="/">Evan Salter</router-link></v-toolbar-title>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-toolbar-item v-for="page in pages"
                         :key="page.name"
@@ -98,5 +98,9 @@ export default {
 }
 .menu {
   height: 100%;
+}
+.title {
+  color: white;
+  text-decoration: none;
 }
 </style>
