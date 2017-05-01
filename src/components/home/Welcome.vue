@@ -18,7 +18,6 @@ export default {
   padding-bottom: 0;
   padding-left: 25px;
   height: calc(100vh - 128px);
-  // background: linear-gradient(to right, rgba(33,150,243,1) 0%,rgba(33,150,243,1) 50%,rgba(33,150,243,0) 100%);
   background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 100%);
   display: flex;
   flex-direction: column;
@@ -27,7 +26,6 @@ export default {
 
 @media(max-width: 575px) {
   .text-container {
-    // background: #2196F3;
     background: white;
   }
   .text {
