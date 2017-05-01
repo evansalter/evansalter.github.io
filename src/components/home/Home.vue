@@ -29,7 +29,7 @@ export default {
       return [
         { p: 'og:title', c: 'Evan Salter' },
         { p: 'og:description', c: 'Evan Salter\'s bio, projects, and blog.' },
-        { p: 'og:url', c: 'https://www.evansalter.com' },
+        { p: 'og:url', c: 'http://www.evansalter.com' },
         { p: 'og:type', c: 'website' },
         { p: 'twitter:site', c: '@_evansalter' }
       ]
