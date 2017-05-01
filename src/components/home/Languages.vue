@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Languages and Frameworks</h2>
+    <h2>Languages and frameworks.</h2>
     <div class="language-container">
       <div v-for="language in languages">
         <div><h4>{{ language.category }}</h4></div>
@@ -65,20 +65,13 @@ h4 {
   flex-direction: column;
 
   div {
+
     padding-top: 10px;
+
     span {
       font-size: 25px;
-      padding-right: 25px;
+      padding-right: 20px;
     }
   }
-
-  // ul {
-  //   padding: 15px;
-  //   list-style: none;
-
-  //   li {
-  //     font-size: 25px;
-  //   }
-  // }
 }
 </style>
