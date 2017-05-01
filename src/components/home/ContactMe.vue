@@ -1,6 +1,6 @@
 <template>
   <div class="contact-container">
-    <h1>Contact Me</h1>
+    <h2>Get in touch.</h2>
     <v-row>
       <v-col xs12 sm6>
         <div class="image-container">
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
+h2 {
   padding-bottom: 15px;
   color: white;
 }

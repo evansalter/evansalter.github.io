@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-toolbar fixed transparent>
+    <v-toolbar fixed transparent class="blue-grey darken-2">
       <v-toolbar-side-icon class="hidden-md-and-up" @click.native.stop="sidebarVisible = !sidebarVisible"></v-toolbar-side-icon>
       <v-toolbar-title>Evan Salter</v-toolbar-title>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -79,9 +79,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .toolbar {
   z-index: 100;
+
+  a, .toolbar__title {
+    text-transform: uppercase !important;
+  }
 }
 
 .sidebar {

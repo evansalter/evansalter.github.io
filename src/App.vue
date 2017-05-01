@@ -29,6 +29,7 @@ export default {
 <style>
 #app {
   overflow: hidden;
+  font-family: futura;
 }
 .spacer {
   height: 64px;

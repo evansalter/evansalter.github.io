@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>Languages and Frameworks</h1>
+    <h2>Languages and Frameworks</h2>
     <div class="language-container">
       <ul v-for="language in languages">
-        <h3>{{ language.category }}</h3>
+        <h4>{{ language.category }}</h4>
         <li v-for="value in language.values">
           {{ value }}
         </li>
@@ -49,8 +49,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1, h3 {
-  color: white;
+h1, h3, * {
+  // color: white;
+  color: #2B3940;
+}
+
+h4 {
+  font-weight: bold;
 }
 
 .language-container {
