@@ -2,7 +2,7 @@
   <div>
     <h2>About me.</h2>
     <p>
-      I am a computer science student at the University of Sasaktchewan, currently completing a 16 month internship
+      I am a computer science student at the University of Saskatchewan, currently completing a 16 month internship
       at Vendasta Technologies.
     </p>
     <p>
