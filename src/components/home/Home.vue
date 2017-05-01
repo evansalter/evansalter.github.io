@@ -3,13 +3,13 @@
     <v-row class="panel" id="welcome-panel">
       <welcome></welcome>
     </v-row>
-    <v-row class="panel panel-full red">
+    <v-row class="panel panel-full grey-panel">
       <about-me></about-me>
     </v-row>
-    <v-row id="languages-and-frameworks" class="panel panel-full blue-grey">
+    <v-row id="languages-and-frameworks" class="panel panel-full">
       <languages></languages>
     </v-row>
-    <v-row id="contact-me" class="panel panel-full green">
+    <v-row id="contact-me" class="panel panel-full grey-panel">
       <contact-me></contact-me>
     </v-row>
   </v-container>
@@ -42,7 +42,6 @@ export default {
 }
 
 #welcome-panel {
-  height: 90%;
   background-image: url("../../assets/headshot/full.jpg");
   background-position: right;
   background-repeat: no-repeat;
@@ -51,6 +50,7 @@ export default {
 
 h1 {
   margin: 0;
+  color: white;
 }
 
 p, li {
@@ -63,5 +63,18 @@ p, li {
 
 .light-green {
   color: black;
+}
+
+.panel{
+  * {
+    color: #314148;
+  }
+}
+
+.grey-panel {
+  background-color: #9BAEB6;
+  * {
+    color: white;
+  }
 }
 </style>

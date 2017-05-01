@@ -1,9 +1,14 @@
 <template>
   <v-container>
     <div>
-      <h3>Thoughts</h3>
+      <h3>Thoughts.</h3>
     </div>
     <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
+    <div v-if="posts.length === 0" class="no-posts">
+      <h4>Nothing here yet!</h4>
+      <h5>Please check back later, or follow me on Twitter for updates</h5>
+      <a href="https://twitter.com/_evansalter" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @_evansalter</a>
+    </div>
     <v-list three-line subheader>
       <v-list-item v-for="post in posts" :key="post.filename" v-if="shouldShowPost(post.tags)" class="slide-and-fade-in">
         <v-list-tile :to="getPath(post.title)" :router="true">
@@ -29,6 +34,7 @@
 import { PostList, Slugify } from './posts/index.js'
 import TagList from '@/components/common/TagList'
 import TagSelector from '@/components/common/TagSelector'
+import '@/components/common/twitter.js'
 
 export default {
   components: { TagList, TagSelector },
@@ -41,6 +47,16 @@ export default {
   mounted: function () {
     if (window.DISQUSWIDGETS) {
       window.DISQUSWIDGETS.getCount({reset: true})
+    }
+    if (window.twttr && window.twttr.widgets) {
+      window.twttr.widgets.load()
+    }
+  },
+  watch: {
+    selectedTags: function () {
+      setTimeout(function () {
+        window.DISQUSWIDGETS.getCount({reset: true})
+      }, 1)
     }
   },
   methods: {
@@ -82,7 +98,15 @@ h3 {
 .list {
   overflow: initial;
 }
-.list > li.list__item {
-  margin-top: 16px;
+.list > li.list__item > a{
+  height: auto;
+  padding-top: 10px;
+
+  div {
+    height: auto;
+  }
+}
+.no-posts {
+  text-align: center;
 }
 </style>

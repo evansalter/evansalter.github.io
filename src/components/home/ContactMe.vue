@@ -1,6 +1,6 @@
 <template>
   <div class="contact-container">
-    <h1>Contact Me</h1>
+    <h2>Get in touch.</h2>
     <v-row>
       <v-col xs12 sm6>
         <div class="image-container">
@@ -20,23 +20,21 @@
 </template>
 
 <script>
+import contactInfo from '@/components/common/contact.js'
+
 export default {
   name: 'contact-me',
   data: () => {
     return {
       contactImage: require('../../assets/headshot/crop.jpg'),
-      contactInfo: [
-        { icon: 'github', scale: '2', display: 'esalter-va', url: 'https://github.com/esalter-va/' },
-        { icon: 'linkedin', scale: '2', display: 'evansalter', url: 'https://www.linkedin.com/in/evansalter/' },
-        { icon: 'envelope', scale: '1.7', display: 'evan@evansalter.com', url: 'evan@evansalter.com' }
-      ]
+      contactInfo: contactInfo
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-h1 {
+h2 {
   padding-bottom: 15px;
   color: white;
 }
@@ -79,6 +77,9 @@ h1 {
 @media(max-width: 575px) {
   .image-container, .contact-info {
     text-align: center;
+  }
+  .contact-info {
+    padding-top: 45px;
   }
 }
 </style>

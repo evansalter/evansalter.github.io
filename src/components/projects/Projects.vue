@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <div>
-      <h3>Projects</h3>
-      <h5>Here's what I've been keeping myself busy with</h5>
+      <h3>Projects.</h3>
+      <h5>What I've been keeping myself busy with.</h5>
     </div>
     <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
     <project-card v-for="(project, index) in projects"
@@ -28,6 +28,15 @@ export default {
     return {
       selectedTags: [],
       projects: [
+        {
+          name: 'webpack-static-site-generator ',
+          description: 'A Webpack plugin to generate a static site from your single-page app.',
+          technologies: ['Javascript', 'Webpack', 'Web'],
+          links: [
+            { name: 'Github', url: 'https://github.com/esalter-va/webpack-static-site-generator', icon: 'github' },
+            { name: 'npm', url: 'https://www.npmjs.com/package/webpack-static-site-generator' }
+          ]
+        },
         {
           name: 'Roll Up Tracker',
           image: require('../../assets/projects/roll-up-tracker.jpg'),
@@ -60,7 +69,7 @@ export default {
         },
         {
           name: 'Chromescape Navigator',
-          description: 'A silly Chrome Extension that displays the Netscape Navigator or IE throbber when loading pages, for nostalgia purposes',
+          description: 'A silly Chrome Extension that displays the Netscape Navigator or IE throbber when loading pages, for nostalgia purposes.',
           technologies: ['Javascript', 'Chrome Extension', 'Web'],
           links: [
             { name: 'GitHub', url: 'https://github.com/esalter-va/chromescape-navigator', icon: 'github' },

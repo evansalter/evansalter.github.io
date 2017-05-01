@@ -10,8 +10,9 @@
       // for this saved URL and redirect to it.
       // Stolen from http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
       sessionStorage.redirect = location.href;
+      var currentLocation = window.location;
+      window.location = currentLocation.origin;
     </script>
-    <meta http-equiv="refresh" content="0;URL='/'"></meta>
   </head>
   <body>
   </body>

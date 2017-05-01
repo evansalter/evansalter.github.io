@@ -7,6 +7,8 @@ var postList = [
   }
 ]
 
+// ----------------------
+
 function slugify (title) {
   return title.replace(/[^a-z0-9]/gi, '-').toLowerCase()
 }

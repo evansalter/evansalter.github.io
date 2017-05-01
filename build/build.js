@@ -18,6 +18,11 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   webpack(webpackConfig, function (err, stats) {
     spinner.stop()
     if (err) throw err
+
+    const info = stats.toJson()
+    if (stats.hasErrors()) console.error(info.errors)
+    if (stats.hasWarnings()) console.warn(info.warnings)
+
     process.stdout.write(stats.toString({
       colors: true,
       modules: false,

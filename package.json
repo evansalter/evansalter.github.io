@@ -21,9 +21,13 @@
     "sass-loader": "^6.0.3",
     "sitemap-webpack-plugin": "^0.3.0",
     "vue": "^2.2.2",
+    "vue-analytics": "^4.1.0",
     "vue-awesome": "^2.2.3",
+    "vue-head": "^2.0.10",
     "vue-router": "^2.3.0",
-    "vuetify": "^0.10.4"
+    "vue-social-sharing": "^2.2.0",
+    "vuetify": "^0.10.4",
+    "webpack-static-site-generator": "^1.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

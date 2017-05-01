@@ -9,8 +9,14 @@ import { PostObject } from './components/blog/posts/index.js'
 
 import Vuetify from 'vuetify'
 import Icon from 'vue-awesome/components/Icon.vue'
+import VueHead from 'vue-head'
+import VueAnalytics from 'vue-analytics'
+
+import SocialSharing from 'vue-social-sharing'
 
 Vue.config.productionTip = false
+Vue.use(SocialSharing)
+Vue.use(VueHead)
 Vue.use(Vuetify)
 Vue.component('icon', Icon)
 
@@ -24,6 +30,11 @@ router.beforeEach((to, from, next) => {
   }
   document.title = `${pageName}${pageName !== undefined ? ' | ' : ''}Evan Salter`
   next()
+})
+
+Vue.use(VueAnalytics, {
+  id: 'UA-90718734-3',
+  router
 })
 
 /* eslint-disable no-new */

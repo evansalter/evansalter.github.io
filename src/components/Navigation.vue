@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-toolbar fixed transparent>
+    <v-toolbar fixed transparent class="blue-grey darken-2">
       <v-toolbar-side-icon class="hidden-md-and-up" @click.native.stop="sidebarVisible = !sidebarVisible"></v-toolbar-side-icon>
-      <v-toolbar-title>Evan Salter</v-toolbar-title>
+      <v-toolbar-title><router-link class="title" to="/">Evan Salter</router-link></v-toolbar-title>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-toolbar-item v-for="page in pages"
                         :key="page.name"
@@ -11,6 +11,21 @@
                         ripple>
           {{ page.name }}
         </v-toolbar-item>
+        <v-menu bottom :offset-y="true" transition="v-slide-y-transition">
+          <v-toolbar-item slot="activator">
+            Contact &nbsp; <icon name="angle-down"></icon>
+          </v-toolbar-item>
+          <v-list>
+            <v-list-item v-for="link in contactInfo" :key="link.url">
+              <v-list-tile :href="link.url" :target="getTarget(link)" avatar>
+                <v-list-tile-avatar>
+                  <icon :name="link.icon"></icon>
+                </v-list-tile-avatar>
+                <v-list-tile-title v-text="link.name"></v-list-tile-title>
+              </v-list-tile>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </v-toolbar-items>
     </v-toolbar>
     <v-sidebar drawer v-model="sidebarVisible">
@@ -20,16 +35,31 @@
             <v-list-tile-title v-text="page.name"/>
           </v-list-tile>
         </v-list-item>
+        <v-divider light/>
+        <v-subheader>
+          Contact Me
+        </v-subheader>
+        <v-list-item v-for="link in contactInfo" :key="link.url">
+          <v-list-tile :href="link.url" :target="getTarget(link)" ripple>
+            <v-list-tile-avatar>
+              <icon :name="link.icon"></icon>
+            </v-list-tile-avatar>
+            <v-list-tile-title v-text="link.name"/>
+          </v-list-tile>
+        </v-list-item>
       </v-list>
     </v-sidebar>
   </div>
 </template>
 
 <script>
+import contactInfo from '@/components/common/contact'
+
 export default {
   name: 'navigation',
   data: () => {
     return {
+      contactInfo: contactInfo,
       sidebarVisible: false,
       pages: [
         { path: '/', name: 'Home', exact: true },
@@ -40,13 +70,22 @@ export default {
         edge: 'right'
       }
     }
+  },
+  methods: {
+    getTarget: function (item) {
+      return item.newTab === false ? '' : '_blank'
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .toolbar {
   z-index: 100;
+
+  a, .toolbar__title {
+    text-transform: uppercase !important;
+  }
 }
 
 .sidebar {
@@ -56,5 +95,12 @@ export default {
 
 .sidebar-active {
   background: rgba(0,0,0,.12);
+}
+.menu {
+  height: 100%;
+}
+.title {
+  color: white;
+  text-decoration: none;
 }
 </style>

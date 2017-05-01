@@ -1,6 +1,12 @@
 language: node_js
 node_js:
   - "node"
+sudo: required
+addons:
+  apt:
+    packages:
+      - xvfb
+      - libxss1
 script:
   - yarn run lint
   - yarn run build

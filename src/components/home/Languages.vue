@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>Languages and Frameworks</h1>
+    <h2>Languages and frameworks.</h2>
     <div class="language-container">
-      <ul v-for="language in languages">
-        <h3>{{ language.category }}</h3>
-        <li v-for="value in language.values">
+      <div v-for="language in languages">
+        <div><h4>{{ language.category }}</h4></div>
+        <span v-for="value in language.values">
           {{ value }}
-        </li>
-      </ul>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -23,6 +23,10 @@ export default {
           values: ['Javascript', 'Typescript', 'HTML', 'CSS', 'Angular2', 'Vue.js', 'KnockoutJS']
         },
         {
+          category: 'Google Cloud Platform',
+          values: ['App Engine', 'Compute Engine']
+        },
+        {
           category: 'Backend',
           values: ['Python', 'Go']
         },
@@ -35,10 +39,9 @@ export default {
           values: ['Cloud Datastore', 'SQL', 'BiqQuery', 'Elasticsearch']
         },
         {
-          category: 'Google Cloud Platform',
-          values: ['AppEngine', 'Compute Engine']
+          category: 'Mobile',
+          values: ['iOS', 'Swift', 'Objective-C']
         }
-
       ]
     }
   }
@@ -46,21 +49,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1, h3 {
-  color: white;
+* {
+  color: #2B3940;
+}
+
+h4 {
+  font-weight: bold;
 }
 
 .language-container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 
-  ul {
-    padding: 15px;
-    list-style: none;
+  flex-direction: column;
 
-    li {
+  div {
+
+    padding-top: 10px;
+
+    span {
       font-size: 25px;
+      padding-right: 20px;
     }
   }
 }
