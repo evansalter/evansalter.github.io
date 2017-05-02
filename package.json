@@ -27,7 +27,7 @@
     "vue-router": "^2.3.0",
     "vue-social-sharing": "^2.2.0",
     "vuetify": "^0.10.4",
-    "webpack-static-site-generator": "^1.2.2"
+    "webpack-static-site-generator": "1.2.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
