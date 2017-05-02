@@ -3,6 +3,8 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
+var hljs = require('highlight.js')
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -85,10 +87,19 @@ module.exports = {
             loader: 'html-loader'
           },
           {
-            loader: 'markdown-it-loader',
+            loader: 'markdownit-loader',
             options: {
-              preset: 'default',
-              typographer: true
+              highlight: function (str, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                  try {
+                    return '<pre class="hljs"><div class="code">' +
+                          hljs.highlight(lang, str, true).value +
+                          '</div></pre>';
+                  } catch (__) {}
+                }
+
+                return '<pre class="hljs"><div class="code">' + md.utils.escapeHtml(str) + '</div></pre>';
+              }
             }
           }
         ]

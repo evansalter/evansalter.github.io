@@ -91,11 +91,11 @@ As cool as the deployment process is, there were some things I didn't like about
 
 #### 4. GitHub Pages
 
-Finally.  You sat through the excrutiating minutia of my SPA hosting experiences.  We have finally arrived at the point of the article, which is that GitHub Pages is fantastic.
+Finally.  You sat through the excruciating minutia of my SPA hosting experiences.  We have finally arrived at the point of the article, which is that GitHub Pages is fantastic.
 
 It seems like the logical place to serve a SPA from, right?  You've got free hosting.  Deploys are a breeze.  Free SSL.  Plus your code is probably going to be kept on GitHub anyway!
 
-I had recently decided that it was time to replace my personal website, which was previously a free Wordpress site that I put zero effort into (and I eventually password protected it because I was embarrassed by it).  My new site, which you are currently looking at, is written in Vue.js with no backend, so I could really choose any provider I wanted.  App Engine (both Standard and Flex) were overkill and/or too expensive, `now` was also unfeasable because of the reasons I stated above.  So here we are.  GitHub Pages is the chosen one.
+I had recently decided that it was time to replace my personal website, which was previously a free Wordpress site that I put zero effort into (and I eventually password protected it because I was embarrassed by it).  My new site, which you are currently looking at, is written in Vue.js with no backend, so I could really choose any provider I wanted.  App Engine (both Standard and Flex) were overkill and/or too expensive, `now` was also unfeasible because of the reasons I stated above.  So here we are.  GitHub Pages is the chosen one.
 
 It is not without it's faults.  Of course, there are a few quirks here and there that you might need to work around, but I haven't come across any blockers, and I'm sure you wouldn't either.
 
@@ -142,7 +142,7 @@ It basically just runs my lint and build, then says if the branch is `sources`, 
 
 ### Part 4: Routing
 
-It was very smooth sailing for a while.  I was devloping locally very quickly using the webpack dev server, complete with hot module reloading.  When I wanted to deploy, I just pushed up my changes and in a minute or so they were live.  I had no problems setting up the Vue router at all.
+It was very smooth sailing for a while.  I was developing locally very quickly using the webpack dev server, complete with hot module reloading.  When I wanted to deploy, I just pushed up my changes and in a minute or so they were live.  I had no problems setting up the Vue router at all.
 
 As it turns out, when I was using the live site I was always starting from the root of the site.  I never tried to go directly to `/projects` or any other page.  That's when I hit a snag.
 
@@ -179,20 +179,20 @@ Basically all this does is save the requested URL in your browser's storage, and
 
 This worked surprisingly well.  However, once I decided to implement Open Graph and Twitter meta tags in my blog posts, it fell apart.  However, if you have a simple site that doesn't require meta tags, then this just might work for you.
 
-#### Attempt 2: Prerendering a Static Site
+#### Attempt 2: Pre-rendering a Static Site
 
 There were two issues with the above router hack in terms of serving meta tags:
 
 1. When Facebook, Slack, Twitter, or any other site with rich media cards would scan my links, they would land on the 404 page as expected.  However, they would not get redirected to the proper page by the method I shared above.  This is because GitHub Pages returned a 404 status code for the 404 page, which told the scrapers to give up.
 1. Even if I didn't use the 404 page hack, my meta tags were generated on the fly in my Vue app.  Since the scraper downloads the page without executing any javascript, it would not find the meta tags.
 
-So, the obvious solutions are server-side rendering or prerending.  I didn't want to go down the path of server-side rendering, since I don't want to host a server for this website.  So, prerendering it is!
+So, the obvious solutions are server-side rendering or pre-rending.  I didn't want to go down the path of server-side rendering, since I don't want to host a server for this website.  So, pre-rendering it is!
 
 Since I'm using Webpack, I thought it made sense to add a webpack plugin to generate static HTML from my site.  I found a couple prebuilt plugins to do this, which both leveraged PhantomJS to render the site.  For some reason, I could not get it to render any actual content in my site.  I wasted a ton of time trying to get it working, with no success.
 
 Frustrated with that, I decided to write my own plugin.  Thus, [webpack-static-site-generator](https://github.com/esalter-va/webpack-static-site-generator) was born (great name, I know).  With that plugin in place, every time I built my site for production I would get static HTML files for all of my pages.  I could still use the Webpack dev server when developing locally without building, which was a huge plus.
 
-So, if you have any trouble hosting your SPA on any hosting provider, you might want to check out prerendering.
+So, if you have any trouble hosting your SPA on any hosting provider, you might want to check out pre-rendering.
 
 ### Part 5: Custom Domain
 

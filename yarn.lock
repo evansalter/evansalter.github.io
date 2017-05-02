@@ -2844,6 +2844,10 @@ highlight.js:
   version "9.10.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.10.0.tgz#f9f0b14c0be00f0e4fb1e577b749fed9e6f52f55"
 
+highlight.js@^9.9.0:
+  version "9.11.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.11.0.tgz#47f98c7399918700db2caf230ded12cec41a84ae"
+
 hmac-drbg@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.0.tgz#3db471f45aae4a994a0688322171f51b8b91bee5"
@@ -3552,7 +3556,7 @@ loader-utils@^0.2.15, loader-utils@^0.2.16:
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
-loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
+loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.0.3, loader-utils@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.1.0.tgz#c98aef488bcceda2ffb5e2de646d6a754429f5cd"
   dependencies:
@@ -3759,7 +3763,7 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
-markdown-it:
+markdown-it, markdown-it@^8.3.1:
   version "8.3.1"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.3.1.tgz#2f4b622948ccdc193d66f3ca2d43125ac4ac7323"
   dependencies:
@@ -3769,9 +3773,13 @@ markdown-it:
     mdurl "^1.0.1"
     uc.micro "^1.0.3"
 
-markdown-it-loader:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-loader/-/markdown-it-loader-0.5.0.tgz#e07a0e96eb0b686f7015497d372effcdb745490a"
+markdownit-loader:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/markdownit-loader/-/markdownit-loader-1.0.1.tgz#ce714e672aef102fc52862fe63a4da61c05b8d7b"
+  dependencies:
+    highlight.js "^9.9.0"
+    loader-utils "^1.0.3"
+    markdown-it "^8.3.1"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.16"
