@@ -9,7 +9,6 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    'babel-polyfill': 'babel-polyfill',
     app: './src/main.js'
   },
   output: {
@@ -46,7 +45,10 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')],
-        exclude: [resolve('src/components/blog/posts/posts.js')]
+        exclude: [resolve('src/components/blog/posts/posts.js')],
+        options: {
+          presets: ['es2015']
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
