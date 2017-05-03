@@ -2,11 +2,11 @@
   <v-app id="app">
     <div class="spacer"></div>
     <navigation></navigation>
-    <main class="main-container">
+    <div class="main-container">
       <v-content>
         <router-view></router-view>
       </v-content>
-    </main>
+    </div >
     <page-footer></page-footer>
   </v-app>
 </template>
