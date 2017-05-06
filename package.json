@@ -16,7 +16,7 @@
     "html-loader": "^0.4.5",
     "image-webpack-loader": "^3.3.0",
     "markdown-it": "^8.3.1",
-    "markdown-it-loader": "^0.5.0",
+    "markdownit-loader": "^1.0.1",
     "node-sass": "^4.5.2",
     "sass-loader": "^6.0.3",
     "sitemap-webpack-plugin": "^0.3.0",

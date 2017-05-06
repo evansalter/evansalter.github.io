@@ -78,6 +78,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~highlight.js/styles/github';
+
 .post-container {
   max-width: 740px;
   margin: 0 auto;
@@ -101,15 +103,20 @@ export default {
 
     ol, ul {
       margin-left: 20px;
+      margin-bottom: 1rem;
     }
 
-    pre > code {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
+    code {
+      background: #F5F6F6;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-weight: normal !important;
+      color: #4B4B4B;
+    }
 
-      &:before, &:after {
-        content: '';
+    pre {
+      margin: 10px 0;
+      .code {
+        font-size: 15px;
       }
     }
   }
