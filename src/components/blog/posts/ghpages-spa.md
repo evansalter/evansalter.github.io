@@ -1,12 +1,14 @@
-Single-Page Apps are all the rage right now.  They make it extremely easy to build feature-rich, highly performant web applications.  So you go ahead and build yourself a SPA, but you run into a problem.  Where do you host it?
+Single-Page Apps (SPAs) are all the rage right now.  They make it extremely easy to build feature-rich, highly performant web applications.  So you go ahead and build yourself a SPA, but one question remains.  Where do you host it?
 
-In the past, I have tackled this in a number of ways.
+This article is separated into two parts.  First, an outline of the different SPA hosting methods I have used, along with their pros and cons.  Second, my experience with hosting an SPA on GitHub Pages, including any trouble I have had.  I hope to help the readers make an informed decision regarding where to host their app, and if they do choose to use any of the methods I talk about, learn from my mistakes.
+
+If you wish to focus on GitHub Pages, and skip the other methods, you can jump to section 4: GitHub Pages.
 
 #### 1. Google App Engine
 
-I didn't really get into web development until I started my current job.  Yes, I knew some HTML and CSS, and I had taken a university web dev class.  However, I wasn't all that interested until I started using those skills in the workforce.
+I didn't really get into web development until I started my current job.  Yes, I knew some HTML and CSS, and I had taken a university web dev class.  However, I wasn't all that interested until I started using those skills in the workplace.
 
-At my job, all of our core applications are built using App Engine.  We use the Python version, with Jinja2 as our templating language, and plain ol' Javascript for frontend code.  After a while I began to feel very comfortable developing in App Engine.  It was familiar, and I had gotten to the point where I could throw together a new application relatively quickly and easily.
+At my job, all of our core applications are built using App Engine.  We use the Python version, with Jinja2 as our templating language, and Knockout.js for frontend code.  After a while I began to feel very comfortable developing in App Engine.  It was familiar, and I had gotten to the point where I could throw together a new application relatively quickly and easily.
 
 Now, back to SPAs.  In the summer of 2016, I started working on [Roll Up Tracker](https://www.rolluptracker.com/).  Roll Up Tracker is an Angular2 web-app that allows you to track your wins and losses during the Roll Up The Rim To Win season at Tim Hortons.  Naturally, when I started the project I decided to host it on App Engine.  It might seem a bit odd to have to bootstrap an entire App Engine project just to serve some HTML and Javascript.  However, I justify it by the fact that the backend was written in Python, using Google Cloud Datastore as the database.  It made sense to keep the frontend hosted alongside that.
 
@@ -49,7 +51,7 @@ I had built a very small SPA using Vue.js called [Scrobblin' With Friends](https
 
 Then I discovered Flex, and found out they have a Node.js environment.  It was extremely easy to set up:
 
-1. `app.yaml` with 2 lines.  `runtime: nodejs` and `env: flex`
+1. `app.yaml` with 2 lines:  `runtime: nodejs` and `env: flex`
 1. `package.json` with a `start` script
 1. A simple express server
 
@@ -80,42 +82,42 @@ I could see Flex being a viable option if you have a project you were willing to
 
 #### 3. now
 
-If you haven't heard of [now](https://zeit.co/now), go check it out.  Now (heh).  It is seriously cool.  After installing it on your computer, just type `now` on your command line, and next thing you know, your application is on the web.
+If you haven't heard of [now](https://zeit.co/now), go check it out now (heh).  It is seriously cool.  After installing it on your computer, just type `now` on your command line, and next thing you know, your application is on the web.
 
 The only requirement is that you have a `package.json` with a `start` script.  `now` takes care of the rest.
 
 As cool as the deployment process is, there were some things I didn't like about it.
 
-1. The free tier gives you these janky URLs for your project, for example: coolproject-glkqdjsslm.now.sh.  This is okay since you're not paying for hosting, but the is that every time you deploy, you get a new URL.  You basically can't host anything that other people are going to use for free
+1. The free tier gives you these janky URLs for your project, for example: coolproject-glkqdjsslm.now.sh.  I usually don't mind having strange URLs when I'm not paying for hosting, but the issue is that every time you deploy, you get a new URL.  You basically can't host anything that other people are going to use for free
 1. Their cheapest paid tier, which gets you 1000 deploys/month (instead of 20), private codebases, and more is $14.99/mo.  Much more than I was willing to pay for silly side projects.
 
 #### 4. GitHub Pages
 
-Finally.  You sat through the excruciating minutia of my SPA hosting experiences.  We have finally arrived at the point of the article, which is that GitHub Pages is fantastic.
+Finally.  You sat through the excruciating minutia of my SPA hosting experiences.  We have finally arrived at the point of the article, which is to outline my experiences hosting an SPA on GitHub Pages.
 
 It seems like the logical place to serve a SPA from, right?  You've got free hosting.  Deploys are a breeze.  Free SSL.  Plus your code is probably going to be kept on GitHub anyway!
 
 I had recently decided that it was time to replace my personal website, which was previously a free Wordpress site that I put zero effort into (and I eventually password protected it because I was embarrassed by it).  My new site, which you are currently looking at, is written in Vue.js with no backend, so I could really choose any provider I wanted.  App Engine (both Standard and Flex) were overkill and/or too expensive, `now` was also unfeasible because of the reasons I stated above.  So here we are.  GitHub Pages is the chosen one.
 
-It is not without it's faults.  Of course, there are a few quirks here and there that you might need to work around, but I haven't come across any blockers, and I'm sure you wouldn't either.
+It is not without it's faults.  Of course, there are a few quirks here and there that you might need to work around, but I haven't come across any blockers, and I'm sure you wouldn't either.  That said, if GitHub Pages were a paid service, some of the problems I encountered would have made me throw in the towel and switch to something else.  Since it's free, I was willing to put in the time to work around the issues.
 
 I'd like to walk through how the whole thing works, including any "gotchas" that I encountered along the way.
 
 ### Part 1: What is GitHub Pages?
 
-First of, [go here](https://pages.github.com/).  It has all the basics of Pages, and if you want more detailed documentation you can click "Pages Help" in the top-right corner.
+First off, [go here](https://pages.github.com/).  It has all the basics of Pages, and if you want more detailed documentation you can click "Pages Help" in the top-right corner.
 
-There are two types of Pages.  The first is an Organization/Personal page.  This lives in a repo called `<YOUR_USERNAME>.github.io`, has a URL that matches the repo name, and is meant as a general landing page for a person or organization (duh).  The code for the site lives in this project.
+There are two types of Pages.  The first is an Organization/Personal page.  This lives in a repo called `<YOUR_USERNAME>.github.io`, has a URL that matches the repo name, and is meant to be a general landing page for a person or organization (duh).  The code for the site lives in this project.
 
 The other kind, a Project page, most commonly lives in the `gh-pages` branch, or in a `/docs` folder on `master`.  Then, you access the page from `<YOUR_USERNAME>.github.io/<PROJECT_NAME>`.  It allows you to keep all the code in one place.  Pretty handy, I think.
 
 For the purposes of this post, I will be talking about Personal pages.
 
-### Part 2: How do I Structure the Code?
+### Part 2: What should my repo look like?
 
 This was the first problem I came across.  A personal site is served from the `master` branch.  That meant I couldn't just create a project using the Vue CLI, commit everything to master, and expect it to work.
 
-After doing some research online, I settled on a plan.  I created a `sources` branch that houses the source files.  Then, on my computer, I built the project, initialized the generated `/dist` directory as a git repo, set it to track `master`, then committed and pushed.  It worked pretty well, but it was largely manual.  Plus if I ever re-cloned the project or used another computer, I'd have to set up the dist repo again.  Annoying.
+After doing some research online, I settled on a plan.  I created a `sources` branch that houses the source files.  Then, on my computer, I built the project, initialized the generated `dist` directory as a git repo, set it to track `master`, then committed and pushed.  It worked pretty well, but it was largely manual.  Plus if I ever re-cloned the project or used another computer, I'd have to set up the dist repo again.  Annoying.
 
 ### Part 3: Automating Deployments
 
@@ -138,13 +140,13 @@ deploy:
     branch: sources
 ```
 
-It basically just runs my lint and build, then says if the branch is `sources`, force-push the `dist` directory to `master`.  For more info on this, check out the [Travis CI docs](https://docs.travis-ci.com/user/deployment/pages/).
+It basically just runs my lint and build, then if the branch is `sources`, force-push the `dist` directory to `master`.  For more info on this, check out the [Travis CI docs](https://docs.travis-ci.com/user/deployment/pages/).
 
 ### Part 4: Routing
 
 It was very smooth sailing for a while.  I was developing locally very quickly using the webpack dev server, complete with hot module reloading.  When I wanted to deploy, I just pushed up my changes and in a minute or so they were live.  I had no problems setting up the Vue router at all.
 
-As it turns out, when I was using the live site I was always starting from the root of the site.  I never tried to go directly to `/projects` or any other page.  That's when I hit a snag.
+As it turns out, when I was using the live site I was always starting from the root of the site.  I never tried to go directly to `/projects` or any other page.  That's when I hit a snag.  Trying to go directly to a route in my app resulted in a 404 page.
 
 I definitely wasn't shocked when I discovered this.  It makes total sense, since GitHub doesn't know about the Vue app's routes.  All it knows is there is an `index.html` file in the repo that it can route to.
 
@@ -177,7 +179,7 @@ Basically all this does is save the requested URL in your browser's storage, and
 </script>
 ```
 
-This worked surprisingly well.  However, once I decided to implement Open Graph and Twitter meta tags in my blog posts, it fell apart.  However, if you have a simple site that doesn't require meta tags, then this just might work for you.
+This worked surprisingly well.  However, once I decided to implement Open Graph and Twitter meta tags in my blog posts, it fell apart due to the scrapers not following the redirects.  However, if you have a simple site that doesn't require meta tags, then this just might work for you.
 
 #### Attempt 2: Pre-rendering a Static Site
 
@@ -186,7 +188,7 @@ There were two issues with the above router hack in terms of serving meta tags:
 1. When Facebook, Slack, Twitter, or any other site with rich media cards would scan my links, they would land on the 404 page as expected.  However, they would not get redirected to the proper page by the method I shared above.  This is because GitHub Pages returned a 404 status code for the 404 page, which told the scrapers to give up.
 1. Even if I didn't use the 404 page hack, my meta tags were generated on the fly in my Vue app.  Since the scraper downloads the page without executing any javascript, it would not find the meta tags.
 
-So, the obvious solutions are server-side rendering or pre-rending.  I didn't want to go down the path of server-side rendering, since I don't want to host a server for this website.  So, pre-rendering it is!
+So, the two obvious solutions are server-side rendering or pre-rending.  I didn't want to go down the path of server-side rendering, since I don't want to host a server for this website.  So, pre-rendering it is!
 
 Since I'm using Webpack, I thought it made sense to add a webpack plugin to generate static HTML from my site.  I found a couple prebuilt plugins to do this, which both leveraged PhantomJS to render the site.  For some reason, I could not get it to render any actual content in my site.  I wasted a ton of time trying to get it working, with no success.
 
@@ -198,12 +200,12 @@ So, if you have any trouble hosting your SPA on any hosting provider, you might 
 
 If you've made it this far, you should be done with the "gotchas" of hosting a single-page app on GH Pages.  Setting up a custom domain was very easy.  There were just a couple steps:
 
-1. In your site's repo, go to Settings, then fill in your domain under "Custom domain" (i.e. `www.evansalter.com`)
+1. Create a file called `CNAME` in your repo, which contains a single line with the domain you want to use (i.e. `www.evansalter.com`).  Make sure this file get commited to your master branch when the build runs.
 1. Set up a `CNAME` record with your domain registrar that points to your `github.io` address (i.e. `esalter-va.github.io`)
 
 There are some slightly different instructions on GitHub's support pages if you want to use an apex domain (no www), but it shouldn't be too much work.
 
-There was one slight problem I discovered.  There is NO SSL support when you're using a custom domain with GH Pages.  I was a tad annoyed at this, but seeing as my site has not real reason to be on HTTPS, I got over it.
+There was one slight problem I discovered.  There is NO SSL support when you're using a custom domain with GH Pages.  I was a tad annoyed at this, but seeing as my site has no real reason to be on HTTPS, I got over it.
 
 ### Final Thoughts
 
