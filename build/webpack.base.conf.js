@@ -44,10 +44,9 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')],
-        exclude: [resolve('src/components/blog/posts/posts.js')],
+        include: [resolve('src'), resolve('test'), resolve('node_modules/vue-awesome')],
         options: {
-          presets: ['es2015']
+          presets: ['es2015', 'stage-0']
         }
       },
       {
