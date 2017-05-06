@@ -27,7 +27,7 @@
     "vue-router": "^2.3.0",
     "vue-social-sharing": "^2.2.0",
     "vuetify": "^0.10.4",
-    "webpack-static-site-generator": "^1.2.2"
+    "webpack-static-site-generator": "^1.2.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
@@ -36,6 +36,8 @@
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "chalk": "^1.1.3",
