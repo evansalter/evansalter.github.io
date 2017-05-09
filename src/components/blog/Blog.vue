@@ -32,12 +32,25 @@
 
 <script>
 import { PostList, Slugify } from './posts/index.js'
+import { Constants } from '@/constants'
 import TagList from '@/components/common/TagList'
 import TagSelector from '@/components/common/TagSelector'
 import '@/components/common/twitter.js'
 
 export default {
   components: { TagList, TagSelector },
+  meta: function () {
+    var description = 'A place to read about, and discuss, a wide variety of topics related to technology and software development.'
+    return [
+      { p: 'description', c: description },
+      { p: 'og:site_name', c: 'Evan Salter' },
+      { p: 'og:title', c: 'Blog | Evan Salter' },
+      { p: 'og:description', c: description },
+      { p: 'og:url', c: Constants.BASE_URL + '/blog' },
+      { p: 'og:type', c: 'website' },
+      { p: 'twitter:site', c: '@_evansalter' }
+    ]
+  },
   data: function () {
     return {
       posts: PostList,

@@ -17,6 +17,7 @@
 
 <script>
 import { PostObject } from './posts/index.js'
+import { Constants } from '@/constants'
 import Disqus from './Disqus'
 import PostFooter from './PostFooter'
 import Sharing from '@/components/common/Sharing'
@@ -47,7 +48,7 @@ export default {
       return require('./posts/' + this.post.filename)
     },
     postUrl: function () {
-      return 'http://www.evansalter.com' + window.location.pathname
+      return Constants.BASE_URL + window.location.pathname
     },
     postContentSnippet: function () {
       return document.getElementsByClassName('post-content')[0].innerText.slice(0, 50) + '...'

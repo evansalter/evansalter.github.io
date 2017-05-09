@@ -18,11 +18,24 @@
 <script>
 import ProjectCard from './ProjectCard'
 import TagSelector from '@/components/common/TagSelector'
+import { Constants } from '@/constants'
 
 export default {
   components: {
     ProjectCard,
     TagSelector
+  },
+  meta: function () {
+    var description = 'A quick look at some of my projects.'
+    return [
+      { p: 'description', c: description },
+      { p: 'og:site_name', c: 'Evan Salter' },
+      { p: 'og:title', c: 'Projects | Evan Salter' },
+      { p: 'og:description', c: description },
+      { p: 'og:url', c: Constants.BASE_URL + '/projects' },
+      { p: 'og:type', c: 'website' },
+      { p: 'twitter:site', c: '@_evansalter' }
+    ]
   },
   data: () => {
     return {
