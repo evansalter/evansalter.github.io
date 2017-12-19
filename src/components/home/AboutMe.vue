@@ -14,8 +14,7 @@
     <p>
       Check out the <a href="#languages-and-frameworks">languages and frameworks</a> that I use below, and
       browse through my <router-link to="/projects">projects page</router-link> to see what I've been up to.
-      Please feel free to contact me with
-      any sort of question, thought, concern, opportunity, or just to chat.
+      Please feel free to contact me with any sort of question, thought, concern, opportunity, or just to chat.
     </p>
   </div>
 </template>
