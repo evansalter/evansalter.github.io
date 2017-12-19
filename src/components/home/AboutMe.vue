@@ -2,8 +2,10 @@
   <div>
     <h2>About me.</h2>
     <p>
-      I am a computer science student at the University of Saskatchewan, currently completing a 16 month internship
-      at Vendasta Technologies.
+      I am a computer science student at the University of Saskatchewan, currently finishing my final year.
+      I recently completed a 16 month internship with Vendasta Technologies in Saskatoon, SK. During this time
+      I gained experience working as a software developer in an agile environment, working mostly with various web
+      technologies based on Google Cloud Platform.
     </p>
     <p>
       I love all things computer science, but my current passion is web development (both front and back-end).
