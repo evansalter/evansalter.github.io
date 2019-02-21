@@ -20,15 +20,15 @@ export default {
       languages: [
         {
           category: 'Web Frontend',
-          values: ['Javascript', 'Typescript', 'HTML', 'CSS', 'Angular2', 'Vue.js', 'KnockoutJS']
+          values: ['Angular', 'Vue.js', 'Typescript', 'SCSS', 'Webpack']
         },
         {
           category: 'Google Cloud Platform',
-          values: ['App Engine', 'Compute Engine']
+          values: ['Kubernetes Engine', 'App Engine', 'Compute Engine', 'Cloud SQL']
         },
         {
           category: 'Backend',
-          values: ['Python', 'Go']
+          values: ['Go', 'Python']
         },
         {
           category: 'Systems',

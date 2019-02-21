@@ -35,7 +35,7 @@ export default {
         { p: 'og:description', c: description },
         { p: 'og:url', c: Constants.BASE_URL },
         { p: 'og:type', c: 'website' },
-        { p: 'og:image', c: Constants.BASE_URL + require('../../assets/headshot/full.jpg') },
+        { p: 'og:image', c: Constants.BASE_URL + require('../../assets/headshot/full2.jpg') },
         { p: 'twitter:site', c: '@_evansalter' }
       ]
     }
@@ -58,7 +58,7 @@ export default {
 }
 
 #welcome-panel {
-  background-image: url("../../assets/headshot/full.jpg");
+  background-image: url("../../assets/headshot/full2.jpg");
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;

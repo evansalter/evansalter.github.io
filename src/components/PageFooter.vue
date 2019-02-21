@@ -1,7 +1,7 @@
 <template>
   <v-footer id="page-footer" class="blue-grey lighten-5">
     <div class="text-xs">
-        &copy; 2017 <span class="hidden-sm-and-down">Evan Salter </span>/ Made with
+        &copy; 2017&mdash;{{ currentYear }} <span class="hidden-sm-and-down">Evan Salter </span>/ Made with
         <span v-tooltip:top="{ html: 'Coffee, duh.' }">
           <icon name="coffee" scale="1"></icon>
         </span>
@@ -38,7 +38,8 @@ export default {
         vuejs: require('../assets/icons/vuejs.svg'),
         vuetify: require('../assets/icons/vuetify.png'),
         webpack: require('../assets/icons/webpack.svg')
-      }
+      },
+      currentYear: new Date().getFullYear()
     }
   }
 }

@@ -2,14 +2,13 @@
   <div>
     <h2>About me.</h2>
     <p>
-      I am a computer science student at the University of Saskatchewan, currently finishing my final year. I
-      recently completed a 16 month internship with Vendasta Technologies in Saskatoon, SK. During this time
-      I gained experience working as a software developer in an agile environment, working mostly with various web
-      technologies based on Google Cloud Platform.
+      I am a software developer living and working in Saskatoon, Saskachewan. I am currently working at 
+      <a href="https://vendasta.com/" target="_blank">Vendasta Technologies</a> and hold a Bachelor of Science in Computer Science
+      from the University of Saskatchewan.
     </p>
     <p>
-      I love all things computer science, but my current passion is web development (both front and back-end).
-      That said, I am always open to trying new things and learning new technologies whenever I have the chance.
+      I enjoy working both in the front and back-end stacks. I focus on Go and the Google Cloud Platform for the backend
+      and various Javascript frameworks from the frontend. That said, I am always excited to learn new technologies and tools.
     </p>
     <p>
       Check out the <a href="#languages-and-frameworks">languages and frameworks</a> that I use below, and
