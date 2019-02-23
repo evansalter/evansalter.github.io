@@ -35,7 +35,7 @@ The main idea is that the bluetooth receiver is powered via the smart outlet. In
 If the receiver is off or I'm playing something through a different source, I am able to use the Echo as normal. I can also play multi-room audio if I don't care about having it run through the stereo system. When I want the Echo to output to the stereo, I simply press a single button on the Harmony remote (or use a voice command) which does the following:
 
 1. Turns the receiver on
-1. Turns the smart outlet, which turns the bluetooth receiver on
+1. Turns the smart outlet on, which turns the bluetooth receiver on
     - The Echo automatically connects to this and switches its audio output
 1. Sets the receiver to the proper input
 
