@@ -54,7 +54,7 @@ export default {
     padding: 0 10px;
   }
   hr {
-    margin-top: 25px;
+    margin-top: 40px;
   }
 }
 ol {
