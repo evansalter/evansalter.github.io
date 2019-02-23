@@ -3,7 +3,7 @@ var postList = [
     title: 'Amazon Echo Dot Stereo Integration',
     filename: 'alexa-stereo/alexa-stereo.md',
     tags: ['Home Automation'],
-    date: '2019-02-20'
+    date: '2019-02-23'
   },
   {
     title: 'GitHub Pages and Single-Page Apps',
