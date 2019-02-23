@@ -103,7 +103,7 @@ export default {
     }
 
     ol, ul {
-      margin-left: 20px;
+      margin-left: 60px;
       margin-bottom: 1rem;
     }
 
@@ -112,6 +112,21 @@ export default {
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
       font-weight: normal !important;
       color: #4B4B4B;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    hr {
+      height: 1px;
+      border: none;
+      background: rgba(0,0,0,.12);
+      margin-bottom: 14px;
+    }
+
+    table {
+      margin-bottom: 2rem;
     }
 
     pre {

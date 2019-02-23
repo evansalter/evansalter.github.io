@@ -1,5 +1,11 @@
 var postList = [
   {
+    title: 'Amazon Echo Dot Stereo Integration',
+    filename: 'alexa-stereo/alexa-stereo.md',
+    tags: ['Home Automation'],
+    date: '2019-02-20'
+  },
+  {
     title: 'GitHub Pages and Single-Page Apps',
     filename: 'ghpages-spa.md',
     tags: ['Hosting', 'Web'],
