@@ -1,0 +1,1 @@
+*This post is a continuation of [My $0 Photo Booth Setup](/blog/my-0-photo-booth-setup).*

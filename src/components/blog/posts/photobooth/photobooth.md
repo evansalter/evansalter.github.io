@@ -167,4 +167,4 @@ And that's it! The program ran smoothly for the majority of the night. The camer
 
 I was extremely happy with the result of this project. Being able to use what I already had to pull this off felt great. The photo booth got lots of use, with 232 photos being taken throughout the night. People had a lot of fun with it, and it gave the hosts some great mementos from the night. Had I given myself some more time, I probably could have made a more robust app, but it really wasn't necessary.
 
-Check out Part 2 to learn about how I processed the images.
+Check out Part 2, [Processing 232 Photo Booth Photos](/blog/processing-232-photo-booth-photos), to learn about how I processed the images.
