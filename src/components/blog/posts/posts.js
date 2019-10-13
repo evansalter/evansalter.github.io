@@ -22,7 +22,10 @@ var postList = [
 // ----------------------
 
 function slugify (title) {
-  return title.replace(/[^a-z0-9]/gi, '-').toLowerCase()
+  return title
+    .replace(/[^a-z0-9]/gi, '-')
+    .replace(/-+/g, '-')
+    .toLowerCase()
 }
 
 function generatePostObject () {
