@@ -1,5 +1,11 @@
 var postList = [
   {
+    title: 'My $0 Photo Booth Setup',
+    filename: 'photobooth/photobooth.md',
+    tags: ['Web', 'Programming', 'Photography'],
+    date: '2019-10-13'
+  },
+  {
     title: 'Amazon Echo Dot Stereo Integration',
     filename: 'alexa-stereo/alexa-stereo.md',
     tags: ['Home Automation'],
