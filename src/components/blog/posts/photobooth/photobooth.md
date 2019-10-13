@@ -1,6 +1,6 @@
 ![](taylor-and-i.jpg)
 
-<sup>The finished product</sup>
+<sup>*The finished product*</sup>
 
 I recently attended a 50th birthday party for my partners Aunt and Uncle. When planning, the idea of a photo booth came up. "I have a nice camera", I thought, deciding it shouldn't be too difficult to set up. I set out exploring different software options to help me with this. The criteria was as follows:
 
