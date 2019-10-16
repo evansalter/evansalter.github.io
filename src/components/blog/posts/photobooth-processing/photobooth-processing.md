@@ -109,4 +109,6 @@ In Photoshop, go to File > Scripts > Image Processor. First, choose the folder c
 
 ![](process.png)
 
-After the processing is complete, your output folder should contain JPEG versions of all of your collages.
+That's it! After the processing is complete, your output folder should contain JPEG versions of all of your collages.
+
+All in, this process probably took 2 hours. That's including transferring the pictures to my NAS, waiting for exports, and learning how to automate Photoshop like this. I would guess this could all be done in an hour if you have your Photoshop template done before hand.
