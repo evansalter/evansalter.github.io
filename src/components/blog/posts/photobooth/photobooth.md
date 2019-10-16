@@ -163,6 +163,17 @@ Finally, I turned on the computer, enabled [Caffeine](http://lightheadsw.com/caf
 
 And that's it! The program ran smoothly for the majority of the night. The camera battery died once, so I just swapped that out and re-connected. I also discovered the speedlight turns off automatically after not firing for some time, so I ended up with a couple batches of dark pictures.
 
+#### Other Specs
+
+**Camera**: Sony a6000  
+**Lens**: Sony E 18-105 f/4 G  
+**Focal Length**: 20mm  
+**Aperature**: f/7.1  
+**Shutter Speed**: 1/100 s  
+**ISO** 640  
+
+Ideally, I would have shot with my FE 50mm, but I just didn't have enough space for that. I chose a ~f/7 aperature to ensure I got everybody in focus, and I tried to keep the speedlight power low to avoid the photo booth being too distracting for the rest of the guests.
+
 #### Summary
 
 I was extremely happy with the result of this project. Being able to use what I already had to pull this off felt great. The photo booth got lots of use, with 232 photos being taken throughout the night. People had a lot of fun with it, and it gave the hosts some great mementos from the night. Had I given myself some more time, I probably could have made a more robust app, but it really wasn't necessary.
