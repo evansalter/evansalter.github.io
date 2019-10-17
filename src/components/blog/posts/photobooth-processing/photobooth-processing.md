@@ -44,7 +44,7 @@ In the dialog window, do the following
 
 Now that the variables are defined, we need to create a CSV that tells photoshop which images to use for each variable. The CSV should be in the following format:
 
-```csv
+```sh
 <var 1>,<var 2>,<var 3>,<var 4>
 /path/to/image/1,/path/to/image/2,/path/to/image/3,/path/to/image/4
 ```
@@ -81,7 +81,7 @@ with open('data_sets.csv', mode='w') as f:
 
 The output looked something like this:
 
-```csv
+```sh
 img1,img2,img3,img4
 /Volumes/Storage/Photo Booth Exports/081.jpg,/Volumes/Storage/Photo Booth Exports/082.jpg,/Volumes/Storage/Photo Booth Exports/083.jpg,/Volumes/Storage/Photo Booth Exports/084.jpg
 /Volumes/Storage/Photo Booth Exports/085.jpg,/Volumes/Storage/Photo Booth Exports/086.jpg,/Volumes/Storage/Photo Booth Exports/087.jpg,/Volumes/Storage/Photo Booth Exports/088.jpg
