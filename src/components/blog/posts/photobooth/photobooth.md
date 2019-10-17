@@ -47,13 +47,9 @@ The template just contains a grid of pictures and a button to start the countdow
 </div>
 ```
 
-![](ui.png)
+![](ui.gif)
 
-After the photos are taken...
-
-![](ui-with-images.png)
-
-About 10 seconds later, the app resets and allows another set of pictures to be taken.
+After about 10 seconds, the app resets and allows another set of pictures to be taken.
 
 The Javascript for this was pretty straightforward as well. Given more time, I could have improved the code quality, but this worked very well:
 
