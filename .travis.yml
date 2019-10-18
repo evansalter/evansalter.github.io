@@ -8,8 +8,8 @@ addons:
       - xvfb
       - libxss1
 script:
-  - yarn run lint
-  - yarn run build
+  - npm run lint
+  - npm run build
 deploy:
   provider: pages
   skip_cleanup: true

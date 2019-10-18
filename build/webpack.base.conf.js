@@ -64,7 +64,6 @@ module.exports = {
           {
             loader: 'image-webpack-loader',
             query: {
-              progressive: true,
               optipng: {
                 optimizationLevel: 7
               },
@@ -72,6 +71,7 @@ module.exports = {
                 interlaced: false,
               },
               mozjpeg: {
+                progressive: true,
                 quality: 65
               },
               pngquant: {
