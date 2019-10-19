@@ -1,5 +1,17 @@
 var postList = [
   {
+    title: 'Processing 232 Photo Booth Photos',
+    filename: 'photobooth-processing/photobooth-processing.md',
+    tags: ['Programming', 'Photography'],
+    date: '2019-10-19'
+  },
+  {
+    title: 'My $0 Photo Booth Setup',
+    filename: 'photobooth/photobooth.md',
+    tags: ['Web', 'Programming', 'Photography'],
+    date: '2019-10-19'
+  },
+  {
     title: 'Amazon Echo Dot Stereo Integration',
     filename: 'alexa-stereo/alexa-stereo.md',
     tags: ['Home Automation'],
@@ -16,7 +28,10 @@ var postList = [
 // ----------------------
 
 function slugify (title) {
-  return title.replace(/[^a-z0-9]/gi, '-').toLowerCase()
+  return title
+    .replace(/[^a-z0-9]/gi, '-')
+    .replace(/-+/g, '-')
+    .toLowerCase()
 }
 
 function generatePostObject () {

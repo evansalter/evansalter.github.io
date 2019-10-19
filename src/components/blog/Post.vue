@@ -107,6 +107,10 @@ export default {
       margin-bottom: 1rem;
     }
 
+    a > code {
+      border: 1px #1976d2 solid;
+    }
+
     code {
       background: #F5F6F6;
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
