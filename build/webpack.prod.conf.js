@@ -105,11 +105,11 @@ var webpackConfig = merge(baseWebpackConfig, {
       }
 
     ]),
-    new StaticSiteGenerator(
-      config.build.assetsRoot,
-      generatePaths(),
-      '.main-container'
-    ),
+    // new StaticSiteGenerator(
+    //   config.build.assetsRoot,
+    //   generatePaths(),
+    //   '.main-container'
+    // ),
     // generate sitemap
     new SitemapPlugin('https://www.evansalter.com', generatePaths())
   ]
