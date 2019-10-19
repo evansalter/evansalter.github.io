@@ -2,7 +2,7 @@
 
 <sup>*The finished product*</sup>
 
-I recently attended a 50th birthday party for my partners Aunt and Uncle. When planning, the idea of a photo booth came up. "I have a nice camera", I thought, deciding it shouldn't be too difficult to set up. I set out exploring different software options to help me with this. The criteria was as follows:
+I recently attended a 50th birthday party for my partner's Aunt and Uncle. When planning, the idea of a photo booth came up. "I have a nice camera", I thought, deciding it shouldn't be too difficult to set up. I set out exploring different software options to help me with this. The criteria was as follows:
 
 1. Tethers to cameras to allow an operator-free photo booth experience
 1. Takes 3-4 pictures at a time
@@ -14,13 +14,20 @@ I recently attended a 50th birthday party for my partners Aunt and Uncle. When p
 
 Unfortunately, I couldn't find anything that met all my criteria. I did find some free or relatively cheap options, but they either didn't work with my Sony a6000 or required Windows to run. Most of them were just too expensive for my uses.
 
-Through this research, I discovered that my camera actually has [an API](https://developer.sony.com/file/download/sony-camera-remote-api-beta-sdk-2/) you can interact with over the WiFi connection! So, with 3 days before the event, I put on my developer hat and set out to develop my own solution. Without further ado, let's dig into my solution.
+Through this research, I discovered that my camera actually has [an API](https://developer.sony.com/file/download/sony-camera-remote-api-beta-sdk-2/) you can interact with over the WiFi connection! So, with 3 days before the event, I put on my developer hat and set out to build my own solution. Without further ado, let's see what I did.
 
 #### The Requirements
 
 When I first started this project, the plan was to create a simple UI that shows a live view of the camera, has a button that starts a 3-second countdown, then takes 4 pictures with a second or 2 in between.
 
 After playing with the API and various libraries on different platforms, I realized it was too complex to support a live view of the camera. It is implemented as a streaming HTTP request that you need to parse in chunks to decode the image. While doable, it wasn't necessary so I decided to focus my efforts on taking and displaying the pictures.
+
+That leaves us with the following requirements:
+
+1. The app has a button to start the capture that users can press
+1. There is a 3 second countdown before taking any pictures
+1. 4 pictures are taken with a short delay between each
+1. The photos are displayed in the screen after each session
 
 #### The UI
 
@@ -104,7 +111,7 @@ export default {
 }
 ```
 
-I used the [`sony-camera`](https://www.npmjs.com/package/sony-camera) NPM package to interface with the camera. The only method I needed for this was `connect()` and `capture()`. When the button is clicked and the countdown has elapsed, I recursively call `capture()` using `setTimeout()` to space out the images. The callback to `capture()` gets the URL of the image to display and appends it to a list of URLs, which the template binds to the `src` attribute of `img` elements.
+I used the [`sony-camera`](https://www.npmjs.com/package/sony-camera) NPM package to interface with the camera. The only methods I needed for this was `connect()` and `capture()`. When the button is clicked and the countdown has elapsed, I recursively call `capture()` using `setTimeout()` to space out the images. The callback to `capture()` gets the URL of the image to display and appends it to a list of URLs, which the template binds to the `src` attribute of `img` elements.
 
 #### The Server
 

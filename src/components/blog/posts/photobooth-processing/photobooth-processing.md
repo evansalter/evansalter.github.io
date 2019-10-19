@@ -4,9 +4,9 @@ After a successful evening with the photo booth, I had over 230 pictures to deal
 
 ### Editing the Photos
 
-I wanted to do a very quick edit of all the photos. I imported them into Capture One, selected all, and ran auto-adjustments. This got them to a pretty good place.
+I wanted to do a very quick edit of all the photos. I imported them into Capture One, selected all, and ran auto-adjustments. This was good enough for me to continue.
 
-Next, I wanted to ensure the crop was good on the photos. Since the camera was on a tripod all night and didn't move, I just cropped the first photo and copied that adjustment to the rest.
+Next, I wanted to ensure the photos were cropped well. You could see the wall behind the backdrop on the sides, so I wanted to crop that out. Since the camera was on a tripod all night and didn't move, I just cropped the first photo and copied that adjustment to the rest.
 
 After adjusting the crop of a few photos with particularly tall people, I exported them all to JPEGs.
 
@@ -16,7 +16,7 @@ Now that I had the raw images in pretty good shape, I wanted to create collages 
 
 #### Step 1: Grouping the Images
 
-There were a couple moments in the night when the camera took 3 images instead of 4, or I took a test shot and didn't delete it. Because of this, I didn't have exactly 4 images per session. To fix this, I simply switched to a thumbnail view in Capture One (you could also do this in a file broswer) and adjusted the zoom until there were 4 pictures in each row. This made it simple to quickly scan and find where there were extra pictures. I just deleted the extra ones until the total nmumber of images was divisible by 4.
+There were a couple moments in the night when the camera took 3 images instead of 4, or I took a test shot and didn't delete it. Therefore, I didn't have exactly 4 images per session. To fix this, I simply switched to a thumbnail view in Capture One (you could also do this in a file broswer) and adjusted the zoom until there were 4 pictures in each row. This made it simple to quickly scan and find where there were extra pictures. I just deleted the extra ones until the total nmumber of images was divisible by 4.
 
 #### Step 2: Creating the Template
 
