@@ -9,6 +9,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var SitemapPlugin = require('sitemap-webpack-plugin')
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
 var generatePaths = require('./sitemap.js')
 
 var StaticSiteGenerator = require('webpack-static-site-generator')
@@ -105,11 +106,12 @@ var webpackConfig = merge(baseWebpackConfig, {
       }
 
     ]),
-    // new StaticSiteGenerator(
-    //   config.build.assetsRoot,
-    //   generatePaths(),
-    //   '.main-container'
-    // ),
+    new PrerenderSpaPlugin({
+      staticDir: config.build.assetsRoot,
+      routes: generatePaths(),
+      renderAfterElementExists: '.main-container',
+      skipThirdPartyRequests: true
+    }),
     // generate sitemap
     new SitemapPlugin('https://www.evansalter.com', generatePaths())
   ]
