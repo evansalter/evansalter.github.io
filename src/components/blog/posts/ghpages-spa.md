@@ -192,7 +192,7 @@ So, the two obvious solutions are server-side rendering or pre-rending.  I didn'
 
 Since I'm using Webpack, I thought it made sense to add a webpack plugin to generate static HTML from my site.  I found a couple prebuilt plugins to do this, which both leveraged PhantomJS to render the site.  For some reason, I could not get it to render any actual content in my site.  I wasted a ton of time trying to get it working, with no success.
 
-Frustrated with that, I decided to write my own plugin.  Thus, [webpack-static-site-generator](https://github.com/esalter-va/webpack-static-site-generator) was born (great name, I know).  With that plugin in place, every time I built my site for production I would get static HTML files for all of my pages.  I could still use the Webpack dev server when developing locally without building, which was a huge plus.
+Frustrated with that, I decided to write my own plugin.  Thus, [webpack-static-site-generator](https://github.com/evansalter/webpack-static-site-generator) was born (great name, I know).  With that plugin in place, every time I built my site for production I would get static HTML files for all of my pages.  I could still use the Webpack dev server when developing locally without building, which was a huge plus.
 
 So, if you have any trouble hosting your SPA on any hosting provider, you might want to check out pre-rendering.
 
@@ -201,7 +201,7 @@ So, if you have any trouble hosting your SPA on any hosting provider, you might 
 If you've made it this far, you should be done with the "gotchas" of hosting a single-page app on GH Pages.  Setting up a custom domain was very easy.  There were just a couple steps:
 
 1. Create a file called `CNAME` in your repo, which contains a single line with the domain you want to use (i.e. `www.evansalter.com`).  Make sure this file get commited to your master branch when the build runs.
-1. Set up a `CNAME` record with your domain registrar that points to your `github.io` address (i.e. `esalter-va.github.io`)
+1. Set up a `CNAME` record with your domain registrar that points to your `github.io` address (i.e. `evansalter.github.io`)
 
 There are some slightly different instructions on GitHub's support pages if you want to use an apex domain (no www), but it shouldn't be too much work.
 

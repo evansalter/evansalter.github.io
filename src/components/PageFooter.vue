@@ -8,7 +8,7 @@
         <a v-tooltip:top="{ html: 'Vue.js' }" href="https://vuejs.org/" target="_blank">
           <img :src="icons.vuejs" height="14"/>
         </a>
-        <a v-tooltip:top="{ html: 'Click to view source on GitHub' }" href="https://github.com/esalter-va/esalter-va.github.io/" target="_blank">
+        <a v-tooltip:top="{ html: 'Click to view source on GitHub' }" href="https://github.com/evansalter/evansalter.github.io/" target="_blank">
           <icon name="github" scale="1"></icon>
         </a>
         <a v-tooltip:top="{ html: 'Webpack' }" href="https://webpack.github.io/" target="_blank">

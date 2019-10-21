@@ -46,7 +46,7 @@ export default {
           description: 'A Webpack plugin to generate a static site from your single-page app.',
           technologies: ['Javascript', 'Webpack', 'Web'],
           links: [
-            { name: 'Github', url: 'https://github.com/esalter-va/webpack-static-site-generator', icon: 'github' },
+            { name: 'Github', url: 'https://github.com/evansalter/webpack-static-site-generator', icon: 'github' },
             { name: 'npm', url: 'https://www.npmjs.com/package/webpack-static-site-generator' }
           ]
         },
@@ -66,7 +66,7 @@ export default {
           description: 'A simple Vue.js web app to see what your friends are listening to.',
           technologies: ['Vue.js', 'Web'],
           links: [
-            { name: 'GitHub', url: 'https://github.com/esalter-va/scrobblin-friends', icon: 'github' },
+            { name: 'GitHub', url: 'https://github.com/evansalter/scrobblin-friends', icon: 'github' },
             { name: 'Website', url: 'https://www.scrobblin-friends.appspot.com', icon: 'globe' }
           ]
         },
@@ -76,7 +76,7 @@ export default {
           description: 'A Vim plugin to simplify creating and using Markdown checklists.',
           technologies: ['Vim'],
           links: [
-            { name: 'GitHub', url: 'https://github.com/esalter-va/vim-checklist', icon: 'github' },
+            { name: 'GitHub', url: 'https://github.com/evansalter/vim-checklist', icon: 'github' },
             { name: 'Vim Awesome', url: 'http://vimawesome.com/plugin/vim-checklist' }
           ]
         },
@@ -85,7 +85,7 @@ export default {
           description: 'A silly Chrome Extension that displays the Netscape Navigator or IE throbber when loading pages, for nostalgia purposes.',
           technologies: ['Javascript', 'Chrome Extension', 'Web'],
           links: [
-            { name: 'GitHub', url: 'https://github.com/esalter-va/chromescape-navigator', icon: 'github' },
+            { name: 'GitHub', url: 'https://github.com/evansalter/chromescape-navigator', icon: 'github' },
             { name: 'Chrome Web Store', url: 'https://chrome.google.com/webstore/detail/chromescape-navigator/ocjjknbofcggmblgmlpfpmhccojaecnp', icon: 'chrome' }
           ]
         }

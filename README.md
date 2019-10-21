@@ -8,5 +8,5 @@ I built this with:
 
 - Vue.js
 - Webpack
-  - Shameless plug for [webpack-static-site-generator](https://github.com/esalter-va/webpack-static-site-generator)
+  - Shameless plug for [webpack-static-site-generator](https://github.com/evansalter/webpack-static-site-generator)
 - Hosted on GitHub Pages
