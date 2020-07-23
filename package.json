@@ -12,6 +12,7 @@
     "test": "echo \"No tests specified; skipping.\""
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "highlight.js": "^9.10.0",
     "html-loader": "^0.4.5",
     "image-webpack-loader": "^3.3.0",
