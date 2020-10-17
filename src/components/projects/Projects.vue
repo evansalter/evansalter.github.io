@@ -42,6 +42,16 @@ export default {
       selectedTags: [],
       projects: [
         {
+          name: 'gata | bookmarks made better',
+          image: require('../../assets/projects/gata.png'),
+          description: 'A Chrome extension for creating dynamic web shortcuts',
+          technologies: ['Javascript', 'Vue.js', 'Web', 'Chrome Extension'],
+          links: [
+            { name: 'Github', url: 'https://github.com/evansalter/gata', icon: 'github' },
+            { name: 'Chrome Web Store', url: 'https://chrome.google.com/webstore/detail/gata/oidckhmhcapggoekanlbdgfckcjccphk', icon: 'chrome' }
+          ]
+        },
+        {
           name: 'webpack-static-site-generator ',
           description: 'A Webpack plugin to generate a static site from your single-page app.',
           technologies: ['Javascript', 'Webpack', 'Web'],
