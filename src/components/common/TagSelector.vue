@@ -1,7 +1,7 @@
 <template>
   <v-container class="tag-container">
       <v-chip label
-              v-for="(count, tag) in tags"
+              v-for="([tag, count]) in sortedTags"
               :key="tag"
               @click.native="toggleTagSelected(tag)"
               :class="{ selected: selectedTags.indexOf(tag) > -1 }">
@@ -17,6 +17,15 @@ export default {
   data: function () {
     return {
       selectedTags: []
+    }
+  },
+  computed: {
+    sortedTags: function () {
+      const tags = []
+      for (const tag in this.tags) {
+        tags.push([tag, this.tags[tag]])
+      }
+      return tags.sort((a, b) => b[1] - a[1])
     }
   },
   methods: {
