@@ -19,12 +19,13 @@
 import AboutMe from './AboutMe'
 import ContactMe from './ContactMe'
 import Languages from './Languages'
+import Wakatime from './Wakatime'
 import Welcome from './Welcome'
 import { Constants } from '@/constants'
 
 export default {
   name: 'home',
-  components: { ContactMe, AboutMe, Languages, Welcome },
+  components: { ContactMe, AboutMe, Languages, Wakatime, Welcome },
   head: {
     meta: function () {
       var description = 'The home of Evan Salter\'s projects and blog.'
