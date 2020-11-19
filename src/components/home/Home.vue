@@ -7,12 +7,7 @@
       <about-me></about-me>
     </v-row>
     <v-row id="languages-and-frameworks" class="panel panel-full">
-      <v-col cols="6">
-        <languages></languages>
-      </v-col>
-      <v-col cols="6">
-        <wakatime></wakatime>
-      </v-col>
+      <languages></languages>
     </v-row>
     <v-row id="contact-me" class="panel panel-full grey-panel">
       <contact-me></contact-me>
