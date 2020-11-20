@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>404</title>
+    <script>
+      // Hack to get a SPA working on GH Pages.
+      // Without this, SPA works when starting at main page
+      // but when you go directly to a URL, say /projects,
+      // it 404s.  This will have the URL to session storage,
+      // and redirect to the root.  Then index.html will check
+      // for this saved URL and redirect to it.
+      // Stolen from http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
+      sessionStorage.redirect = location.href;
+      var currentLocation = window.location;
+      window.location = currentLocation.origin;
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
