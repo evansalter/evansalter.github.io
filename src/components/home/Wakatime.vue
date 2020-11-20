@@ -1,6 +1,7 @@
 <template>
-  <div>
-      <canvas id="chart"></canvas>
+  <div class="chart-container">
+      <v-progress-circular indeterminate v-if="loading" :size="50" color="blue-grey lighten-4"></v-progress-circular>
+      <canvas id="chart" :class="{hidden: loading}"></canvas>
   </div>
 </template>
 
@@ -15,12 +16,14 @@ export default {
   name: 'wakatime',
   data: () => {
     return {
+      loading: true,
       chart: null
     }
   },
   mounted () {
     const url = `${corsProxyURL}/${wakatimeTopLanguagesURL}`
     axios.get(url).then(resp => {
+      this.loading = false
       const labelsAndDatasets = labelsAndDatasetsFromRawData(resp.data.data)
       this.chart = new Chart('chart', {
         type: 'horizontalBar',
@@ -65,4 +68,16 @@ function labelsAndDatasetsFromRawData (data) {
 </script>
 
 <style lang="scss" scoped>
+.chart-container {
+  width: 100%;
+  text-align: center;
+
+  .progress-circular {
+    margin: 50px 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
 </style>
