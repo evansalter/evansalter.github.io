@@ -21,7 +21,7 @@ Vue.use(VueHead)
 Vue.use(Vuetify)
 Vue.component('icon', Icon)
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
   var pageName
   if (to.meta.name !== undefined) {
     pageName = to.meta.name

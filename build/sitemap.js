@@ -5,7 +5,8 @@ const BASE_PATH = '/blog/'
 var paths = new Set([
   '/',
   '/projects',
-  '/blog'
+  '/blog',
+  '/resume'
 ])
 
 module.exports = function () {

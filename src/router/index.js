@@ -5,6 +5,7 @@ import Blog from '@/components/blog/Blog'
 import BlogPost from '@/components/blog/Post'
 import Home from '@/components/home/Home'
 import Projects from '@/components/projects/Projects'
+import Resume from '@/components/resume/Resume.vue'
 import FourOhFour from '@/components/404'
 
 Vue.use(Router)
@@ -23,6 +24,12 @@ export default new Router({
       name: 'Projects',
       component: Projects,
       meta: { name: 'Projects' }
+    },
+    {
+      path: '/resume',
+      name: 'Resume',
+      component: Resume,
+      meta: { name: 'Resume' }
     },
     {
       path: '/blog',

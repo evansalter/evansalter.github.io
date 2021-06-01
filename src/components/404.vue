@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h2>Uh Oh...</h2>
+    <h2>Uh oh...</h2>
     <p>
       There doesn't seem to be anything here.  Would you like to <router-link to="/">start fresh</router-link>?
     </p>

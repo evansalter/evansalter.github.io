@@ -64,7 +64,8 @@ export default {
       pages: [
         { path: '/', name: 'Home', exact: true },
         { path: '/projects', name: 'Projects', exact: false },
-        { path: '/blog', name: 'Blog', exact: false }
+        { path: '/blog', name: 'Blog', exact: false },
+        { path: '/resume', name: 'Resume', exact: false }
       ],
       nav: {
         edge: 'right'
