@@ -12,6 +12,9 @@ jobs:
         with:
           node-version: '11'
 
+      - name: Set up libpng
+        run: echo "deb http://mirrors.kernel.org/ubuntu/ xenial main" | sudo tee -a /etc/apt/sources.list && sudo apt-get update && sudo apt install -y --allow-unauthenticated libpng12-0
+
       - name: Install, Lint, and Build 🔧
         run: |
           npm ci
