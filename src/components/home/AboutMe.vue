@@ -2,13 +2,13 @@
   <div>
     <h2>About me.</h2>
     <p>
-      I am a software developer living and working in Saskatoon, Saskachewan. I am currently working at 
-      <a href="https://vendasta.com/" target="_blank">Vendasta Technologies</a> and hold a Bachelor of Science in Computer Science
+      I am a software developer based in Saskatoon, Saskachewan. I am currently working remotely at 
+      <a href="https://rewind.com" target="_blank">Rewind</a> and hold a Bachelor of Science in Computer Science
       from the University of Saskatchewan.
     </p>
     <p>
-      I enjoy working both in the front and back-end stacks. I focus on Go and the Google Cloud Platform for the backend
-      and various Javascript frameworks from the frontend. That said, I am always excited to learn new technologies and tools.
+      I am a full-stack developer with extensive experience building scalable, modern SaaS products.
+      Currently I am working with Ruby on Rails and React to build a backup service for the world's most popular SaaS applications.
     </p>
     <p>
       Check out the <a href="#languages-and-frameworks">languages and frameworks</a> that I use below, and

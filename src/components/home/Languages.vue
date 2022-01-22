@@ -14,9 +14,9 @@
       <span>These stats are updated live from <a href="https://wakatime.com/" target="_blank" rel="noopener">Wakatime</a> and includes data from the past 3 months.</span>
     </div>
     <div class="language-container" :class="{hidden: selectedButton !== 'all'}">
-      <div v-for="language in languages">
+      <div v-for="language in languages" :key="language">
         <div><h4>{{ language.category }}</h4></div>
-        <span v-for="value in language.values">
+        <span v-for="value in language.values" :key="value">
           {{ value }}
         </span>
       </div>
@@ -36,7 +36,7 @@ export default {
       languages: [
         {
           category: 'Web Frontend',
-          values: ['Angular', 'Vue.js', 'Typescript', 'SCSS', 'Webpack']
+          values: ['Angular', 'React', 'Vue.js', 'Typescript', 'SCSS', 'Webpack']
         },
         {
           category: 'Google Cloud Platform',
@@ -44,7 +44,7 @@ export default {
         },
         {
           category: 'Backend',
-          values: ['Go', 'Python']
+          values: ['Go', 'Python', 'Ruby on Rails']
         },
         {
           category: 'Systems',
@@ -52,7 +52,7 @@ export default {
         },
         {
           category: 'Data',
-          values: ['Cloud Datastore', 'SQL', 'BiqQuery', 'Elasticsearch']
+          values: ['SQL', 'Elasticsearch', 'Cloud Datastore', 'BiqQuery']
         },
         {
           category: 'Mobile',
