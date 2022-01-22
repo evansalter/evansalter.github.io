@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <div class="intro-container">
     <img src="../../assets/headshot/crop.jpg">
     <div class="contact-info">
       <h3>Evan Salter</h3>
       <div class="icons">
-        <a v-for="i of contactInfo" :key="i" :href="i.url" :target="i.newTab === false ? '' : '_blank'">
+        <a v-for="i of contactInfo" :key="i.name" :href="i.url" :target="i.newTab === false ? '' : '_blank'">
           <icon :name="i.icon"/>
         </a>
       </div>
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.intro-container {
   margin-top: 40px;
   max-height: 25px;
   text-align: center;
