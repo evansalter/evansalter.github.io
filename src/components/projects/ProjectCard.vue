@@ -12,7 +12,7 @@
           <v-btn flat v-for="link in project.links" :key="link.name" @click.native="open(link.url, '_blank')">
             <template v-if="link.icon">
               <icon v-if="link.icon" :name="link.icon" scale="1"></icon>
-              &nbsp
+              &nbsp;
             </template>
             {{ link.name }}
           </v-btn>

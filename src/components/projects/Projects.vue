@@ -19,6 +19,10 @@
 import ProjectCard from './ProjectCard'
 import TagSelector from '@/components/common/TagSelector'
 import { Constants } from '@/constants'
+import gataImage from '../../assets/projects/gata.png'
+import rollUpTrackerImage from '../../assets/projects/roll-up-tracker.jpg'
+import scrobblinImage from '../../assets/projects/scrobblin-with-friends.png'
+import vimChecklistImage from '../../assets/projects/vim-checklist.gif'
 
 export default {
   components: {
@@ -43,7 +47,7 @@ export default {
       projects: [
         {
           name: 'gata | bookmarks made better',
-          image: require('../../assets/projects/gata.png'),
+          image: gataImage,
           description: 'A Chrome extension for creating dynamic web shortcuts',
           technologies: ['Javascript', 'Vue.js', 'Web', 'Chrome Extension'],
           links: [
@@ -62,7 +66,7 @@ export default {
         },
         {
           name: 'Roll Up Tracker',
-          image: require('../../assets/projects/roll-up-tracker.jpg'),
+          image: rollUpTrackerImage,
           description: 'A web and iOS app to track your Roll Up The Rim To Win progress.',
           technologies: ['Angular2', 'Typescript', 'Python', 'iOS', 'Swift', 'Web'],
           links: [
@@ -72,7 +76,7 @@ export default {
         },
         {
           name: 'Scrobblin\' With Friends',
-          image: require('../../assets/projects/scrobblin-with-friends.png'),
+          image: scrobblinImage,
           description: 'A simple Vue.js web app to see what your friends are listening to.',
           technologies: ['Vue.js', 'Web'],
           links: [
@@ -82,7 +86,7 @@ export default {
         },
         {
           name: 'vim-checklist',
-          image: require('../../assets/projects/vim-checklist.gif'),
+          image: vimChecklistImage,
           description: 'A Vim plugin to simplify creating and using Markdown checklists.',
           technologies: ['Vim'],
           links: [

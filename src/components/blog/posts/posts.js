@@ -43,6 +43,6 @@ function generatePostObject () {
   return obj
 }
 
-module.exports.postList = postList
-module.exports.postObject = generatePostObject()
-module.exports.slugify = slugify
+const postObject = generatePostObject()
+
+export { postList, postObject, slugify }

@@ -1,8 +1,8 @@
 <template>
   <v-footer id="page-footer" class="blue-grey lighten-5">
     <div class="text-xs">
-        &copy; 2017&mdash;{{ currentYear }} <span class="hidden-sm-and-down">Evan Salter </span>/ Made with
-        <span v-tooltip:top="{ html: 'Coffee, duh.' }">
+        &copy; 2017&mdash;{{ currentYear }} <span class="hidden-sm-and-down">Evan Salter </span><!-- / Made with -->
+        <!-- <span v-tooltip:top="{ html: 'Coffee, duh.' }">
           <icon name="coffee" scale="1"></icon>
         </span>
         <a v-tooltip:top="{ html: 'Vue.js' }" href="https://vuejs.org/" target="_blank">
@@ -22,22 +22,27 @@
         </a>
         <a v-tooltip:top="{ html: 'NPM' }" href="https://www.npmjs.com/" target="_blank">
           <img :src="icons.npm" height="17"/>
-        </a>
+        </a> -->
          / <span class="hidden-sm-and-down">Hosted on </span><a href="https://github.io" target="_blank">github.io</a>
     </div>
   </v-footer>
 </template>
 
 <script>
+import npm from '../assets/icons/npm.svg'
+import vuejs from '../assets/icons/vuejs.svg'
+import vuetify from '../assets/icons/vuetify.png'
+import webpack from '../assets/icons/webpack.svg'
+
 export default {
   name: 'page-footer',
   data: () => {
     return {
       icons: {
-        npm: require('../assets/icons/npm.svg'),
-        vuejs: require('../assets/icons/vuejs.svg'),
-        vuetify: require('../assets/icons/vuetify.png'),
-        webpack: require('../assets/icons/webpack.svg')
+        npm,
+        vuejs,
+        vuetify,
+        webpack
       },
       currentYear: new Date().getFullYear()
     }

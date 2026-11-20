@@ -6,17 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
-          node-version: '11'
+          node-version-file: '.nvmrc'
+          cache: npm
 
-      - name: Set up libpng
-        run: |
-          sudo add-apt-repository ppa:linuxuprising/libpng12
-          sudo apt update
-          sudo apt install libpng12-0
+      # Ubuntu 24.04 blocks unprivileged user namespaces, which Chrome's sandbox
+      # needs for prerendering. Re-enable them rather than using --no-sandbox.
+      - name: Allow Chrome sandbox
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 
       - name: Install, Lint, and Build 🔧
         run: |
@@ -26,7 +26,7 @@ jobs:
 
       - name: Deploy 🚀
         if: github.ref == 'refs/heads/sources'
-        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: master # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
