@@ -29,15 +29,20 @@
 </template>
 
 <script>
+import npm from '../assets/icons/npm.svg'
+import vuejs from '../assets/icons/vuejs.svg'
+import vuetify from '../assets/icons/vuetify.png'
+import webpack from '../assets/icons/webpack.svg'
+
 export default {
   name: 'page-footer',
   data: () => {
     return {
       icons: {
-        npm: require('../assets/icons/npm.svg'),
-        vuejs: require('../assets/icons/vuejs.svg'),
-        vuetify: require('../assets/icons/vuetify.png'),
-        webpack: require('../assets/icons/webpack.svg')
+        npm,
+        vuejs,
+        vuetify,
+        webpack
       },
       currentYear: new Date().getFullYear()
     }

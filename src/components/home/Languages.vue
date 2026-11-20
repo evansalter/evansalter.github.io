@@ -14,7 +14,7 @@
       <span>These stats are updated live from <a href="https://wakatime.com/" target="_blank" rel="noopener">Wakatime</a> and includes data from the past 3 months.</span>
     </div>
     <div class="language-container" :class="{hidden: selectedButton !== 'all'}">
-      <div v-for="language in languages" :key="language">
+      <div v-for="language in languages" :key="language.category">
         <div><h4>{{ language.category }}</h4></div>
         <span v-for="value in language.values" :key="value">
           {{ value }}

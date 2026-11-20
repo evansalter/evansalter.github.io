@@ -16,12 +16,15 @@
 </template>
 
 <script>
+import 'highlight.js/styles/github.css'
 import { PostObject } from './posts/index.js'
 import { Constants } from '@/constants'
 import Disqus from './Disqus'
 import PostFooter from './PostFooter'
 import Sharing from '@/components/common/Sharing'
 import TagList from '@/components/common/TagList'
+
+const postFiles = import.meta.glob('./posts/**/*.md', { eager: true, import: 'default' })
 
 export default {
   props: ['slug'],
@@ -45,7 +48,7 @@ export default {
       return post
     },
     postContent: function () {
-      return require('./posts/' + this.post.filename)
+      return postFiles['./posts/' + this.post.filename]
     },
     postUrl: function () {
       return Constants.BASE_URL + window.location.pathname
@@ -79,8 +82,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~highlight.js/styles/github';
-
 .post-container {
   max-width: 740px;
   margin: 0 auto;

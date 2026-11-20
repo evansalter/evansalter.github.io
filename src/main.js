@@ -1,6 +1,19 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import 'vue-awesome/icons'
+// Only register the Font Awesome icons the site actually uses
+import 'vue-awesome/icons/angle-down'
+import 'vue-awesome/icons/chrome'
+import 'vue-awesome/icons/codepen'
+import 'vue-awesome/icons/coffee'
+import 'vue-awesome/icons/comments-o'
+import 'vue-awesome/icons/envelope'
+import 'vue-awesome/icons/facebook'
+import 'vue-awesome/icons/font-awesome'
+import 'vue-awesome/icons/github'
+import 'vue-awesome/icons/globe'
+import 'vue-awesome/icons/google-plus'
+import 'vue-awesome/icons/linkedin'
+import 'vue-awesome/icons/mobile'
+import 'vue-awesome/icons/reddit'
+import 'vue-awesome/icons/twitter'
 import 'vuetify/dist/vuetify.min.css'
 
 import Vue from 'vue'
@@ -38,7 +51,6 @@ Vue.use(VueAnalytics, {
   router
 })
 
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,

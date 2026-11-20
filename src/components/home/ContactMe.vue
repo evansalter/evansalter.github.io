@@ -4,12 +4,12 @@
     <v-row>
       <v-col xs12 sm6>
         <div class="image-container">
-          <img class="contact-image" :src="contactImage"></img>
+          <img class="contact-image" :src="contactImage">
         </div>
       </v-col>
       <v-col xs12 sm6>
         <div class="contact-info">
-          <p v-for="item in contactInfo">
+          <p v-for="item in contactInfo" :key="item.url">
             <icon :name="item.icon" :scale="item.scale"></icon>
             <a :href="item.url" target="_blank">{{ item.display }}</a>
           </p>
@@ -21,12 +21,13 @@
 
 <script>
 import contactInfo from '@/components/common/contact.js'
+import contactImage from '../../assets/headshot/crop.jpg'
 
 export default {
   name: 'contact-me',
   data: () => {
     return {
-      contactImage: require('../../assets/headshot/crop.jpg'),
+      contactImage,
       contactInfo: contactInfo
     }
   }
