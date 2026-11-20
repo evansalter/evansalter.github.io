@@ -59,7 +59,7 @@ export default {
 }
 
 #welcome-panel {
-  background-image: url("../../assets/headshot/full2.jpg");
+  // background-image: url("../../assets/headshot/full3.jpg");
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;

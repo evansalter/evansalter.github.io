@@ -1,5 +1,5 @@
 <template>
-  <v-col xs12 sm7 class="text-container">
+  <v-col xs12 class="text-container">
     <div class="text">
       <h1>Hi,</h1>
       <h3>I'm Evan Salter.</h3>
@@ -23,13 +23,13 @@ export default {
   flex-direction: column;
   justify-content: space-around;
 }
+.text {
+  text-align: center;
+}
 
 @media(max-width: 575px) {
   .text-container {
     background: white;
-  }
-  .text {
-    text-align: center;
   }
 }
 </style>

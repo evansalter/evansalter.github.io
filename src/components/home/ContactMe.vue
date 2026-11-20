@@ -61,7 +61,7 @@ h2 {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 
   a {
     font-size: 21px;
