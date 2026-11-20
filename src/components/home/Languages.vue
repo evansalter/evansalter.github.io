@@ -1,19 +1,19 @@
 <template>
   <div class="full-width">
     <h2>Languages and frameworks.</h2>
-    <div class="button-group">
+    <!-- <div class="button-group">
       <v-btn round outline @click.native="selectedButton = 'top'" :class="{active: selectedButton === 'top'}">
         Current top languages
       </v-btn>
       <v-btn round outline @click.native="selectedButton = 'all'" :class="{active: selectedButton === 'all'}">
         All languages
       </v-btn>
-    </div>
-    <div :class="{hidden: selectedButton !== 'top'}">
+    </div> -->
+    <!-- <div :class="{hidden: selectedButton !== 'top'}">
       <wakatime></wakatime>
       <span>These stats are updated live from <a href="https://wakatime.com/" target="_blank" rel="noopener">Wakatime</a> and includes data from the past 3 months.</span>
-    </div>
-    <div class="language-container" :class="{hidden: selectedButton !== 'all'}">
+    </div> -->
+    <div class="language-container"> <!-- :class="{hidden: selectedButton !== 'all'}"> -->
       <div v-for="language in languages" :key="language.category">
         <div><h4>{{ language.category }}</h4></div>
         <span v-for="value in language.values" :key="value">
@@ -35,28 +35,20 @@ export default {
       selectedButton: 'top',
       languages: [
         {
-          category: 'Web Frontend',
-          values: ['Angular', 'React', 'Vue.js', 'Typescript', 'SCSS', 'Webpack']
-        },
-        {
-          category: 'Google Cloud Platform',
-          values: ['Kubernetes Engine', 'App Engine', 'Compute Engine', 'Cloud SQL']
-        },
-        {
           category: 'Backend',
-          values: ['Go', 'Python', 'Ruby on Rails']
+          values: ['Ruby', 'Go', 'Python']
         },
         {
-          category: 'Systems',
-          values: ['C/C++', 'Java']
+          category: 'Web Frontend',
+          values: ['React', 'Vue.js', 'Typescript', 'SCSS']
         },
         {
-          category: 'Data',
-          values: ['SQL', 'Elasticsearch', 'Cloud Datastore', 'BiqQuery']
+          category: 'AWS',
+          values: ['ECS', 'Lambda', 'S3', 'CloudWatch', 'RDS', 'OpenSearch']
         },
         {
-          category: 'Mobile',
-          values: ['iOS', 'Swift', 'Objective-C']
+          category: 'Frameworks',
+          values: ['Rails', 'Sidekiq']
         }
       ]
     }
