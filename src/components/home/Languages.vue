@@ -25,11 +25,8 @@
 </template>
 
 <script>
-import Wakatime from './Wakatime'
-
 export default {
   name: 'languages',
-  components: { Wakatime },
   data: () => {
     return {
       selectedButton: 'top',
