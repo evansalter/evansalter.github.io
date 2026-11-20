@@ -13,6 +13,11 @@ jobs:
           node-version-file: '.nvmrc'
           cache: npm
 
+      # Ubuntu 24.04 blocks unprivileged user namespaces, which Chrome's sandbox
+      # needs for prerendering. Re-enable them rather than using --no-sandbox.
+      - name: Allow Chrome sandbox
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
       - name: Install, Lint, and Build 🔧
         run: |
           npm ci
