@@ -15,13 +15,17 @@ That package is MIT licensed, but the artwork itself is Microsoft's.
 | `warning`    | `Warning`     |
 | `start`      | `Logo`        |
 | `tip`        | `Bulb`        |
+| `shut-down`  | `Shell3228`   |
 
-`start` and `tip` are 32px only. For `start`, the 16px `Logo` is a different icon (taskbar settings),
+`start`, `tip` and `shut-down` are 32px only. For `start`, the 16px `Logo` is a different icon (taskbar settings),
 with a panel covering part of the flag.
 
 `github` and `linkedin` aren't from that package: they were drawn for this site in
 the same style (16-color palette, dithered fills, light from the top left). The
 logos are trademarks of their owners.
+
+`shut-down` is cropped from 32px to its 24px artwork, so it fills the same box as the
+other icons.
 
 Bitmaps vary in how much of their canvas they fill (`FolderFile` and `Settings`
 are only about 24px of 32), so check a new icon next to the others.

@@ -40,6 +40,13 @@
             {{ link.name }}
           </a>
         </li>
+        <li class="start-divider" role="presentation"><hr></li>
+        <li>
+          <button type="button" class="start-item" @click="shutDown">
+            <desktop-icon name="shut-down" :size="32"></desktop-icon>
+            Shut Down...
+          </button>
+        </li>
       </ul>
     </div>
   </header>
@@ -85,6 +92,10 @@ export default {
         this.menuOpen = false
         this.$refs.start.focus()
       }
+    },
+    shutDown: function () {
+      this.closeMenu()
+      this.$emit('shut-down')
     },
     onDocumentClick: function (event) {
       if (!this.$refs.taskbar.contains(event.target)) {
@@ -195,6 +206,23 @@ export default {
       background-color: var(--color-blue);
       color: var(--color-white);
       outline: none;
+    }
+  }
+
+  // A button that looks like the links above it
+  button.start-item:not(.tab) {
+    width: 100%;
+    justify-content: flex-start;
+    background: none;
+    box-shadow: none;
+    font: inherit;
+
+    &:hover, &:focus {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+    }
+    &:focus::after {
+      content: none;
     }
   }
 

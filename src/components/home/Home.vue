@@ -10,13 +10,13 @@
       <app-window id="welcome" title="Welcome" icon="computer">
         <welcome></welcome>
       </app-window>
-      <app-window id="about-me" title="About me." icon="notepad">
+      <app-window id="about-me" title="About me" icon="notepad">
         <about-me></about-me>
       </app-window>
-      <app-window id="languages-and-frameworks" title="Languages and frameworks." icon="settings">
+      <app-window id="languages-and-frameworks" title="Languages and frameworks" icon="settings">
         <languages></languages>
       </app-window>
-      <app-window id="contact-me" title="Get in touch." icon="mail">
+      <app-window id="contact-me" title="Get in touch" icon="mail">
         <contact-me></contact-me>
       </app-window>
     </div>

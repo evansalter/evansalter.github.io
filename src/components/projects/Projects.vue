@@ -1,6 +1,6 @@
 <template>
   <div class="desktop-page">
-    <app-window title="Projects." icon="folder" heading="h1" close-to="/">
+    <app-window title="Projects" icon="folder" heading="h1" close-to="/">
       <p>What I've been keeping myself busy with.</p>
       <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
     </app-window>

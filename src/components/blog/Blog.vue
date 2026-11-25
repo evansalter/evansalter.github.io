@@ -1,6 +1,6 @@
 <template>
   <div class="desktop-page">
-    <app-window title="Thoughts." icon="blog" heading="h1" close-to="/">
+    <app-window title="Blog" icon="blog" heading="h1" close-to="/">
       <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
       <div v-if="posts.length === 0" class="no-posts">
         <h2>Nothing here yet!</h2>
