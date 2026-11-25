@@ -1,7 +1,7 @@
 <template>
   <div class="footer-container">
     <div class="fin">
-      <hr class="divider"/>
+      <hr/>
     </div>
     <div>
       <h3>What's next?</h3>
@@ -37,19 +37,20 @@ export default {
 
 <style lang="scss" scoped>
 .footer-container {
-  margin-bottom: 50px;
+  margin-top: 40px;
 }
 .fin {
   width: 100%;
   text-align: center;
   font-size: 40px;
-  font-family: serif;
+  line-height: 60px;
+  font-family: "Times New Roman", Times, serif;
   font-style: oblique;
   &:after {
     content: '~ fin ~';
     display: inline-block;
     position: relative;
-    top: -34px;
+    top: -30px;
     background: white;
     padding: 0 10px;
   }
@@ -58,10 +59,10 @@ export default {
   }
 }
 ol {
-  list-style-position: hanging;
-  margin-left: 25px;
+  margin: 10px 0 0 25px;
+  padding: 0;
   li {
-    font-size: 20px;
+    margin-bottom: 8px;
     iframe {
       vertical-align: text-bottom;
     }

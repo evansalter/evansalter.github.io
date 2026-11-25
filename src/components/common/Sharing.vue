@@ -34,7 +34,8 @@ export default {
 </script>
 
 <style lang="scss">
-svg.fa-icon {
+.sharing svg.fa-icon, .sharing-links svg.fa-icon {
   cursor: pointer;
+  margin-right: 6px;
 }
 </style>

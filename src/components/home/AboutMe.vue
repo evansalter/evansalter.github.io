@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <h2>About me.</h2>
+  <div class="sunken">
     <p>
       I am a software developer based in Saskatoon, Saskachewan. I am currently working remotely at 
-      <a href="https://rewind.com" target="_blank">Rewind</a> and hold a Bachelor of Science in Computer Science
+      <a href="https://rewind.com" target="_blank" rel="noopener">Rewind</a> and hold a Bachelor of Science in Computer Science
       from the University of Saskatchewan.
     </p>
     <p>
@@ -23,15 +22,3 @@ export default {
   name: 'about-me'
 }
 </script>
-
-<style lang="scss" scoped>
-h2 {
-  color: white;
-}
-p {
-  font-size: 25px;
-}
-a {
-  color: white;
-}
-</style>

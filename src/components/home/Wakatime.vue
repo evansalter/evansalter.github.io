@@ -1,6 +1,6 @@
 <template>
   <div class="chart-container">
-      <v-progress-circular indeterminate v-if="loading" :size="50" color="blue-grey lighten-4"></v-progress-circular>
+      <progress v-if="loading"></progress>
       <canvas id="chart" :class="{hidden: loading}"></canvas>
   </div>
 </template>
@@ -70,7 +70,7 @@ function labelsAndDatasetsFromRawData (data) {
   width: 100%;
   text-align: center;
 
-  .progress-circular {
+  progress {
     margin: 50px 0;
   }
 }

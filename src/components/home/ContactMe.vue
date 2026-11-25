@@ -1,30 +1,25 @@
 <template>
   <div class="contact-container">
-    <h2>Get in touch.</h2>
-    <v-row>
-      <v-col xs12 sm6>
-        <div class="image-container">
-          <img class="contact-image" :src="contactImage">
-        </div>
-      </v-col>
-      <v-col xs12 sm6>
-        <div class="contact-info">
-          <p v-for="item in contactInfo" :key="item.url">
-            <icon :name="item.icon" :scale="item.scale"></icon>
-            <a :href="item.url" target="_blank">{{ item.display }}</a>
-          </p>
-        </div>
-      </v-col>
-    </v-row>
+    <div class="sunken contact-image">
+      <img :src="contactImage" alt="Evan Salter" width="215" height="215">
+    </div>
+    <ul>
+      <li v-for="item in contactInfo" :key="item.url">
+        <desktop-icon :name="item.icon" :size="32"></desktop-icon>
+        <a :href="item.url" target="_blank" rel="noopener">{{ item.display }}</a>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import DesktopIcon from '@/components/desktop/DesktopIcon'
 import contactInfo from '@/components/common/contact.js'
 import contactImage from '../../assets/headshot/crop.jpg'
 
 export default {
   name: 'contact-me',
+  components: { DesktopIcon },
   data: () => {
     return {
       contactImage,
@@ -35,52 +30,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h2 {
-  padding-bottom: 15px;
-  color: white;
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-6);
 }
 
-.col {
-  height: 215px;
-}
+.contact-image {
+  padding: calc(var(--px) * 2);
 
-.image-container {
-  text-align: right;
-
-  .contact-image {
+  img {
     width: 215px;
-    border-radius: 50%;
+    height: 215px;
+    object-fit: cover;
   }
 }
 
-.contact-container {
-  width: 100%;
-}
-
-.contact-info {
-  height: 100%;
+ul {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
-  a {
-    font-size: 21px;
-    padding-left: 15px;
-    color: white;
-    text-decoration: underline;
-  }
-
-  svg {
-    vertical-align: bottom;
-  }
+  gap: var(--spacing-5);
+  padding: 0;
+  list-style: none;
 }
 
-@media(max-width: 575px) {
-  .image-container, .contact-info {
-    text-align: center;
-  }
-  .contact-info {
-    padding-top: 45px;
-  }
+li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
 }
 </style>

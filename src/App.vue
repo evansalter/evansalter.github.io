@@ -1,14 +1,11 @@
 <template>
-  <v-app id="app">
-    <div class="spacer"></div>
-    <navigation></navigation>
-    <div class="main-container">
-      <v-content>
-        <router-view></router-view>
-      </v-content>
-    </div >
+  <div id="app">
+    <main class="main-container">
+      <router-view></router-view>
+    </main>
     <page-footer></page-footer>
-  </v-app>
+    <navigation></navigation>
+  </div>
 </template>
 
 <script>
@@ -28,14 +25,6 @@ export default {
 
 <style>
 #app {
-  overflow: hidden;
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-}
-.spacer {
-  height: 64px;
-}
-.main-container {
-  min-height: calc(100vh - 109px);
-  transform: translateZ(0);
+  padding-bottom: var(--taskbar-height);
 }
 </style>

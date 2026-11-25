@@ -1,44 +1,43 @@
 <template>
-  <v-container>
-    <div>
-      <h3>Thoughts.</h3>
-    </div>
-    <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
-    <div v-if="posts.length === 0" class="no-posts">
-      <h4>Nothing here yet!</h4>
-      <h5>Please check back later, or follow me on Twitter for updates</h5>
-      <a href="https://twitter.com/_evansalter" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @_evansalter</a>
-    </div>
-    <v-list three-line subheader>
-      <v-list-item v-for="post in posts" :key="post.filename" v-if="shouldShowPost(post.tags)" class="slide-and-fade-in">
-        <v-list-tile :to="getPath(post.title)" :router="true">
-          <v-list-tile-content>
-            <v-list-tile-title>{{ post.title }}</v-list-tile-title>
-            <v-list-tile-sub-title>{{ post.date }}</v-list-tile-sub-title>
-            <tag-list :tags="post.tags"></tag-list>
-          </v-list-tile-content>
-          <v-list-tile-action>
-            <div>
+  <div class="desktop-page">
+    <app-window title="Thoughts." icon="blog" heading="h1" close-to="/">
+      <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
+      <div v-if="posts.length === 0" class="no-posts">
+        <h2>Nothing here yet!</h2>
+        <p>Please check back later, or follow me on Twitter for updates</p>
+        <a href="https://twitter.com/_evansalter" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @_evansalter</a>
+      </div>
+      <ul v-else class="sunken post-list">
+        <li v-for="post in visiblePosts" :key="post.filename">
+          <router-link :to="getPath(post.title)">
+            <desktop-icon name="document" :size="32"></desktop-icon>
+            <div class="post-summary">
+              <div class="post-title">{{ post.title }}</div>
+              <div>{{ post.date }}</div>
+              <tag-list :tags="post.tags"></tag-list>
+            </div>
+            <div class="post-comments">
               <icon name="comments-o"></icon>
               <span class="disqus-comment-count" :data-disqus-url="hostname + getPath(post.title)"></span>
             </div>
-          </v-list-tile-action>
-        </v-list-tile>
-        <v-divider/>
-      </v-list-item>
-    </v-list>
-  </v-container>
+          </router-link>
+        </li>
+      </ul>
+    </app-window>
+  </div>
 </template>
 
 <script>
 import { PostList, Slugify } from './posts/index.js'
 import { Constants } from '@/constants'
+import AppWindow from '@/components/desktop/AppWindow'
+import DesktopIcon from '@/components/desktop/DesktopIcon'
 import TagList from '@/components/common/TagList'
 import TagSelector from '@/components/common/TagSelector'
 import '@/components/common/twitter.js'
 
 export default {
-  components: { TagList, TagSelector },
+  components: { AppWindow, DesktopIcon, TagList, TagSelector },
   meta: function () {
     var description = 'A place to read about, and discuss, a wide variety of topics related to technology and software development.'
     return [
@@ -84,6 +83,9 @@ export default {
     }
   },
   computed: {
+    visiblePosts: function () {
+      return this.posts.filter(post => this.shouldShowPost(post.tags))
+    },
     hostname: function () {
       return window.location.href.split(window.location.pathname)[0]
     },
@@ -92,7 +94,7 @@ export default {
       for (var post of this.posts) {
         if (post.tags) {
           for (var tag of post.tags) {
-            tags[tag] = tags[tags] + 1 || 1
+            tags[tag] = tags[tag] + 1 || 1
           }
         }
       }
@@ -103,23 +105,39 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/animation.scss";
+.post-list {
+  margin-top: calc(var(--px) * 8);
+  padding: calc(var(--px) * 2);
+  list-style: none;
 
-h3 {
-  margin-top: 15px;
-}
-.list {
-  overflow: initial;
-}
-.list > li.list__item > a{
-  height: auto;
-  padding-top: 10px;
+  a {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-4);
+    padding: var(--spacing-4);
+    color: var(--color-black);
+    text-decoration: none;
 
-  div {
-    height: auto;
+    &:hover, &:focus {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+      outline: var(--line) dotted var(--color-yellow);
+      outline-offset: -2px;
+    }
   }
+}
+.post-summary {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+.post-title {
+  font-weight: bold;
 }
 .no-posts {
   text-align: center;
+  padding: var(--spacing-6);
 }
 </style>

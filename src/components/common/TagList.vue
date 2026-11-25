@@ -1,8 +1,6 @@
 <template>
   <div v-if="tags && tags.length > 0" class="tags">
-    <v-chip label class="blue-grey lighten-4" v-for="tag in tags" :key="tag">
-      {{ tag }}
-    </v-chip>
+    <span class="tag" v-for="tag in tags" :key="tag">{{ tag }}</span>
   </div>
 </template>
 
@@ -14,7 +12,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.technologies {
-  display: inline-block;
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+.tag {
+  padding: 0 calc(var(--px) * 4);
+  background-color: var(--color-gray-200);
+  border: var(--line) solid var(--color-gray-300);
+  color: var(--color-black);
 }
 </style>

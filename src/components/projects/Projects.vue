@@ -1,21 +1,18 @@
 <template>
-  <v-container>
-    <div>
-      <h3>Projects.</h3>
-      <h5>What I've been keeping myself busy with.</h5>
-    </div>
-    <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
-    <project-card v-for="(project, index) in projects"
+  <div class="desktop-page">
+    <app-window title="Projects." icon="folder" heading="h1" close-to="/">
+      <p>What I've been keeping myself busy with.</p>
+      <tag-selector :tags="allTags" v-model="selectedTags"></tag-selector>
+    </app-window>
+    <project-card v-for="project in visibleProjects"
                   :key="project.name"
-                  :index="index"
-                  :project="project"
-                  class="slide-and-fade-in"
-                  v-if="shouldShowProject(project.technologies)">
+                  :project="project">
     </project-card>
-  </v-container>
+  </div>
 </template>
 
 <script>
+import AppWindow from '@/components/desktop/AppWindow'
 import ProjectCard from './ProjectCard'
 import TagSelector from '@/components/common/TagSelector'
 import { Constants } from '@/constants'
@@ -26,6 +23,7 @@ import vimChecklistImage from '../../assets/projects/vim-checklist.gif'
 
 export default {
   components: {
+    AppWindow,
     ProjectCard,
     TagSelector
   },
@@ -56,7 +54,7 @@ export default {
           ]
         },
         {
-          name: 'webpack-static-site-generator ',
+          name: 'webpack-static-site-generator',
           description: 'A Webpack plugin to generate a static site from your single-page app.',
           technologies: ['Javascript', 'Webpack', 'Web'],
           links: [
@@ -107,6 +105,9 @@ export default {
     }
   },
   computed: {
+    visibleProjects: function () {
+      return this.projects.filter(project => this.shouldShowProject(project.technologies))
+    },
     allTags: function () {
       var tags = {}
       for (var project of this.projects) {
@@ -126,18 +127,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "../../styles/animation.scss";
-
-.card {
-  margin-bottom: 25px;
-  &:nth-child(2) {
-    margin-top: 25px;
-  }
-}
-
-h3 {
-  margin-top: 15px;
-}
-</style>

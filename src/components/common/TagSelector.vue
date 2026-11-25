@@ -1,13 +1,17 @@
 <template>
-  <v-container class="tag-container">
-      <v-chip label
-              v-for="([tag, count]) in sortedTags"
+  <fieldset class="tag-selector">
+    <legend>Filter by tag</legend>
+    <div class="tag-buttons">
+      <button v-for="([tag, count]) in sortedTags"
+              type="button"
               :key="tag"
-              @click.native="toggleTagSelected(tag)"
-              :class="{ selected: selectedTags.indexOf(tag) > -1 }">
+              :class="{ 'is-active': isSelected(tag) }"
+              :aria-pressed="String(isSelected(tag))"
+              @click="toggleTagSelected(tag)">
         {{ tag }} ({{ count }})
-      </v-chip>
-  </v-container>
+      </button>
+    </div>
+  </fieldset>
 </template>
 
 <script>
@@ -29,6 +33,9 @@ export default {
     }
   },
   methods: {
+    isSelected: function (tag) {
+      return this.selectedTags.indexOf(tag) > -1
+    },
     toggleTagSelected: function (tag) {
       var index = this.selectedTags.indexOf(tag)
       if (index < 0) {
@@ -43,16 +50,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tag-container {
-  text-align: center;
-  margin-bottom: 15px;
-  .chip {
-    opacity: 0.5;
-    box-shadow: none;
-    &.selected {
-      opacity: 1;
-      box-shadow: 0 1px 5px rgba(0,0,0,.2), 0 2px 2px rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
-      outline: none;
+.tag-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--px) * 4);
+
+  button:not(.tab) {
+    // Keep a selected tag pressed in while it still has focus
+    &.is-active:not(:active) {
+      box-shadow: var(--shadow-default-button-active);
+      background-color: var(--color-gray-100);
     }
   }
 }
