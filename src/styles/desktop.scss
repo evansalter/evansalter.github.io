@@ -1,0 +1,186 @@
+// Site-specific layer on top of 95CSS. Anything 95CSS already styles
+// (.dialog, .btn, fieldset, header/nav, ...) should come from there.
+//
+// 95CSS mixes scales: 2x bevels and scrollbars, ~1.4x text. Everything here is
+// sized in Windows 95 pixels through --px instead, so text, icons, bevels and
+// chrome all share one scale.
+
+:root {
+  // One Windows 95 pixel
+  --px: 1.5px;
+  // Bevel line thickness: one Win95 pixel, snapped to whole device pixels
+  --line: 1px;
+  // W95FA is drawn on a 12.5-unit em, so this is exactly 1x its pixel grid
+  --font-size: calc(var(--px) * 12.5);
+  --taskbar-height: calc(var(--px) * 28);
+}
+
+@media (min-resolution: 2dppx) {
+  :root { --line: 1.5px; }
+}
+
+@media (min-resolution: 3dppx) {
+  :root { --line: 1.3333px; }
+}
+
+// 95CSS declares these on `*`, so they have to be overridden there too
+* {
+  --shadow-inner-1: inset calc(var(--line) * -1) calc(var(--line) * -1) 0 var(--color-white),
+    inset var(--line) var(--line) 0 var(--color-gray-300);
+  --shadow-inner-2: var(--shadow-inner-1),
+    inset calc(var(--line) * -2) calc(var(--line) * -2) 0 var(--color-gray-300),
+    inset calc(var(--line) * 2) calc(var(--line) * 2) 0 var(--color-white);
+  --shadow-inner-3: inset calc(var(--line) * -1) calc(var(--line) * -1) 0 var(--color-white),
+    inset var(--line) var(--line) 0 var(--color-black),
+    inset calc(var(--line) * -2) calc(var(--line) * -2) 0 var(--color-gray-100),
+    inset calc(var(--line) * 2) calc(var(--line) * 2) 0 var(--color-gray-300);
+  --shadow-inner-4: var(--shadow-inner-1),
+    inset calc(var(--line) * -2) calc(var(--line) * -2) 0 var(--color-gray-200),
+    inset calc(var(--line) * 2) calc(var(--line) * 2) 0 var(--color-black);
+  --shadow-outer-1: inset calc(var(--line) * -1) calc(var(--line) * -1) 0 var(--color-black),
+    inset var(--line) var(--line) 0 var(--color-white),
+    inset calc(var(--line) * -2) calc(var(--line) * -2) 0 var(--color-gray-300),
+    inset calc(var(--line) * 2) calc(var(--line) * 2) 0 var(--color-gray-100);
+  --shadow-outer-2: inset var(--line) var(--line) 0 var(--color-black),
+    inset calc(var(--line) * -2) calc(var(--line) * -2) 0 var(--color-black),
+    inset calc(var(--line) * 2) calc(var(--line) * 2) 0 var(--color-white),
+    inset calc(var(--line) * -3) calc(var(--line) * -3) 0 var(--color-gray-300),
+    inset calc(var(--line) * 3) calc(var(--line) * 3) 0 var(--color-gray-100);
+  --shadow-outer-3: inset calc(var(--line) * -1) calc(var(--line) * -1) 0 var(--color-black),
+    inset var(--line) var(--line) 0 var(--color-gray-100),
+    inset calc(var(--line) * -2) calc(var(--line) * -2) 0 var(--color-gray-300),
+    inset calc(var(--line) * 2) calc(var(--line) * 2) 0 var(--color-white);
+  --shadow-outer-4: inset calc(var(--line) * -1) calc(var(--line) * -1) 0 var(--color-black),
+    inset var(--line) var(--line) 0 var(--color-white),
+    inset calc(var(--line) * -2) calc(var(--line) * -2) 0 var(--color-gray-300);
+}
+
+body {
+  min-height: 100vh;
+  font-size: var(--font-size);
+  line-height: calc(var(--px) * 16);
+}
+
+a {
+  color: var(--color-blue);
+
+  // Component-ish links shouldn't look like hyperlinks
+  &.btn {
+    color: var(--color-black);
+  }
+}
+
+p {
+  margin-bottom: calc(var(--px) * 8);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+hr {
+  height: var(--line);
+  box-shadow: 0 var(--line) 0 var(--color-white);
+}
+
+// Inline SVG icons: undo the 95CSS `svg { display: block }` reset
+svg.fa-icon {
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+// Standard Win95 push button: 75x23
+button:not(.tab),
+.btn:not(.tab) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--px) * 4);
+  min-height: calc(var(--px) * 23);
+  padding: 0 calc(var(--px) * 8);
+  line-height: calc(var(--px) * 14);
+
+  &:not(:active):focus::after,
+  &:not(:active).is-focused::after {
+    inset: calc(var(--px) * 4);
+    width: auto;
+    height: auto;
+    border: var(--line) dotted var(--color-black);
+  }
+}
+
+fieldset {
+  min-width: 0;
+  padding: calc(var(--px) * 6) calc(var(--px) * 8) calc(var(--px) * 8);
+}
+
+legend {
+  top: 0;
+  left: 0;
+  padding: 0 calc(var(--px) * 3);
+}
+
+// Draw the etched line as a border so the legend sits centred on it
+fieldset {
+  border: var(--line) solid var(--color-gray-300);
+  box-shadow: var(--line) var(--line) 0 var(--color-white), inset var(--line) var(--line) 0 var(--color-white);
+}
+
+// White, recessed panel: document areas, list views, image wells
+.sunken {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-input);
+  padding: calc(var(--px) * 8);
+}
+
+.main-container {
+  min-height: calc(100vh - var(--taskbar-height) - 40px);
+}
+
+.desktop-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: calc(var(--px) * 16);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--px) * 16);
+}
+
+// Window frame: 2px bevel plus 2px of border
+.dialog {
+  // 95CSS sets a 320px min-width, too wide for small phones with a gutter
+  min-width: 0;
+  width: 100%;
+  padding: calc(var(--px) * 4);
+  gap: 0;
+}
+
+.dialog-body {
+  padding: calc(var(--px) * 8);
+}
+
+::-webkit-scrollbar {
+  width: calc(var(--px) * 16);
+  height: calc(var(--px) * 16);
+  min-height: 0;
+}
+
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-button:vertical:start:decrement,
+::-webkit-scrollbar-button:vertical:end:increment {
+  height: calc(var(--px) * 16);
+  background-size: calc(var(--px) * 7);
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment {
+  width: calc(var(--px) * 16);
+  background-size: calc(var(--px) * 7);
+}
+
+@media (max-width: 767px) {
+  .desktop-page {
+    padding: calc(var(--px) * 6);
+    gap: calc(var(--px) * 8);
+  }
+}

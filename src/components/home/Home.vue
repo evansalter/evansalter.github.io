@@ -1,18 +1,26 @@
 <template>
-  <v-container fluid>
-    <v-row class="panel" id="welcome-panel">
-      <welcome></welcome>
-    </v-row>
-    <v-row class="panel panel-full grey-panel">
-      <about-me></about-me>
-    </v-row>
-    <v-row id="languages-and-frameworks" class="panel panel-full">
-      <languages></languages>
-    </v-row>
-    <v-row id="contact-me" class="panel panel-full grey-panel">
-      <contact-me></contact-me>
-    </v-row>
-  </v-container>
+  <div class="home">
+    <nav class="desktop-icons" aria-label="Desktop">
+      <router-link v-for="shortcut in shortcuts" :key="shortcut.name" :to="shortcut.to">
+        <desktop-icon :name="shortcut.icon" :size="32"></desktop-icon>
+        <span>{{ shortcut.name }}</span>
+      </router-link>
+    </nav>
+    <div class="desktop-page home-windows">
+      <app-window id="welcome" title="Welcome" icon="computer">
+        <welcome></welcome>
+      </app-window>
+      <app-window id="about-me" title="About me." icon="notepad">
+        <about-me></about-me>
+      </app-window>
+      <app-window id="languages-and-frameworks" title="Languages and frameworks." icon="settings">
+        <languages></languages>
+      </app-window>
+      <app-window id="contact-me" title="Get in touch." icon="mail">
+        <contact-me></contact-me>
+      </app-window>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -20,12 +28,25 @@ import AboutMe from './AboutMe'
 import ContactMe from './ContactMe'
 import Languages from './Languages'
 import Welcome from './Welcome'
+import AppWindow from '@/components/desktop/AppWindow'
+import DesktopIcon from '@/components/desktop/DesktopIcon'
 import { Constants } from '@/constants'
 import headshot from '../../assets/headshot/full2.jpg'
 
 export default {
   name: 'home',
-  components: { ContactMe, AboutMe, Languages, Welcome },
+  components: { AppWindow, ContactMe, AboutMe, DesktopIcon, Languages, Welcome },
+  data: () => {
+    return {
+      shortcuts: [
+        { name: 'About me', icon: 'notepad', to: '/#about-me' },
+        { name: 'Languages', icon: 'settings', to: '/#languages-and-frameworks' },
+        { name: 'Contact', icon: 'mail', to: '/#contact-me' },
+        { name: 'Projects', icon: 'folder', to: '/projects' },
+        { name: 'Blog', icon: 'blog', to: '/blog' }
+      ]
+    }
+  },
   head: {
     meta: function () {
       var description = 'The home of Evan Salter\'s projects and blog.'
@@ -45,53 +66,64 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.panel {
-  margin: 0;
-  color: white;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  position: relative;
+.home {
+  display: flex;
+  align-items: flex-start;
+}
 
-  @for $i from 1 through 4 {
-    &:nth-child(#{$i}) {
-      z-index: 98 - $i
+.home-windows {
+  flex: 1;
+  min-width: 0;
+}
+
+.app-window {
+  scroll-margin-top: var(--spacing-5);
+}
+
+.desktop-icons {
+  position: sticky;
+  top: 0;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--px) * 12);
+  padding: calc(var(--px) * 16) 0 0 calc(var(--px) * 6);
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-2);
+    width: calc(var(--px) * 75);
+    color: var(--color-white);
+    text-align: center;
+    text-decoration: none;
+
+    span {
+      padding: 0 var(--spacing-2);
+      border: var(--line) dotted transparent;
+    }
+
+    &:hover span, &:focus span {
+      background-color: var(--color-blue);
+      border-color: var(--color-white);
+    }
+    &:focus {
+      outline: none;
     }
   }
 }
 
-#welcome-panel {
-  // background-image: url("../../assets/headshot/full3.jpg");
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-h1 {
-  margin: 0;
-  color: white;
-}
-
-p, li {
-  font-size: 25px;
-}
-
-.panel-full {
-  padding: 25px;
-}
-
-.light-green {
-  color: black;
-}
-
-.panel{
-  * {
-    color: #314148;
+@media (max-width: 767px) {
+  .home {
+    display: block;
   }
-}
-
-.grey-panel {
-  background-color: #9BAEB6;
-  * {
-    color: white;
+  .desktop-icons {
+    position: static;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: calc(var(--px) * 8) 0;
+    padding: calc(var(--px) * 8) 0 0;
   }
 }
 </style>

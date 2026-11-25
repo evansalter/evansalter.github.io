@@ -1,64 +1,91 @@
 <template>
-  <v-card hover raised class="project-card">
-    <v-row>
-      <v-col class="project-image" v-if="project.image" :style="imageStyle" xs12 md4></v-col>
-      <v-col xs12 :class="{ md8: project.image }">
-        <v-row>
-          <v-card-title>{{ project.name }}</v-card-title>
-          <v-card-text v-if="project.description">{{ project.description }}</v-card-text>
-        </v-row>
+  <app-window :title="project.name" icon="folder">
+    <div class="project" :class="{ 'has-image': project.image }">
+      <div v-if="project.image" class="sunken project-image">
+        <div :style="imageStyle"></div>
+      </div>
+      <div class="project-info">
+        <p v-if="project.description">{{ project.description }}</p>
         <tag-list :tags="project.technologies"></tag-list>
-        <v-card-row actions>
-          <v-btn flat v-for="link in project.links" :key="link.name" @click.native="open(link.url, '_blank')">
-            <template v-if="link.icon">
-              <icon v-if="link.icon" :name="link.icon" scale="1"></icon>
-              &nbsp;
-            </template>
+        <div class="toolbar">
+          <a class="btn"
+             v-for="link in project.links"
+             :key="link.name"
+             :href="link.url"
+             target="_blank"
+             rel="noopener">
+            <desktop-icon v-if="link.icon === 'github'" name="github" :size="16"></desktop-icon>
+            <icon v-else-if="link.icon" :name="link.icon" scale="1"></icon>
             {{ link.name }}
-          </v-btn>
-        </v-card-row>
-      </v-col>
-    </v-row>
-  </v-card>
+          </a>
+        </div>
+      </div>
+    </div>
+  </app-window>
 </template>
 
 <script>
+import AppWindow from '@/components/desktop/AppWindow'
+import DesktopIcon from '@/components/desktop/DesktopIcon'
 import TagList from '@/components/common/TagList'
 
 export default {
   name: 'project-card',
-  props: ['project', 'index'],
-  components: { TagList },
+  props: ['project'],
+  components: { AppWindow, DesktopIcon, TagList },
   computed: {
     imageStyle: function () {
       return 'background-image: url("' + this.project.image + '")'
-    },
-    infoClass: function () {
-      return this.project.image ? 'xs12 md8' : 'xs12'
-    }
-  },
-  methods: {
-    open: function (url) {
-      window.open(url, 'blank')
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.project-card {
-  overflow: hidden;
-  &:hover {
-    cursor: initial;
+.project {
+  display: grid;
+  gap: calc(var(--px) * 8);
+
+  &.has-image {
+    grid-template-columns: 1fr 2fr;
   }
 }
+
 .project-image {
-  background-size: cover;
-  background-position: center center;
-  @media(max-width: 767px) {
-    & {
-      height: 300px;
-    }
+  padding: calc(var(--px) * 2);
+  min-height: 180px;
+  display: flex;
+
+  div {
+    flex: 1;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+
+  p {
+    margin: 0;
+  }
+}
+
+.toolbar {
+  flex-wrap: wrap;
+  gap: calc(var(--px) * 4);
+  margin-top: auto;
+}
+
+@media (max-width: 767px) {
+  .project.has-image {
+    grid-template-columns: 1fr;
+  }
+  .project-image {
+    height: 240px;
   }
 }
 </style>

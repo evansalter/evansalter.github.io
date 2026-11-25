@@ -16,6 +16,7 @@
     "node": ">=22"
   },
   "dependencies": {
+    "95css": "^0.4.2",
     "axios": "^1.21.1",
     "chart.js": "^2.9.4",
     "vue": "^2.7.16",
@@ -23,8 +24,7 @@
     "vue-awesome": "^2.3.8",
     "vue-head": "^2.2.0",
     "vue-router": "^3.6.5",
-    "vue-social-sharing": "^2.4.7",
-    "vuetify": "^0.10.4"
+    "vue-social-sharing": "^2.4.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",

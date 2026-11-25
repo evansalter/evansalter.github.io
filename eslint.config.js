@@ -14,11 +14,7 @@ export default [
     },
     rules: {
       // Legacy component names predate this rule
-      'vue/multi-word-component-names': 'off',
-      // Vuetify 0.10 components are used with v-text, and lists filter with v-if
-      // so the staggered nth-child animations line up
-      'vue/no-v-text-v-html-on-component': 'off',
-      'vue/no-use-v-if-with-v-for': 'off'
+      'vue/multi-word-component-names': 'off'
     }
   },
   {
