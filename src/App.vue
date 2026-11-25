@@ -4,13 +4,15 @@
       <router-view></router-view>
     </main>
     <page-footer></page-footer>
-    <navigation></navigation>
+    <navigation @shut-down="isShutDown = true"></navigation>
+    <shut-down-screen v-if="isShutDown" @restart="isShutDown = false"></shut-down-screen>
   </div>
 </template>
 
 <script>
 import Navigation from '@/components/Navigation'
 import PageFooter from '@/components/PageFooter'
+import ShutDownScreen from '@/components/desktop/ShutDownScreen'
 
 import 'highlight.js/styles/default.css'
 
@@ -18,7 +20,13 @@ export default {
   name: 'app',
   components: {
     Navigation,
-    PageFooter
+    PageFooter,
+    ShutDownScreen
+  },
+  data: function () {
+    return {
+      isShutDown: false
+    }
   }
 }
 </script>
