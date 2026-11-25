@@ -1,6 +1,6 @@
 <template>
   <footer id="page-footer">
-    &copy; 2017&mdash;{{ currentYear }} Evan Salter / Hosted on <a href="https://github.io" target="_blank" rel="noopener">github.io</a>
+    (C) 2017 &dash; {{ currentYear }} Evan Salter / Hosted on <a href="https://github.io" target="_blank" rel="noopener">github.io</a>
   </footer>
 </template>
 
