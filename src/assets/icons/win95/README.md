@@ -27,5 +27,8 @@ logos are trademarks of their owners.
 `shut-down` is cropped from 32px to its 24px artwork, so it fills the same box as the
 other icons.
 
+`public/favicon.ico` holds `computer` at 16, 32 and 48px (`Explorer100` again), and
+`public/apple-touch-icon.png` is the 32px one at 4x on the desktop teal.
+
 Bitmaps vary in how much of their canvas they fill (`FolderFile` and `Settings`
 are only about 24px of 32), so check a new icon next to the others.
