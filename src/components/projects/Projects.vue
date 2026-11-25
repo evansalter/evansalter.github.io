@@ -50,7 +50,8 @@ export default {
           technologies: ['Javascript', 'Vue.js', 'Web', 'Chrome Extension'],
           links: [
             { name: 'Github', url: 'https://github.com/evansalter/gata', icon: 'github' },
-            { name: 'Chrome Web Store', url: 'https://chrome.google.com/webstore/detail/gata/oidckhmhcapggoekanlbdgfckcjccphk', icon: 'chrome' }
+            { name: 'Chrome Web Store', url: 'https://chrome.google.com/webstore/detail/gata/oidckhmhcapggoekanlbdgfckcjccphk', icon: 'chrome' },
+            { name: 'Firefox Add-ons', url: 'https://addons.mozilla.org/en-CA/firefox/addon/gata/', icon: 'firefox' }
           ]
         },
         {

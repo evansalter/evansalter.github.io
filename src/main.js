@@ -2,6 +2,7 @@
 import 'vue-awesome/icons/chrome'
 import 'vue-awesome/icons/comments-o'
 import 'vue-awesome/icons/facebook'
+import 'vue-awesome/icons/firefox'
 import 'vue-awesome/icons/github'
 import 'vue-awesome/icons/globe'
 import 'vue-awesome/icons/google-plus'
