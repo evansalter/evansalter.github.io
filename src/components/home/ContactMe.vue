@@ -1,7 +1,7 @@
 <template>
   <div class="contact-container">
     <div class="sunken contact-image">
-      <img :src="contactImage" alt="Evan Salter" width="215" height="215">
+      <img :src="contactImage" alt="Evan Salter" width="144" height="144">
     </div>
     <ul>
       <li v-for="item in contactInfo" :key="item.url">
@@ -15,7 +15,8 @@
 <script>
 import DesktopIcon from '@/components/desktop/DesktopIcon'
 import contactInfo from '@/components/common/contact.js'
-import contactImage from '../../assets/headshot/crop.jpg'
+// crop.jpg at 144x144 in 256 dithered colors
+import contactImage from '../../assets/headshot/crop-256.png'
 
 export default {
   name: 'contact-me',
@@ -41,9 +42,13 @@ export default {
   padding: calc(var(--px) * 2);
 
   img {
-    width: 215px;
-    height: 215px;
-    object-fit: cover;
+    width: calc(var(--px) * 144);
+    height: calc(var(--px) * 144);
+
+    // 1.5x only lands on whole device pixels on high-density screens
+    @media (min-resolution: 2dppx) {
+      image-rendering: pixelated;
+    }
   }
 }
 
