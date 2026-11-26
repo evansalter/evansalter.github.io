@@ -16,6 +16,7 @@ That package is MIT licensed, but the artwork itself is Microsoft's.
 | `start`      | `Logo`        |
 | `tip`        | `Bulb`        |
 | `shut-down`  | `Shell3228`   |
+| `display`    | `Desk100`     |
 
 `start`, `tip` and `shut-down` are 32px only. For `start`, the 16px `Logo` is a different icon (taskbar settings),
 with a panel covering part of the flag.

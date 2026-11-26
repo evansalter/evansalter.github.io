@@ -114,6 +114,14 @@ export default {
   }
 }
 
+// White labels need a shadow to stay readable over the light clouds
+:root[data-wallpaper='clouds'] .desktop-icons a span {
+  text-shadow: var(--line) var(--line) 0 var(--color-black);
+}
+:root[data-wallpaper='clouds'] .desktop-icons a:is(:hover, :focus) span {
+  text-shadow: none;
+}
+
 @media (max-width: 767px) {
   .home {
     display: block;

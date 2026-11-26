@@ -6,6 +6,12 @@
     <title>Evan Salter</title>
     <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script>
+      // Apply the saved wallpaper before first paint (see src/components/desktop/wallpaper.js)
+      try {
+        document.documentElement.dataset.wallpaper = localStorage.getItem('wallpaper') === 'none' ? 'none' : 'clouds'
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="app"></div>
