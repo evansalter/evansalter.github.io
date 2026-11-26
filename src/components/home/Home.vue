@@ -24,7 +24,7 @@ import Languages from './Languages'
 import Welcome from './Welcome'
 import AppWindow from '@/components/desktop/AppWindow'
 import { Constants } from '@/constants'
-import headshot from '../../assets/headshot/full2.jpg'
+import headshot from '../../assets/headshot/crop.jpg'
 
 export default {
   name: 'home',
