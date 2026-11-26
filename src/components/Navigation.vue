@@ -42,6 +42,12 @@
         </li>
         <li class="start-divider" role="presentation"><hr></li>
         <li>
+          <button type="button" class="start-item" @click="changeWallpaper">
+            <desktop-icon name="display" :size="32"></desktop-icon>
+            Change Wallpaper
+          </button>
+        </li>
+        <li>
           <button type="button" class="start-item" @click="shutDown">
             <desktop-icon name="shut-down" :size="32"></desktop-icon>
             Shut Down...
@@ -55,6 +61,7 @@
 <script>
 import contactInfo from '@/components/common/contact'
 import DesktopIcon from '@/components/desktop/DesktopIcon'
+import { toggleWallpaper } from '@/components/desktop/wallpaper'
 
 function currentTime () {
   return new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })
@@ -92,6 +99,10 @@ export default {
         this.menuOpen = false
         this.$refs.start.focus()
       }
+    },
+    changeWallpaper: function () {
+      toggleWallpaper()
+      this.closeMenu()
     },
     shutDown: function () {
       this.closeMenu()
@@ -165,7 +176,7 @@ export default {
   position: absolute;
   bottom: calc(100% - var(--px) * 2);
   left: calc(var(--px) * 2);
-  width: calc(var(--px) * 164);
+  width: calc(var(--px) * 184);
   max-height: calc(100vh - var(--taskbar-height));
   overflow-y: auto;
   flex-direction: row;
@@ -213,6 +224,8 @@ export default {
   button.start-item:not(.tab) {
     width: 100%;
     justify-content: flex-start;
+    text-align: left;
+    white-space: nowrap;
     background: none;
     box-shadow: none;
     font: inherit;

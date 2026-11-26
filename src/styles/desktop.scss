@@ -55,8 +55,28 @@
     inset calc(var(--line) * -2) calc(var(--line) * -2) 0 var(--color-gray-300);
 }
 
+// Clouds wallpaper, stretched to fill the screen. A fixed layer rather than
+// background-attachment: fixed, which iOS Safari ignores.
+html {
+  background-color: var(--color-teal);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url('../assets/wallpaper/clouds.jpg') center / cover no-repeat;
+}
+
+// Plain teal desktop, picked from Start > Change Wallpaper
+html[data-wallpaper='none'] body::before {
+  content: none;
+}
+
 body {
   min-height: 100vh;
+  background: transparent;
   font-size: var(--font-size);
   line-height: calc(var(--px) * 16);
 }
