@@ -8,9 +8,24 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <script>
       // Apply the saved wallpaper before first paint (see src/components/desktop/wallpaper.js)
-      try {
-        document.documentElement.dataset.wallpaper = localStorage.getItem('wallpaper') === 'none' ? 'none' : 'clouds'
-      } catch (e) {}
+      (function () {
+        var wallpaper = 'clouds'
+        try {
+          if (localStorage.getItem('wallpaper') === 'none') wallpaper = 'none'
+        } catch (e) {}
+        document.documentElement.dataset.wallpaper = wallpaper
+        // Start downloading the clouds now, instead of after the stylesheet
+        // loads. (scripts/prerender.js strips this link from the static HTML.)
+        if (wallpaper === 'clouds') {
+          var link = document.createElement('link')
+          link.id = 'wallpaper-preload'
+          link.rel = 'preload'
+          link.as = 'image'
+          link.href = '/wallpaper/clouds.jpg'
+          link.fetchPriority = 'high'
+          document.head.appendChild(link)
+        }
+      })()
     </script>
   </head>
   <body>
