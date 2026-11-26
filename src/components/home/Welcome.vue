@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="welcome-actions">
-      <router-link class="btn is-highlighted" to="/projects">Projects</router-link>
+      <router-link class="btn" to="/projects">Projects</router-link>
       <router-link class="btn" to="/blog">Blog</router-link>
       <a class="btn" href="#contact-me">Contact</a>
     </div>
