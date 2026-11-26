@@ -56,9 +56,15 @@
 }
 
 // Clouds wallpaper, stretched to fill the screen. A fixed layer rather than
-// background-attachment: fixed, which iOS Safari ignores.
+// background-attachment: fixed, which iOS Safari ignores. It's served from
+// public/ at a fixed URL so index.html can start loading it right away, and
+// the sky blue underneath (the image's average colour) shows until it arrives.
 html {
   background-color: var(--color-teal);
+}
+
+html[data-wallpaper='clouds'] {
+  background-color: #c0d7e9;
 }
 
 body::before {
@@ -66,7 +72,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: url('../assets/wallpaper/clouds.jpg') center / cover no-repeat;
+  background: url('/wallpaper/clouds.jpg') center / cover no-repeat;
 }
 
 // Plain teal desktop, picked from Start > Change Wallpaper

@@ -26,6 +26,8 @@ try {
     await page.evaluate(() => {
       // Drop third-party scripts injected at runtime; the app re-adds them when it boots
       document.querySelectorAll('script[src^="http"]:not(#dsq-count-scr)').forEach(s => s.remove())
+      // index.html's inline script adds this itself, only when the clouds are on
+      document.getElementById('wallpaper-preload')?.remove()
     })
     const html = '<!DOCTYPE html>\n' + await page.evaluate(() => document.documentElement.outerHTML)
     const outDir = path.join(DIST, route)
